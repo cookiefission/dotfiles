@@ -48,3 +48,5 @@ fi
 if [ -d ~/.bash_completion.d ]; then
     . ~/.bash_completion.d/*
 fi
+
+alias 3cd='cd ../../..'
