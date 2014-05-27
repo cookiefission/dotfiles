@@ -50,3 +50,7 @@ if [ -d ~/.bash_completion.d ]; then
 fi
 
 alias 3cd='cd ../../..'
+alias gitpull='git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias gitpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
+
+trap 'echo -ne "\033]0;$USER@${HOSTNAME}: ${PWD##*/}\007"' DEBUG
