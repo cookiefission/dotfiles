@@ -13,7 +13,8 @@ map <F8> :tabn<CR>
 let NERDTreeShowLineNumbers=1
 
 " Codefolding
-set foldmethod=manual
+set foldmethod=indent
+set foldlevel=20
 
 " Misc Settings
 set number
