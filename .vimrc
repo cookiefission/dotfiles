@@ -61,6 +61,11 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 
+" Enable mouse if available
+if has("mouse")
+    set mouse=a
+endif
+
 " Cursorline Settings
 set cul
 hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
