@@ -34,10 +34,6 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 export HISTSIZE=5000
 shopt -s cmdhist
 
-#Aliases
-alias gff="git flow feature"
-alias ls="ls -G"
-
 #Includes
 if [ -f ~/.profile ]; then
     . ~/.profile
