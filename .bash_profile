@@ -45,7 +45,7 @@ if [ -d ~/.bash_completion.d ]; then
     . ~/.bash_completion.d/*
 fi
 
-alias 3cd='cd ../../..'
+alias ...='cd ../../..'
 alias gitpull='git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gitpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
 
