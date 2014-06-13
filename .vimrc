@@ -22,6 +22,7 @@ set ruler
 match Error /\s\+$/
 set laststatus=2
 set ttyfast
+set hidden
 
 " Relative numbers
 set relativenumber
