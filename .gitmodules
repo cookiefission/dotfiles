@@ -25,3 +25,6 @@
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "bundle/splitjoin"]
+	path = bundle/splitjoin
+	url = git@github.com:AndrewRadev/splitjoin.vim.git
