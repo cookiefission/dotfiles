@@ -1,0 +1,16 @@
+global !p
+from snippet_helpers import *
+endglobal
+
+snippet getset
+public function set$1($1 \$`!p snip.rv = lcfirst(t[1])`)
+{
+	\$this->`!p snip.rv = lcfirst(t[1])` = \$`!p snip.rv = lcfirst(t[1])`;
+	return \$this;
+}
+
+public function get$1()
+{
+	return \$this->`!p snip.rv = lcfirst(t[1])`;
+}
+endsnippet
