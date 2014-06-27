@@ -73,3 +73,7 @@ hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 
 " Ack-Grep
 command -nargs=* Ack :!ack-grep <args>
+
+" List chars
+set listchars=tab:>~,nbsp:_,trail:.
+set list
