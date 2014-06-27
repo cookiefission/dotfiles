@@ -34,3 +34,6 @@
 [submodule "bundle/php.vim"]
 	path = bundle/php.vim
 	url = git@github.com:StanAngeloff/php.vim.git
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
