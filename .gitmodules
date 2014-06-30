@@ -28,9 +28,6 @@
 [submodule "bundle/splitjoin"]
 	path = bundle/splitjoin
 	url = git@github.com:AndrewRadev/splitjoin.vim.git
-[submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
-	url = git@github.com:bling/vim-airline.git
 [submodule "bundle/php.vim"]
 	path = bundle/php.vim
 	url = git@github.com:StanAngeloff/php.vim.git
