@@ -84,3 +84,6 @@ let g:phpqa_codecoverage_autorun = 1
 
 " CtrlP.vim
 let g:ctrlp_working_path_mode = 0
+
+" Trim whitespace
+autocmd BufWritePre *.* :%s/\s\+$//e
