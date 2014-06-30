@@ -4,10 +4,15 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Enable 256 colours
+set t_Co=256
+
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
+map <Leader>vi :tabe ~/.vim/vimrc<CR>
+map <Leader>gs :Gstatus<CR>
 
 " NERDTree
 let NERDTreeShowLineNumbers=1
@@ -55,8 +60,8 @@ set autoindent
 
 " Filetype Specific
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+"autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Set up .swp files to ~/.vim/tmp
 set backupdir=~/.vim/tmp,.
@@ -77,3 +82,17 @@ command -nargs=* Ack :!ack-grep <args>
 " List chars
 set listchars=tab:>~,nbsp:_,trail:.
 set list
+
+" Linting
+command -nargs=0 Plint :!php -l %:p
+
+" PhpQa
+let g:phpqa_messdetector_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
+let g:phpqa_codecoverage_autorun = 1
+
+" CtrlP.vim
+let g:ctrlp_working_path_mode = 0
+
+" Trim whitespace
+autocmd BufWritePre *.* :%s/\s\+$//e
