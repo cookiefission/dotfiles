@@ -14,9 +14,6 @@ map <F8> :tabn<CR>
 map <Leader>vi :tabe ~/.vim/vimrc<CR>
 map <Leader>gs :Gstatus<CR>
 
-" Statusline
-highlight StatusLine ctermfg=blue ctermbg=yellow
-
 " NERDTree
 let NERDTreeShowLineNumbers=1
 
