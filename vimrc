@@ -4,6 +4,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Enable 256 colours
+set t_Co=256
+
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
