@@ -9,6 +9,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 
+" Statusline
+highlight StatusLine ctermfg=blue ctermbg=yellow
+
 " NERDTree
 let NERDTreeShowLineNumbers=1
 
