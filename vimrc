@@ -8,6 +8,7 @@ filetype plugin indent on
 map <C-n> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
+map <Leader>vi :tabe ~/.vim/vimrc<CR>
 
 " Statusline
 highlight StatusLine ctermfg=blue ctermbg=yellow
