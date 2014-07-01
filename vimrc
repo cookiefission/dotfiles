@@ -14,7 +14,7 @@ map <F8> :tabn<CR>
 map <Leader>vi :tabe ~/.vim/vimrc<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>nh :noh<CR>
-map <Leader>sc :execute 'tabe ~/Documents/sandbox/scratch.' . &filetype<CR>
+map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 
 " NERDTree
 let NERDTreeShowLineNumbers=1
