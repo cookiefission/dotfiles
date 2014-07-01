@@ -19,13 +19,13 @@ function _git_prompt() {
         else
             # Detached HEAD.  (branch=HEAD is a faster alternative.)
             branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
-                    echo HEAD`)"
+                echo HEAD`)"
         fi
         echo -n ' \[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\]'
     fi
 }
 function _prompt_command() {
-    PS1="\A \[\033[1m\]\w\[\033[0m\]`_git_prompt`\$ "
+PS1="\e]2;\u@\h: \w\a\\A \[\033[1m\]\W\[\033[0m\]`_git_prompt`\$ "
 }
 PROMPT_COMMAND=_prompt_command
 
@@ -48,5 +48,3 @@ fi
 alias ...='cd ../../..'
 alias gitpull='git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gitpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
-
-trap 'echo -ne "\033]0;$USER@${HOSTNAME}: ${PWD##*/}\007"' DEBUG
