@@ -62,8 +62,11 @@ set autoindent
 
 " Filetype Specific
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-"autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Set up .swp files to ~/.vim/tmp
 set backupdir=~/.vim/tmp,.
@@ -80,6 +83,10 @@ hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 
 " Ack-Grep
 command -nargs=* Ack :!ack-grep <args>
+
+" List chars
+set listchars=tab:>~,nbsp:_,trail:.
+set list
 
 " Linting
 command -nargs=0 Plint :!php -l %:p
