@@ -15,6 +15,8 @@ map <Leader>vi :tabe ~/.vim/vimrc<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>nh :noh<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
+map <Leader>== mmgg=G'm
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " NERDTree
 let NERDTreeShowLineNumbers=1
@@ -81,8 +83,11 @@ endif
 set cul
 hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 
-" Ack-Grep
-command -nargs=* Ack :!ack-grep <args>
+" Use ag for grepping
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " List chars
 set listchars=tab:>~,nbsp:_,trail:.
