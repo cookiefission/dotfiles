@@ -87,6 +87,7 @@ hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
 " List chars
