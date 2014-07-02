@@ -18,6 +18,7 @@ map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>== mmgg=G'm
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+
 " NERDTree
 let NERDTreeShowLineNumbers=1
 
@@ -86,7 +87,6 @@ hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 " Use ag for grepping
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
