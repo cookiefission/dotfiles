@@ -122,3 +122,6 @@ function! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
+
+" Composer
+map <Leader>cj :tabe composer.json<CR>
