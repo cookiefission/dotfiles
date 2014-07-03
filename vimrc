@@ -18,6 +18,7 @@ map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>== mmgg=G'm
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>bl :Gblame<CR>
+nnoremap <leader>c :call QuickfixToggle()<cr>
 
 
 " NERDTree
@@ -108,3 +109,16 @@ let g:ctrlp_working_path_mode = 0
 
 " Trim whitespace
 autocmd BufWritePre *.* :%s/\s\+$//e
+
+" Toggle Quickfix
+let g:quickfix_is_open = 0
+
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+    else
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
