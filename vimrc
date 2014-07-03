@@ -17,6 +17,7 @@ map <Leader>nh :noh<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>== mmgg=G'm
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+map <Leader>bl :Gblame<CR>
 
 
 " NERDTree
