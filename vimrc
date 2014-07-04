@@ -8,7 +8,7 @@ filetype plugin indent on
 set t_Co=256
 
 " Mappings
-map <C-n> :NERDTreeToggle<CR>
+nnoremap Y y$
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 map <Leader>vi :tabe ~/.vim/vimrc<CR>
@@ -21,12 +21,20 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>bl :Gblame<CR>
 nnoremap <Leader>c :call QuickfixToggle()<cr>
 
+" Auto centering
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
 " Composer
 map <Leader>cj :tabe composer.json<CR>
-command -nargs=0 Compose :Dispatch! composer update && notify-send VIM "Composer Updated"<CR>
 
 " NERDTree
 let NERDTreeShowLineNumbers=1
+map <C-n> :NERDTreeToggle<CR>
 
 " Codefolding
 set foldmethod=indent
@@ -42,6 +50,7 @@ match Error /\s\+$/
 set laststatus=2
 set ttyfast
 set nowrap
+set clipboard=unnamed
 
 " Completion
 set wildchar=<TAB>
