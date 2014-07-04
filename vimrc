@@ -21,6 +21,9 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>bl :Gblame<CR>
 nnoremap <Leader>c :call QuickfixToggle()<cr>
 
+" Composer
+map <Leader>cj :tabe composer.json<CR>
+command -nargs=0 Compose :Dispatch! composer update && notify-send VIM "Composer Updated"<CR>
 
 " NERDTree
 let NERDTreeShowLineNumbers=1
@@ -123,6 +126,3 @@ function! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfunction
-
-" Composer
-map <Leader>cj :tabe composer.json<CR>
