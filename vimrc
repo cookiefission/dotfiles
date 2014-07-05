@@ -20,6 +20,7 @@ map <Leader>== mmgg=G'm
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>bl :Gblame<CR>
 nnoremap <Leader>c :call QuickfixToggle()<cr>
+map <Leader>gc :Gcommit -a<CR>i
 
 " Auto centering
 nnoremap <silent> n nzz
