@@ -33,6 +33,10 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
 
+" More Natural Splits
+set splitbelow
+set splitright
+
 " Composer
 map <Leader>cj :tabe composer.json<CR>
 
