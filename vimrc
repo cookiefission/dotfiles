@@ -16,11 +16,14 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>nh :noh<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>sql :tabe /tmp/scratch.sql<CR>
+map <Leader>txt :tabe /tmp/scratch.txt<CR>
 map <Leader>== mmgg=G'm
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>bl :Gblame<CR>
 nnoremap <Leader>c :call QuickfixToggle()<cr>
 map <Leader>gc :Gcommit -a<CR>i
+map <Leader>pp :tabclose<CR>
+map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 
 " Auto centering
 nnoremap <silent> n nzz
@@ -81,7 +84,7 @@ set autoindent
 
 " Filetype Specific
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
