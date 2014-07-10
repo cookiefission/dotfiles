@@ -21,7 +21,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <Leader>bl :Gblame<CR>
 nnoremap <Leader>c :call QuickfixToggle()<cr>
 map <Leader>gc :Gcommit -a<CR>i
-map <Leader>pp :tabclose<CR>
+map <Leader>q :tabclose<CR>
 map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 map <Leader>pu :!vendor/bin/phpunit<CR>
 
