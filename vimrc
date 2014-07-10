@@ -7,7 +7,6 @@ filetype plugin indent on
 " Enable 256 colours
 set t_Co=256
 
-" Mappings
 nnoremap Y y$
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
@@ -24,6 +23,7 @@ nnoremap <Leader>c :call QuickfixToggle()<cr>
 map <Leader>gc :Gcommit -a<CR>i
 map <Leader>pp :tabclose<CR>
 map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
+map <Leader>pu :!vendor/bin/phpunit<CR>
 
 " Auto centering
 nnoremap <silent> n nzz
