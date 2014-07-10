@@ -2,7 +2,7 @@
 CURRENT=${PWD##*/}
 exec ctags-exuberant -f ~/.vim/mytags/$CURRENT \
 -h \".php\" -R \
---exclude=\"\.svn\" \
+--exclude=\"\.git\" \
 --totals=yes \
 --tag-relative=yes \
 --PHP-kinds=+cf \
