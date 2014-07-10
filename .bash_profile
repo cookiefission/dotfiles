@@ -45,6 +45,11 @@ if [ -d ~/.bash_completion.d ]; then
     . ~/.bash_completion.d/*
 fi
 
+# View markdown file in man pages style
+function manmd() {
+    pandoc -s -f markdown -t man $1 | man -l -
+}
+
 alias ...='cd ../../..'
 alias gitpull='git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gitpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
