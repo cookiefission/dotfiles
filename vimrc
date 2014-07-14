@@ -37,6 +37,10 @@ filetype plugin indent on
 " Enable 256 colours
 set t_Co=256
 
+let mapleader = "\<space>"
+let g:mapleader = "\<space>"
+
+" Mappings
 nnoremap Y y$
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
