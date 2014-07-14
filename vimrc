@@ -1,6 +1,36 @@
 set nocompatible
+filetype off
 
-execute pathogen#infect()
+" Vundle Setup
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Plugin list
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/UltiSnips'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'AndrewRadev/sideways.vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-dispatch'
+
+" Done setting up Vundle
+call vundle#end()
+
 syntax on
 filetype plugin indent on
 
