@@ -42,18 +42,21 @@ let g:mapleader = "\<space>"
 
 " Mappings
 nnoremap Y y$
+map <Leader>nh :noh<CR>
+map <Leader>== mmgg=G'm
+
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
+
 map <Leader>vi :tabe ~/.vim/vimrc<CR>
-map <Leader>nh :noh<CR>
+map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>sql :tabe /tmp/scratch.sql<CR>
 map <Leader>txt :tabe /tmp/scratch.txt<CR>
-map <Leader>== mmgg=G'm
+
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>c :call QuickfixToggle()<cr>
 map <Leader>pp :tabclose<CR>
-map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 
 map <Leader>gg :Gstatus<CR>
 map <Leader>gc :Gcommit -a<CR>i
