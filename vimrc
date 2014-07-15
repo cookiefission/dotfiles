@@ -58,6 +58,7 @@ map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 map <Leader>gg :Gstatus<CR>
 map <Leader>gc :Gcommit -a<CR>i
 map <Leader>gb :Gblame<CR>
+map <Leader>gd :Gdiff<CR>
 map <Leader>git :Git<space>
 
 autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
