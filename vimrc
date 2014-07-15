@@ -45,7 +45,7 @@ nnoremap Y y$
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 map <Leader>vi :tabe ~/.vim/vimrc<CR>
-map <Leader>gs :Gstatus<CR>
+map <Leader>g :Gstatus<CR>
 map <Leader>nh :noh<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>sql :tabe /tmp/scratch.sql<CR>
