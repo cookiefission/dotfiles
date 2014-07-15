@@ -19,7 +19,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
@@ -27,6 +26,7 @@ Plugin 'AndrewRadev/sideways.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/syntastic'
 
 " Done setting up Vundle
 call vundle#end()
