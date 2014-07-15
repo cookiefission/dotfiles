@@ -55,9 +55,10 @@ nnoremap <Leader>c :call QuickfixToggle()<cr>
 map <Leader>q :tabclose<CR>
 map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 
-map <Leader>g :Gstatus<CR>
+map <Leader>gg :Gstatus<CR>
 map <Leader>gc :Gcommit -a<CR>i
 map <Leader>gb :Gblame<CR>
+map <Leader>git :Git<space>
 
 autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
 
