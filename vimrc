@@ -27,6 +27,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/syntastic'
+Plugin 'StanAngeloff/php.vim'
 
 " Done setting up Vundle
 call vundle#end()
@@ -161,11 +162,8 @@ if executable('ag')
 endif
 
 " List chars
-set listchars=tab:>~,nbsp:_,trail:.
+set listchars=tab:>#,nbsp:_,trail:~
 set list
-
-" Linting
-command -nargs=0 Plint :!php -l %:p
 
 " PhpQa
 let g:phpqa_messdetector_autorun = 0
