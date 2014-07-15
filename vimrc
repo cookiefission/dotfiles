@@ -48,6 +48,9 @@ map <Leader>== mmgg=G'm
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 
+nmap j gj
+nmap k gk
+
 map <Leader>vi :tabe ~/.vim/vimrc<CR>
 map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
