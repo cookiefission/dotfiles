@@ -60,7 +60,7 @@ map <Leader>sql :tabe /tmp/scratch.sql<CR>
 map <Leader>txt :tabe /tmp/scratch.txt<CR>
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <Leader>c :call QuickfixToggle()<cr>
+nnoremap <Leader>qf :call QuickfixToggle()<cr>
 map <Leader>pp :tabclose<CR>
 
 map <Leader>gg :Gstatus<CR>
@@ -69,7 +69,11 @@ map <Leader>gb :Gblame<CR>
 map <Leader>gd :Gdiff<CR>
 map <Leader>git :Git
 
-autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+augroup php
+    autocmd!
+    autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+    autocmd FileType php map <Leader>php :!php %<CR>
+augroup END
 
 " Auto centering
 nnoremap <silent> n nzz
