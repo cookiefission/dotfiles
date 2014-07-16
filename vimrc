@@ -45,7 +45,7 @@ let g:mapleader = "\<space>"
 " Mappings
 nnoremap Y y$
 map <Leader>nh :noh<CR>
-map <Leader>== mmgg=G'm
+map <Leader>== mmgg=G'm:w<CR>
 
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
