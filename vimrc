@@ -35,8 +35,9 @@ call vundle#end()
 syntax on
 filetype plugin indent on
 
-" Enable 256 colours
+" Colour settings
 set t_Co=256
+hi Comment ctermfg=yellow
 
 let mapleader = "\<space>"
 let g:mapleader = "\<space>"
