@@ -75,6 +75,7 @@ augroup php
     autocmd!
     autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
     autocmd FileType php map <Leader>php :!php %<CR>
+    autocmd FileType php map <Leader>cj :tabe composer.json<CR>
 augroup END
 
 " Auto centering
@@ -88,9 +89,6 @@ nnoremap <silent> g# g#zz
 " More Natural Splits
 set splitbelow
 set splitright
-
-" Composer
-map <Leader>cj :tabe composer.json<CR>
 
 " NERDTree
 let NERDTreeShowLineNumbers=1
