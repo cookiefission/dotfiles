@@ -1,6 +1,44 @@
 #!/bin/bash
 if [ $# -eq 0 ]; then
     git status
-else
-    git $@
 fi
+OP=$1
+shift
+case "$OP" in
+    c)
+        git commit $@
+        ;;
+    d)
+        git diff $@
+        ;;
+    l)
+        git log $@
+        ;;
+    b)
+        git blame $@
+        ;;
+    ch)
+        if [ $# -eq 0 ]; then
+            git checkout -
+        else
+            git checkout $@
+        fi
+        ;;
+    ps)
+        if [ $# -eq 0 ]; then
+            git push origin $(git rev-parse --abbrev-ref HEAD)
+        else
+            git push $@
+        fi
+        ;;
+    pl)
+        if [ $# -eq 0 ]; then
+            git pull origin $(git rev-parse --abbrev-ref HEAD)
+        else
+            git pull $@
+        fi
+        ;;
+    *)
+        git status
+        ;;
+esac
