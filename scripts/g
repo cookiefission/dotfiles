@@ -6,10 +6,11 @@ fi
 OP=$1
 shift
 case "$OP" in
+    a) git add $@ ;;
+    b) git blame $@ ;;
     c) git commit $@ ;;
     d) git diff $@ ;;
     l) git log $@ ;;
-    b) git blame $@ ;;
     m)
         if [ $# -eq 0 ]; then
             git merge -
