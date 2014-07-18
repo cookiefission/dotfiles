@@ -38,5 +38,8 @@ case "$OP" in
             git pull $@
         fi
         ;;
-    *) git status ;;
+    *)
+        echo "Unrecognised arguments: $OP $@"; echo
+        git status
+        ;;
 esac
