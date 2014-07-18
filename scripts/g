@@ -11,6 +11,7 @@ case "$OP" in
     c) git commit $@ ;;
     d) git diff $@ ;;
     l) git log $@ ;;
+    s) git status ;;
     m)
         if [ $# -eq 0 ]; then
             git merge -
