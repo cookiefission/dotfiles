@@ -39,7 +39,7 @@ case "$OP" in
         fi
         ;;
     *)
-        echo "Unrecognised arguments: $OP $@"; echo
+        echo "Unrecognised argument(s): $OP $@"; echo
         git status
         ;;
 esac
