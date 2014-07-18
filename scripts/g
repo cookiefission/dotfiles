@@ -18,6 +18,13 @@ case "$OP" in
     b)
         git blame $@
         ;;
+    m)
+        if [ $# -eq 0 ]; then
+            git merge -
+        else
+            git merge $@
+        fi
+        ;;
     ch)
         if [ $# -eq 0 ]; then
             git checkout -
