@@ -160,6 +160,10 @@ endif
 set cul
 hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 
+" Highlight column when over 80 characters
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
 " Use ag for grepping
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
