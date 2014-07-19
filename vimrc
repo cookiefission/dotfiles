@@ -52,9 +52,6 @@ map <Leader>== mmgg=G'm:w<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 
-nnoremap ; :
-nnoremap : ;
-
 nmap j gj
 nmap k gk
 
