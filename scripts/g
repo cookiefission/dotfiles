@@ -3,6 +3,19 @@ if [ $# -eq 0 ]; then
     git status
     exit 0
 fi
+
+function prompt_pull() {
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    echo $branch
+}
+
+function git_pull_recurse() {
+    for path in $(pwd)/*; do
+        [ -d "${path}" ] || continue
+        (cd ${path} && prompt_pull)
+    done
+}
+
 OP=$1
 shift
 case "$OP" in
@@ -36,6 +49,8 @@ case "$OP" in
     pl)
         if [ $# -eq 0 ]; then
             git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
+        elif [ $1 == "--recurse" ]; then
+            git_pull_recurse
         else
             git pull $@
         fi
