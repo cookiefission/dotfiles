@@ -170,11 +170,6 @@ endif
 set listchars=tab:>#,nbsp:_,trail:~
 set list
 
-" PhpQa
-let g:phpqa_messdetector_autorun = 0
-let g:phpqa_codesniffer_autorun = 0
-let g:phpqa_codecoverage_autorun = 1
-
 " CtrlP.vim
 let g:ctrlp_working_path_mode = 0
 
