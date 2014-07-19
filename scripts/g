@@ -20,7 +20,7 @@ _prompt_pull() {
     _is_master $branch
     if ! [ $? -eq 0 ]; then
         while true; do
-            read -p "You are not on develop or master, do you still want to pull?" yn
+            read -p "You are not on develop or master, do you still want to pull? " yn
             case "$yn" in
                 [Yy]*) break;;
                 [Nn]*) return 1;;
@@ -32,6 +32,16 @@ _prompt_pull() {
 }
 
 _git_pull_recurse() {
+    local base_branch="`git rev-parse --abbrev-ref HEAD 2>&1`"
+    if ! [[ "$base_branch" =~ Not\ a\ git\ repo ]]; then
+        while true; do
+            read -p "You are currently in a git repository, are you sure you want to pull recursively? " bb
+            case "$bb" in
+                [Yy]*) break;;
+                [Nn]*) exit 1;;
+            esac
+        done
+    fi
     for path in $(pwd)/*; do
         [ -d "${path}" ] || continue
         (cd ${path} && _prompt_pull)
