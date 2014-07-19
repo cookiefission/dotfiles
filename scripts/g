@@ -35,13 +35,12 @@ case "$OP" in
         ;;
     pl)
         if [ $# -eq 0 ]; then
-            git pull origin $(git rev-parse --abbrev-ref HEAD)
+            git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
         else
             git pull $@
         fi
         ;;
     *)
-        echo "Unrecognised argument(s): $OP $@"; echo
-        git status
+        git $OP $@
         ;;
 esac
