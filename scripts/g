@@ -12,7 +12,11 @@ _is_master () {
 }
 
 _prompt_pull() {
-    branch=$(git rev-parse --abbrev-ref HEAD)
+    branch="`git rev-parse --abbrev-ref HEAD 2>&1`"
+    if [[ "$branch" =~ Not\ a\ git\ repo ]]; then
+        echo "$PWD is not a git repository: not pulling"
+        return 1
+    fi
     _is_master $branch
     if ! [ $? -eq 0 ]; then
         while true; do
@@ -24,7 +28,7 @@ _prompt_pull() {
         done
     fi
     echo "Pulling origin/$branch in $PWD"
-    `git pull origin $branch`
+    pull="`git pull origin $branch 2>&1`"
 }
 
 _git_pull_recurse() {
