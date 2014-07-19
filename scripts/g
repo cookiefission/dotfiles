@@ -4,15 +4,33 @@ if [ $# -eq 0 ]; then
     exit 0
 fi
 
-function prompt_pull() {
-    branch=$(git rev-parse --abbrev-ref HEAD)
-    echo $branch
+_is_master () {
+    local branches=( develop master )
+    local e
+    for e in "${branches[@]}"; do [[ "$e" == "$1" ]] && return 0; done
+    return 1
 }
 
-function git_pull_recurse() {
+_prompt_pull() {
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    _is_master $branch
+    if ! [ $? -eq 0 ]; then
+        while true; do
+            read -p "You are not on develop or master, do you still want to pull?" yn
+            case "$yn" in
+                [Yy]*) break;;
+                [Nn]*) return 1;;
+            esac
+        done
+    fi
+    echo "Pulling origin/$branch in ${pwd}"
+    `git pull origin $branch`
+}
+
+_git_pull_recurse() {
     for path in $(pwd)/*; do
         [ -d "${path}" ] || continue
-        (cd ${path} && prompt_pull)
+        (cd ${path} && _prompt_pull)
     done
 }
 
@@ -50,7 +68,7 @@ case "$OP" in
         if [ $# -eq 0 ]; then
             git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
         elif [ $1 == "--recurse" ]; then
-            git_pull_recurse
+            _git_pull_recurse
         else
             git pull $@
         fi
