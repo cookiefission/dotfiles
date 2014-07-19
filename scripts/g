@@ -23,7 +23,7 @@ _prompt_pull() {
             esac
         done
     fi
-    echo "Pulling origin/$branch in ${pwd}"
+    echo "Pulling origin/$branch in $PWD"
     `git pull origin $branch`
 }
 
