@@ -65,10 +65,11 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>qf :call QuickfixToggle()<cr>
 map <Leader>pp :tabclose<CR>
 
-map <Leader>gg :Gstatus<CR>
-map <Leader>gc :Gcommit -a<CR>i
+map <Leader>ga :Git add
 map <Leader>gb :Gblame<CR>
+map <Leader>gc :Gcommit -a<CR>i
 map <Leader>gd :Gdiff<CR>
+map <Leader>gg :Gstatus<CR>
 map <Leader>git :Git
 
 augroup php
