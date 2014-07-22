@@ -57,6 +57,8 @@ case "$OP" in
     d) git diff $@ ;;
     l) git log $@ ;;
     s) git status ;;
+    st) git stash ;;
+    sp) git stash pop ;;
     m)
         if [ $# -eq 0 ]; then
             git merge -
