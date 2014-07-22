@@ -56,6 +56,7 @@ case "$OP" in
     c) git commit $@ ;;
     d) git diff $@ ;;
     l) git log $@ ;;
+    r) git reset $@ ;;
     s) git stash ;;
     sp) git stash pop ;;
     st) git status $@ ;;
