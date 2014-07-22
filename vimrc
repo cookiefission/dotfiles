@@ -60,9 +60,10 @@ map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 map <Leader>sql :tabe /tmp/scratch.sql<CR>
 map <Leader>txt :tabe /tmp/scratch.txt<CR>
+map <leader>st :call MoveBufferToTabIfSplit()<CR>
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <Leader>qf :call QuickfixToggle()<cr>
+nnoremap <Leader>qf :call QuickfixToggle()<CR>
 map <Leader>pp :tabclose<CR>
 
 map <Leader>ga :Git add
@@ -147,6 +148,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Set up .swp files to ~/.vim/tmp
 set backupdir=~/.vim/tmp,.
@@ -192,4 +194,9 @@ function! QuickfixToggle()
         copen
         let g:quickfix_is_open = 1
     endif
+endfunction
+
+" Move buffer into a new tab if it is a split
+function! MoveBufferToTabIfSplit()
+
 endfunction
