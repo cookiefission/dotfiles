@@ -51,6 +51,5 @@ function manmd() {
 }
 
 alias ...='cd ../../..'
-alias gitpull='git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)'
-alias gitpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias clear='echo "Use Ctrl-L idiot"'
+alias v='vim'
