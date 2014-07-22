@@ -8,3 +8,7 @@ Using Terminator, go to Preferences > Profiles > Command and tick Run command as
 ### Global gitignore
 
 `(cd ~ && ln -s /path/to/dotfiles/.gitignore.global .gitignore.global)`
+
+### Fzf
+
+This shit is awesome and required for some scripts: https://github.com/junegunn/fzf
