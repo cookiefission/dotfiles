@@ -46,11 +46,10 @@ if [ -d ~/.bash_completion.d ]; then
 fi
 
 # View markdown file in man pages style
-function manmd() {
+manmd() {
     pandoc -s -f markdown -t man $1 | man -l -
 }
 
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
-alias v='vim'
 alias z='cd "$HOME/$(cd ~ && find * -path \'*/\.*\\' -prune -o -type d -print 2> /dev/null | fzf +m --reverse)"'
