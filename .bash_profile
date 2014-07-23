@@ -56,7 +56,7 @@ z() {
     local zdir
     zdir=$(cd ~ && find * -path '*/\.*' -prune \
     -o -type d -print 2> /dev/null | \
-    fzf +m --reverse --select-1 --query=$@) &&
+    fzf +m --reverse --select-1 --query="$@") &&
   cd "$HOME/$zdir"
 }
 
