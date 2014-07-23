@@ -53,3 +53,4 @@ function manmd() {
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
 alias v='vim'
+alias z='cd "$HOME/$(cd ~ && find * -path \'*/\.*\\' -prune -o -type d -print 2> /dev/null | fzf +m --reverse)"'
