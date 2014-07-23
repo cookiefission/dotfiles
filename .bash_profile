@@ -46,10 +46,18 @@ if [ -d ~/.bash_completion.d ]; then
 fi
 
 # View markdown file in man pages style
+# Function because aliases don't accept arguments
 manmd() {
     pandoc -s -f markdown -t man $1 | man -l -
 }
 
+# This is quite probably the best function of all time
+z() {
+    local zdir
+    zdir=$(cd ~ && find * -path '*/\.*' -prune \
+    -o -type d -print 2> /dev/null | fzf +m --reverse) &&
+  cd "$HOME/$zdir"
+}
+
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
-alias z='cd "$HOME/$(cd ~ && find * -path \'*/\.*\\' -prune -o -type d -print 2> /dev/null | fzf +m --reverse)"'
