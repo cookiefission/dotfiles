@@ -62,3 +62,4 @@ z() {
 
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
+alias vimf='fuzzfile=$(fzf --reverse) && vim $fuzzfile'
