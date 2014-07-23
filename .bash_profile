@@ -55,7 +55,7 @@ manmd() {
 z() {
     local zdir
     zdir=$(cd ~ && find * -path '*/\.*' -prune \
-    -o -type d -print 2> /dev/null | fzf +m --reverse) &&
+    -o -type d -print 2> /dev/null | fzf +m --reverse --query=$@) &&
   cd "$HOME/$zdir"
 }
 
