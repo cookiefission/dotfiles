@@ -89,4 +89,7 @@ export EDITOR=vim
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Fzf stuff
 source ~/.fzf.bash
+export FZF_DEFAULT_OPTS="--reverse"
