@@ -48,6 +48,14 @@ _git_pull_recurse() {
     done
 }
 
+_git_pull_merge() {
+    branch=$1
+    git checkout $branch
+    git pull origin $branch
+    git checkout -
+    git merge -
+}
+
 OP=$1
 shift
 case "$OP" in
@@ -63,6 +71,9 @@ case "$OP" in
     m)
         if [ $# -eq 0 ]; then
             git merge -
+        elif [ $1 == "--pull" ]; then
+            shift
+            _git_pull_merge $1
         else
             git merge $@
         fi
