@@ -59,7 +59,3 @@ z() {
     fzf +m --select-1 --query="$@") &&
   cd "$HOME/$zdir"
 }
-
-alias ...='cd ../../..'
-alias clear='echo "Use Ctrl-L idiot"'
-alias vimf='fuzzfile=$(fzf --reverse) && vim $fuzzfile'
