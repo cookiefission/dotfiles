@@ -65,6 +65,7 @@ map <leader>st :call MoveBufferToTabIfSplit()<CR>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>qf :call QuickfixToggle()<CR>
 map <Leader>pp :tabclose<CR>
+nnoremap <Leader>li :set list!<CR>
 
 map <Leader>ga :Git add
 map <Leader>gb :Gblame<CR>
