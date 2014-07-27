@@ -65,8 +65,18 @@ case "$OP" in
     d) git diff $@ ;;
     l) git log $@ ;;
     r) git reset $@ ;;
-    s) git stash ;;
-    sp) git stash pop ;;
+    s)
+        if [ $# -eq 0 ]; then
+            git stash
+        else
+            case $1 in
+                a) git stash apply ;;
+                d) git stash drop ;;
+                p) git stash pop ;;
+                *) git stash $@ ;;
+            esac
+        fi
+        ;;
     st) git status $@ ;;
     m)
         if [ $# -eq 0 ]; then
