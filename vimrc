@@ -55,24 +55,24 @@ map <F8> :tabn<CR>
 nmap j gj
 nmap k gk
 
-map <Leader>vi :tabe ~/.vim/vimrc<CR>
-map <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
-map <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
-map <Leader>sql :tabe /tmp/scratch.sql<CR>
-map <Leader>txt :tabe /tmp/scratch.txt<CR>
-map <leader>st :call MoveBufferToTabIfSplit()<CR>
+nnoremap <Leader>vi :tabe ~/.vim/vimrc<CR>
+nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
+nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
+nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
+nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
+nnoremap <leader>st :call MoveBufferToTabIfSplit()<CR>
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>qf :call QuickfixToggle()<CR>
-map <Leader>pp :tabclose<CR>
+nnoremap <Leader>pp :tabclose<CR>
 nnoremap <Leader>li :set list!<CR>
 
-map <Leader>ga :Git add
-map <Leader>gb :Gblame<CR>
-map <Leader>gc :Gcommit -a<CR>i
-map <Leader>gd :Gdiff<CR>
-map <Leader>gg :Gstatus<CR>
-map <Leader>git :Git
+nnoremap <Leader>ga :Git add
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit -a<CR>i
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gg :Gstatus<CR>
+nnoremap <Leader>git :Git
 
 augroup php
     autocmd!
