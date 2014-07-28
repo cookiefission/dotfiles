@@ -19,3 +19,12 @@ if [ -e ~/.shell_aliases ]; then
 fi
 
 source ~/.fzf.zsh
+
+# This is quite probably the best function of all time
+z() {
+    local zdir
+    zdir=$(cd ~ && find * -path '*/\.*' -prune \
+    -o -type d -print 2> /dev/null | \
+    fzf +m --select-1 --query="$@") &&
+  cd "$HOME/$zdir"
+}
