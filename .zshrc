@@ -1,5 +1,5 @@
-if [ -d ~/.zsh/git-prompt ]; then
-    source ~/.zsh/git-prompt/zshrc.sh
+if [ -d ~/.zsh ]; then
+    source ~/.zsh/zshrc.sh
     PROMPT='%B%M%~%b$(git_super_status) %# '
 fi
 

@@ -1,12 +1,8 @@
-# To install source this file from your .zshrc file
+export __GIT_PROMPT_DIR=~/.zsh
 
-# Change this to reflect your installation directory
-export __GIT_PROMPT_DIR=~/.zsh/git-prompt
-# Initialize colors.
 autoload -U colors
 colors
 
-# Allow for functions in the prompt.
 setopt PROMPT_SUBST
 
 autoload -U add-zsh-hook
@@ -18,16 +14,16 @@ add-zsh-hook precmd precmd_update_git_vars
 ## Function definitions
 function preexec_update_git_vars() {
     case "$2" in
-        git*|hub*|gh*|stg*)
-        __EXECUTED_GIT_COMMAND=1
+        g*|git*|hub*|gh*|stg*)
+        __UPDATE_GIT_PROMPT=1
         ;;
     esac
 }
 
 function precmd_update_git_vars() {
-    if [ -n "$__EXECUTED_GIT_COMMAND" ] || [ -n "$ZSH_THEME_GIT_PROMPT_NOCACHE" ]; then
+    if [ -n "$__UPDATE_GIT_PROMPT" ] || [ -n "$ZSH_THEME_GIT_PROMPT_NOCACHE" ]; then
         update_current_git_vars
-        unset __EXECUTED_GIT_COMMAND
+        unset __UPDATE_GIT_PROMPT
     fi
 }
 
@@ -79,9 +75,9 @@ git_super_status() {
 	fi
 }
 
-# Default values for the appearance of the prompt. Configure at will.
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+# Default values for the appearance of the prompt.
+ZSH_THEME_GIT_PROMPT_PREFIX=" "
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}●"
