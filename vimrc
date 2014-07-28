@@ -74,6 +74,8 @@ nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gg :Gstatus<CR>
 nnoremap <Leader>git :Git
 
+nnoremap <Leader>cw ^cw
+
 augroup php
     autocmd!
     autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
