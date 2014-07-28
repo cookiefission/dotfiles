@@ -20,7 +20,7 @@ _prompt_pull() {
     _is_master $branch
     if ! [ $? -eq 0 ]; then
         while true; do
-            read -p "You are not on develop or master, do you still want to pull? " yn
+            read -p "You are not on develop or master of ${PWD}, do you still want to pull? " yn
             case "$yn" in
                 [Yy]*) break;;
                 [Nn]*) return 1;;
