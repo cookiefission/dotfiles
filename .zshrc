@@ -1,6 +1,7 @@
 if [ -d ~/.zsh/git-prompt ]; then
     source ~/.zsh/git-prompt/zshrc.sh
-    PROMPT='%B%m%~%b$(git_super_status) %# '
+    ZSH_THEME_GIT_PROMPT_NOCACHE=1
+    PROMPT='%B%M%~%b$(git_super_status) %# '
 fi
 
 HISTFILE=~/.histfile

@@ -3,6 +3,19 @@
 # Allow for sudoing of aliases
 alias sudo='sudo '
 
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
 alias vimf='fuzzfile=$(fzf --reverse) && vim $fuzzfile'
