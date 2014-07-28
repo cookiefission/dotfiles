@@ -78,6 +78,7 @@ case "$OP" in
         fi
         ;;
     st) git status $@ ;;
+    li) git ls-files $@ ;;
     m)
         if [ $# -eq 0 ]; then
             git merge -
