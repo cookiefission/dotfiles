@@ -28,3 +28,16 @@ z() {
     fzf +m --select-1 --query="$@") &&
   cd "$HOME/$zdir"
 }
+
+zd() {
+    local dir
+    dir=$(find ${1:-*} -path '*/\.*' -prune \
+        -o -type d -print 2> /dev/null | fzf +m) &&
+        cd "$dir"
+}
+
+vimf() {
+    local file
+    file=$(fzf --query="$1" --select-1 --exit-0)
+    [ -n "$file" ] && vim "$file"
+}
