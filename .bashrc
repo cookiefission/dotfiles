@@ -96,4 +96,4 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # Fzf stuff
 source ~/.fzf.bash
-export FZF_DEFAULT_OPTS="--reverse"
+export FZF_DEFAULT_OPTS="--reverse +i"
