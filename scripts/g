@@ -63,6 +63,7 @@ case "$OP" in
     b) git blame $@ ;;
     c) git commit $@ ;;
     d) git diff $@ ;;
+    f) git fetch $@ ;;
     l) git log $@ ;;
     r) git reset $@ ;;
     s)
