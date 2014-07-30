@@ -5,7 +5,11 @@ My Dotfiles.
 
 ![You're gonna have a bad time](http://i.imgur.com/T4xU6RO.jpg)
 
-Using Terminator, go to Preferences > Profiles > Command and tick Run command as login shell. Otherwise .bash_profile won't take affect
+## Setup
+
+### Misc
+
+- Using Terminator, go to Preferences > Profiles > Command and tick Run command as login shell. Otherwise .bash_profile won't take affect
 
 ### Global gitignore
 
