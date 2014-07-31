@@ -1,9 +1,21 @@
 #!/bin/bash
 
+_parse_change() {
+    changes=$1
+    file=$2
+    echo $changes
+    echo $file
+}
+
 IFS=$'\n'
-status_arr=($(git status --porcelain -b))
+status_arr=( $(git status --porcelain -b) )
 unset IFS
 
-echo ${status_arr[0]}
-echo ${status_arr[1]}
-echo ${#status_arr[@]}
+branchline=${status_arr[0]}
+unset status_arr[0]
+
+change_count=${#status_arr[@]}
+
+for (( i=1; i<=$change_count; i++ )); do
+    _parse_change ${status_arr[$i]}
+done
