@@ -1,0 +1,7 @@
+[user]
+	email = sean.kenny@hotmail.com
+	name = Sean Kenny
+[core]
+	excludesfile = /home/sean/.gitignore.global
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
