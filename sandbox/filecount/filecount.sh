@@ -3,8 +3,8 @@
 _parse_change() {
     changes=$1
     file=$2
-    echo $changes
-    echo $file
+
+    echo ${changes:0:1}
 }
 
 IFS=$'\n'
