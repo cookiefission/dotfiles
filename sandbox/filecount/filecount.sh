@@ -11,7 +11,6 @@ IFS=$'\n'
 status_arr=( $(git status --porcelain -b) )
 unset IFS
 
-branchline=${status_arr[0]}
 unset status_arr[0]
 
 change_count=${#status_arr[@]}
