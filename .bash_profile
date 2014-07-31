@@ -9,12 +9,12 @@ function _git_prompt() {
     if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
         if [[ "$git_status" =~ unmerged ]]; then
             local ansi=41
-        elif[[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local ansi=32
         elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
             local ansi=33
         elif [[ "$git_status" =~ Changes\ to\ be\ committed ]]; then
             local ansi=34
+        elif [[ "$git_status" =~ nothing\ to\ commit ]]; then
+            local ansi=32
         else
             local ansi=35
         fi
