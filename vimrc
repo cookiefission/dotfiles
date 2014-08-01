@@ -56,6 +56,8 @@ nmap j gj
 nmap k gk
 
 nnoremap <Leader>vi :tabe ~/.vim/vimrc<CR>
+nnoremap <Leader>so :so $MYVIMRC<CR>
+
 nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
@@ -75,6 +77,11 @@ nnoremap <Leader>gg :Gstatus<CR>
 nnoremap <Leader>git :Git
 
 nnoremap <Leader>cw ^cw
+nnoremap <Leader>, A,<CR>
+nnoremap <Leader>d; ddkA;<esc>
+
+" Count occurence of pattern to -- to be inputted
+nnoremap <Leader>K :%s///gn<Left><Left><Left><Left>
 
 augroup php
     autocmd!
@@ -173,7 +180,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 " Use ag for grepping
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+    command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
 " List chars
