@@ -62,7 +62,16 @@ case "$OP" in
     a) git add $@ ;;
     b) git blame $@ ;;
     c) git commit $@ ;;
-    d) git diff $@ ;;
+    d)
+        if [ $# -eq 0 ]; then
+            git diff
+        else
+            case $1 in
+                h) git diff HEAD ;;
+                *) git diff $@
+            esac
+        fi
+        ;;
     f) git fetch $@ ;;
     l) git log $@ ;;
     r) git reset $@ ;;
