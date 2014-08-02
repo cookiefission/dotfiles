@@ -25,12 +25,6 @@ U      |    U   |unmerged, both modified
 ?      |    ?   |untracked
 !      |    !   |ignored
 
-## Status Mapping
+## Combination Mappings
 
-Status    | Symbol
-----------|-------
-Changed   |   ±
-Staged    |   ◆
-Untracked |   ‥
-Unmerged  |   ✗ (and append CONFLICTS with red background)
-Clean     |   ✓
+Of 4 counts: `Changed`, `Staged`, `Untracked` and `Unmerged`

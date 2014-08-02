@@ -11,7 +11,9 @@ _parse_change() {
 
     changes=${arg_changes// /_}
 
-    echo $changes
+    case $changes in
+
+    esac
 }
 
 IFS=$'\n'

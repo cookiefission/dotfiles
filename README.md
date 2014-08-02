@@ -18,3 +18,17 @@ My Dotfiles.
 ### Fzf
 
 This shit is awesome and required for some scripts: https://github.com/junegunn/fzf
+
+## Prompt
+
+### Git Status Mapping
+
+Status    | Symbol
+----------|-------
+Changed   |   ±
+Staged    |   ◆
+Untracked |   ‥
+Unmerged  |   ✗
+Clean     |   ✓
+
+N.B append CONFLICTS with red background to any prompt with Unmerged count
