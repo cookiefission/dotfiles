@@ -2,7 +2,7 @@
 
 Fiddling around with git status --porcelain to get change information into prompt
 
-## Status Mapping
+## Status Meaning
 
 X      |   Y    |Meaning
 -------|--------|--------------------------------
@@ -24,3 +24,13 @@ A      |    A   |unmerged, both added
 U      |    U   |unmerged, both modified
 ?      |    ?   |untracked
 !      |    !   |ignored
+
+## Status Mapping
+
+Status    | Symbol
+----------|-------
+Changed   |   ±
+Staged    |   ◆
+Untracked |   ‥
+Unmerged  |   ✗ (and append CONFLICTS with red background)
+Clean     |   ✓
