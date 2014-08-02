@@ -11,18 +11,13 @@ _parse_change() {
 
     changes=${arg_changes// /_}
 
-    change1=${changes:0:1}
-    change2=${changes:1:2}
-    echo -$change1-
-    echo -$change2-
+    echo $changes
 }
 
 IFS=$'\n'
 status_arr=( $(git status --porcelain -b) )
 
 unset status_arr[0]
-
-change_count=
 
 for (( i=1; i<=${#status_arr[@]}; i++ )); do
     _parse_change ${status_arr[$i]:0:2}
