@@ -7,7 +7,9 @@ GIT_STATUS_REMOVED=0
 GIT_STATUS_UNTRACKED=0
 
 _parse_change() {
-    changes=$@
+    arg_changes=$@
+
+    changes=${arg_changes// /_}
 
     change1=${changes:0:1}
     change2=${changes:1:2}
