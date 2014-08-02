@@ -10,12 +10,18 @@ GIT_STATUS_UNMERGED=0
 # See README.md for possible combinations and their meanings
 ##
 _parse_change() {
-    case ${@// /_} in
-        *_) ((GIT_STATUS_STAGED++)) ;;
-        _M|_D) ((GIT_STATUS_UNSTAGED++)) ;;
-        DD|AU|UD|UA|DU|AA|UU) ((GIT_STATUS_UNMERGED++)) ;;
-        "??") ((GIT_STATUS_UNTRACKED++)) ;;
-        *) echo Something else ;;
+    changes=${@// /_}
+    case $changes in
+        DD|AU|UD|UA|DU|AA|UU)
+            ((GIT_STATUS_UNMERGED++))
+            ;;
+        "??")
+            ((GIT_STATUS_UNTRACKED++))
+            ;;
+        *)
+            [ ${changes:0:1} == _ ] || ((GIT_STATUS_STAGED++))
+            [ ${changes:1:2} == _ ] || ((GIT_STATUS_UNSTAGED++))
+            ;;
     esac
 }
 

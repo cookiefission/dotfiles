@@ -36,6 +36,7 @@ Intepretation:
 `MM`| Unstaged, Staged
 `MD`| Unstaged, Staged
 `A_`| Staged
+``|
 
 
 ## Combination Mappings
