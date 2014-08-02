@@ -36,9 +36,16 @@ for (( i=1; i<=$count; i++ )); do
     _parse_change ${status_arr[$i]:0:2}
 done
 
+echo -ne "Staged:\t\t"
 echo $GIT_STATUS_STAGED
+
+echo -ne "Unstaged:\t"
 echo $GIT_STATUS_UNSTAGED
+
+echo -ne "Untracked:\t"
 echo $GIT_STATUS_UNTRACKED
+
+echo -ne "Unmerged:\t"
 echo $GIT_STATUS_UNMERGED
 
 unset IFS
