@@ -3,14 +3,25 @@
 # Split output on newlines
 IFS=$'\n'
 
-# Prompt variables
+# Prompt Variables
 GIT_STATUS_STAGED=0
 GIT_STATUS_UNSTAGED=0
 GIT_STATUS_UNTRACKED=0
 GIT_STATUS_UNMERGED=0
 
 # Prompt Symbols
-GIT_STATUS_STAGED_SYMBOL=
+GIT_STATUS_STAGED_SYMBOL="✓"
+GIT_STATUS_UNSTAGED_SYMBOL="±"
+GIT_STATUS_UNTRACKED_SYMBOL="‥"
+GIT_STATUS_UNMERGED_SYMBOL="✗"
+GIT_DIR_CLEAN_SYMBOL="✓"
+
+# Prompt Colours
+GIT_STATUS_STAGED_COLOUR=34
+GIT_STATUS_UNSTAGED_COLOUR=35
+GIT_STATUS_UNTRACKED_COLOUR=33
+GIT_STATUS_UNMERGED_COLOUR=41
+GIT_DIR_CLEAN_COLOUR=35
 
 ##
 # Expects a XY combination of changes from git status --porcelain
@@ -62,10 +73,10 @@ git_prompt() {
             _parse_change ${status_arr[$i]:0:2}
         done
         local ansi=32
-        [ $GIT_STATUS_UNTRACKED -eq 0 ] || local ansi=33
-        [ $GIT_STATUS_STAGED -eq 0 ] || local ansi=34
-        [ $GIT_STATUS_UNSTAGED -eq 0 ] || local ansi=35
-        [ $GIT_STATUS_UNMERGED -eq 0 ] || local ansi=41
+        [ $GIT_STATUS_UNTRACKED -eq 0 ] || local ansi=$GIT_STATUS_UNTRACKED_COLOUR
+        [ $GIT_STATUS_STAGED -eq 0 ] || local ansi=$GIT_STATUS_STAGED_COLOUR
+        [ $GIT_STATUS_UNSTAGED -eq 0 ] || local ansi=$GIT_STATUS_UNSTAGED_COLOUR
+        [ $GIT_STATUS_UNMERGED -eq 0 ] || local ansi=$GIT_STATUS_UNMERGED_COLOUR
         echo -n ' \[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\]'
     fi
 }
