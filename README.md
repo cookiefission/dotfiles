@@ -30,5 +30,7 @@ Staged    |   ◆
 Untracked |   ‥
 Unmerged  |   ✗
 Clean     |   ✓
+Lots      |   ↔
 
 N.B append CONFLICTS with red background to any prompt with Unmerged count
+N.B.B Lots is there in case the prompt is too slow parsing lots of changes
