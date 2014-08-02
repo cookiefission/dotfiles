@@ -9,6 +9,9 @@ GIT_STATUS_UNSTAGED=0
 GIT_STATUS_UNTRACKED=0
 GIT_STATUS_UNMERGED=0
 
+# Prompt Symbols
+GIT_STATUS_STAGED_SYMBOL=
+
 ##
 # Expects a XY combination of changes from git status --porcelain
 # See README.md for possible combinations and their meanings
@@ -37,7 +40,7 @@ _parse_change() {
 #       ## HEAD (no branch)
 ##
 _parse_branch() {
-    local branchline=$1
+    local branchline=$2
     if [[ "$branchline" == HEAD ]]; then
         echo "(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
             echo HEAD`)"
@@ -48,13 +51,21 @@ _parse_branch() {
 
 # Prompt
 git_prompt() {
+    local IFS=$'\n'
     status_arr=( `git status --porcelain -b 2>&1` )
-    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-        local branch="`_parse_branch ${status_arr[1]} 2>&1`"
-        for (( i=1; i<=$count; i++ )); do
+    if ! [[ "${status_arr[@]}" =~ Not\ a\ git\ repo ]]; then
+        unset IFS
+        local branch="`_parse_branch ${status_arr[0]} 2>&1`"
+        local IFS=$'\n'
+        local count=${#status_arr[@]}
+        for (( i=1; i<$count; i++ )); do
             _parse_change ${status_arr[$i]:0:2}
         done
         local ansi=32
+        [ $GIT_STATUS_UNTRACKED -eq 0 ] || local ansi=33
+        [ $GIT_STATUS_STAGED -eq 0 ] || local ansi=34
+        [ $GIT_STATUS_UNSTAGED -eq 0 ] || local ansi=35
+        [ $GIT_STATUS_UNMERGED -eq 0 ] || local ansi=41
         echo -n ' \[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\]'
     fi
 }
