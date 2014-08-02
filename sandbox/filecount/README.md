@@ -4,9 +4,11 @@ Fiddling around with git status --porcelain to get change information into promp
 
 ## Status Meaning
 
+From Git site:
+
 X      |   Y    |Meaning
 -------|--------|--------------------------------
-       |[MD]    | not updated
+       |  [MD]  | not updated
 M      | [ MD]  | updated in index
 A      | [ MD]  |added to index
 D      |  [ M]  |deleted from index
@@ -24,6 +26,17 @@ A      |    A   |unmerged, both added
 U      |    U   |unmerged, both modified
 ?      |    ?   |untracked
 !      |    !   |ignored
+
+Intepretation:
+
+ XY | Counts
+----|-------
+`_M`|_Unstaged
+`_D`|_Unstaged
+`MM`|_Unstaged,_Staged
+`MD`|_Unstaged,_Staged
+`A_`|_Staged
+
 
 ## Combination Mappings
 
