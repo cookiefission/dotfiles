@@ -1,9 +1,7 @@
 #!/bin/bash
 
 GIT_STATUS_STAGED=0
-GIT_STATUS_ADDED=0
-GIT_STATUS_MODIFIED=0
-GIT_STATUS_REMOVED=0
+GIT_STATUS_UNSTAGED=0
 GIT_STATUS_UNTRACKED=0
 GIT_STATUS_UNMERGED=0
 
@@ -13,8 +11,9 @@ GIT_STATUS_UNMERGED=0
 ##
 _parse_change() {
     case ${@// /_} in
+        *_) ((GIT_STATUS_STAGED++)) ;;
+        _M|_D) ((GIT_STATUS_UNSTAGED++)) ;;
         DD|AU|UD|UA|DU|AA|UU) ((GIT_STATUS_UNMERGED++)) ;;
-        "") ((GIT_STATUS_++)) ;;
         "??") ((GIT_STATUS_UNTRACKED++)) ;;
         *) echo Something else ;;
     esac
@@ -32,9 +31,7 @@ for (( i=1; i<=$count; i++ )); do
 done
 
 echo $GIT_STATUS_STAGED
-echo $GIT_STATUS_ADDED
-echo $GIT_STATUS_MODIFIED
-echo $GIT_STATUS_REMOVED
+echo $GIT_STATUS_UNSTAGED
 echo $GIT_STATUS_UNTRACKED
 echo $GIT_STATUS_UNMERGED
 
