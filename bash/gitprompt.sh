@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Split output on newlines
+IFS=$'\n'
+
+# Prompt variables
+GIT_STATUS_STAGED=0
+GIT_STATUS_UNSTAGED=0
+GIT_STATUS_UNTRACKED=0
+GIT_STATUS_UNMERGED=0
+
+##
+# Expects a XY combination of changes from git status --porcelain
+# See README.md for possible combinations and their meanings
+##
+_parse_change() {
+    local changes=${@// /_}
+    case $changes in
+        DD|AU|UD|UA|DU|AA|UU)
+            ((GIT_STATUS_UNMERGED++))
+            ;;
+        "??")
+            ((GIT_STATUS_UNTRACKED++))
+            ;;
+        *)
+            [ ${changes:0:1} == _ ] || ((GIT_STATUS_STAGED++))
+            [ ${changes:1:2} == _ ] || ((GIT_STATUS_UNSTAGED++))
+            ;;
+    esac
+}
+
+##
+# Expects the first line from "git status --porcelain -b"
+#   Like:
+#       ## master...origin/master
+#   or:
+#       ## HEAD (no branch)
+##
+_parse_branch() {
+    local branchline=$1
+    if [[ "$branchline" == HEAD ]]; then
+        echo "(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
+            echo HEAD`)"
+    else
+        echo ${branchline%%...*}
+    fi
+}
+
+# Prompt
+git_prompt() {
+    status_arr=( `git status --porcelain -b 2>&1` )
+    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+        local branch="`_parse_branch ${status_arr[1]} 2>&1`"
+        for (( i=1; i<=$count; i++ )); do
+            _parse_change ${status_arr[$i]:0:2}
+        done
+        local ansi=32
+        echo -n ' \[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\]'
+    fi
+}
+
+unset IFS
