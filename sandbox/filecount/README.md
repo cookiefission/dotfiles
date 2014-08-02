@@ -31,11 +31,11 @@ Intepretation:
 
  XY | Counts
 ----|-------
-`_M`|_Unstaged
-`_D`|_Unstaged
-`MM`|_Unstaged,_Staged
-`MD`|_Unstaged,_Staged
-`A_`|_Staged
+`_M`| Unstaged
+`_D`| Unstaged
+`MM`| Unstaged, Staged
+`MD`| Unstaged, Staged
+`A_`| Staged
 
 
 ## Combination Mappings
