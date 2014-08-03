@@ -21,7 +21,8 @@ GIT_STATUS_STAGED_COLOUR=34
 GIT_STATUS_UNSTAGED_COLOUR=35
 GIT_STATUS_UNTRACKED_COLOUR=33
 GIT_STATUS_UNMERGED_COLOUR=41
-GIT_DIR_CLEAN_COLOUR=35
+GIT_DIR_CLEAN_COLOUR=32
+BRANCH_COLOUR=$GIT_DIR_CLEAN_COLOUR
 
 ##
 # Expects a XY combination of changes from git status --porcelain
@@ -60,6 +61,22 @@ _parse_branch() {
     fi
 }
 
+_prompt_colours() {
+    if [ $GIT_STATUS_UNTRACKED -gt 0 ]; then
+        BRANCH_COLOUR=$GIT_STATUS_UNTRACKED_COLOUR
+        echo -n "\[\e[0;37;'"$GIT_STATUS_UNTRACKED_COLOUR"';1m\]'"$GIT_STATUS_UNTRACKED"'\[\e[0m\]"
+    fi
+    if [ $GIT_STATUS_STAGED    -gt 0 ]; then
+        BRANCH_COLOUR=$GIT_STATUS_STAGED_COLOUR
+    fi
+    if [ $GIT_STATUS_UNSTAGED  -gt 0 ]; then
+        BRANCH_COLOUR=$GIT_STATUS_UNSTAGED_COLOUR
+    fi
+    if [ $GIT_STATUS_UNMERGED  -gt 0 ]; then
+        BRANCH_COLOUR=$GIT_STATUS_UNMERGED_COLOUR
+    fi
+}
+
 # Prompt
 git_prompt() {
     local IFS=$'\n'
@@ -72,12 +89,8 @@ git_prompt() {
         for (( i=1; i<$count; i++ )); do
             _parse_change ${status_arr[$i]:0:2}
         done
-        local ansi=32
-        [ $GIT_STATUS_UNTRACKED -eq 0 ] || local ansi=$GIT_STATUS_UNTRACKED_COLOUR
-        [ $GIT_STATUS_STAGED -eq 0 ] || local ansi=$GIT_STATUS_STAGED_COLOUR
-        [ $GIT_STATUS_UNSTAGED -eq 0 ] || local ansi=$GIT_STATUS_UNSTAGED_COLOUR
-        [ $GIT_STATUS_UNMERGED -eq 0 ] || local ansi=$GIT_STATUS_UNMERGED_COLOUR
-        echo -n ' \[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\]'
+        local file_changes=$(_prompt_colours)
+        echo -n ' \[\e[0;37;'"$BRANCH_COLOUR"';1m\]'"$branch"'\[\e[0m\]|`echo -ne "$file_changes"`'
     fi
 }
 
