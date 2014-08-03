@@ -80,6 +80,9 @@ nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
 nnoremap <Leader>d; ddkA;<esc>
 
+nnoremap <Leader>j ddp
+nnoremap <Leader>k ddkP
+
 " Count occurence of pattern to -- to be inputted
 nnoremap <Leader>K :%s///gn<Left><Left><Left><Left>
 
