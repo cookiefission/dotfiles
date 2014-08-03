@@ -61,22 +61,6 @@ _parse_branch() {
     fi
 }
 
-_prompt_colours() {
-    if [ $GIT_STATUS_UNTRACKED -gt 0 ]; then
-        BRANCH_COLOUR=$GIT_STATUS_UNTRACKED_COLOUR
-        echo -n "\[\e[0;37;'"$GIT_STATUS_UNTRACKED_COLOUR"';1m\]'"$GIT_STATUS_UNTRACKED"'\[\e[0m\]"
-    fi
-    if [ $GIT_STATUS_STAGED    -gt 0 ]; then
-        BRANCH_COLOUR=$GIT_STATUS_STAGED_COLOUR
-    fi
-    if [ $GIT_STATUS_UNSTAGED  -gt 0 ]; then
-        BRANCH_COLOUR=$GIT_STATUS_UNSTAGED_COLOUR
-    fi
-    if [ $GIT_STATUS_UNMERGED  -gt 0 ]; then
-        BRANCH_COLOUR=$GIT_STATUS_UNMERGED_COLOUR
-    fi
-}
-
 # Prompt
 git_prompt() {
     local IFS=$'\n'
@@ -89,8 +73,41 @@ git_prompt() {
         for (( i=1; i<$count; i++ )); do
             _parse_change ${status_arr[$i]:0:2}
         done
-        local file_changes=$(_prompt_colours)
-        echo -n ' \[\e[0;37;'"$BRANCH_COLOUR"';1m\]'"$branch"'\[\e[0m\]|`echo -ne "$file_changes"`'
+        GIT_REPO_CLEAN=0
+        if [ $GIT_STATUS_UNTRACKED -gt 0 ]; then
+            BRANCH_COLOUR=$GIT_STATUS_UNTRACKED_COLOUR
+            ut_colour='\[\e[0;37;'"$GIT_STATUS_UNTRACKED_COLOUR"';1m\]'
+            ut_symbol="$GIT_STATUS_UNTRACKED""$GIT_STATUS_UNTRACKED_SYMBOL"'\[\e[0m\]'
+            untracked="${ut_colour}${ut_symbol}"
+            GIT_REPO_CLEAN=1
+        fi
+        if [ $GIT_STATUS_STAGED    -gt 0 ]; then
+            BRANCH_COLOUR=$GIT_STATUS_STAGED_COLOUR
+            st_colour='\[\e[0;37;'"$GIT_STATUS_STAGED_COLOUR"';1m\]'
+            st_symbol="$GIT_STATUS_STAGED""$GIT_STATUS_STAGED_SYMBOL"'\[\e[0m\]'
+            staged="${st_colour}${st_symbol}"
+            GIT_REPO_CLEAN=1
+        fi
+        if [ $GIT_STATUS_UNSTAGED  -gt 0 ]; then
+            BRANCH_COLOUR=$GIT_STATUS_UNSTAGED_COLOUR
+            us_colour='\[\e[0;37;'"$GIT_STATUS_UNSTAGED_COLOUR"';1m\]'
+            us_symbol="$GIT_STATUS_UNSTAGED""$GIT_STATUS_UNSTAGED_SYMBOL"'\[\e[0m\]'
+            unstaged="${us_colour}${us_symbol}"
+            GIT_REPO_CLEAN=1
+        fi
+        if [ $GIT_STATUS_UNMERGED  -gt 0 ]; then
+            BRANCH_COLOUR=$GIT_STATUS_UNMERGED_COLOUR
+            um_colour='\[\e[0;37;'"$GIT_STATUS_UNMERGED_COLOUR"';1m\]'
+            um_symbol="$GIT_STATUS_UNMERGED""$GIT_STATUS_UNMERGED_SYMBOL"'\[\e[0m\]|'
+            umerged="${um_colour}${um_symbol}"
+            GIT_REPO_CLEAN=1
+        fi
+        echo -n ' \[\e[0;37;'"$BRANCH_COLOUR"';1m\]'"$branch"'\[\e[0m\]|'
+        echo -n $staged
+        echo -n $unstaged
+        echo -n $untracked
+        echo -n $unmerged
+        [ $GIT_REPO_CLEAN -eq 0 ] && echo -n $GIT_REPO_CLEAN_LINE
     fi
 }
 
