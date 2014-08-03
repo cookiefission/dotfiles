@@ -4,32 +4,16 @@
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 #Prompt
-function _git_prompt() {
-    local git_status="`git status -unormal 2>&1`"
-    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-        if [[ "$git_status" =~ unmerged ]]; then
-            local ansi=41
-        elif [[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local ansi=32
-        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local ansi=33
-        elif [[ "$git_status" =~ Changes\ to\ be\ committed ]]; then
-            local ansi=34
-        else
-            local ansi=35
-        fi
-        if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
-            branch=${BASH_REMATCH[1]}
-        else
-            # Detached HEAD.  (branch=HEAD is a faster alternative.)
-            branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
-                echo HEAD`)"
-        fi
-        echo -n ' \[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\]'
-    fi
-}
-function _prompt_command() {
-PS1="\e]2;\u@\h: \w\a\\A \[\033[1m\]\W\[\033[0m\]`_git_prompt`\$ "
+if [[ -f ~/.bash/gitprompt.sh ]]; then
+    source ~/.bash/gitprompt.sh
+else
+    git_prompt() {
+        git rev-parse --abbrev-ref HEAD
+    }
+fi
+
+_prompt_command() {
+PS1="\e]2;\u@\h: \w\a\\A \[\033[1m\]\W\[\033[0m\]`git_prompt`\$ "
 }
 PROMPT_COMMAND=_prompt_command
 
