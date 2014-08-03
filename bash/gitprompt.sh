@@ -22,7 +22,7 @@ GIT_STATUS_UNSTAGED_COLOUR=35
 GIT_STATUS_UNTRACKED_COLOUR=33
 GIT_STATUS_UNMERGED_COLOUR=41
 GIT_REPO_CLEAN_COLOUR=32
-GIT_REPO_CLEAN_LINE='\[\e[0;37;'"$GIT_REPO_CLEAN_COLOUR"';1m\]'"$GIT_REPO_CLEAN_SYMBOL"'\[\e[0m\]|'
+GIT_REPO_CLEAN_LINE='\[\e[0;37;'"$GIT_REPO_CLEAN_COLOUR"';1m\]'"$GIT_REPO_CLEAN_SYMBOL"'\[\e[0m\]'
 BRANCH_COLOUR=$GIT_REPO_CLEAN_COLOUR
 
 ##
@@ -109,6 +109,7 @@ git_prompt() {
         echo -n $untracked
         echo -n $unmerged
         [ $GIT_REPO_CLEAN -eq 0 ] && echo -n $GIT_REPO_CLEAN_LINE
+        echo -n " "
     fi
 }
 
