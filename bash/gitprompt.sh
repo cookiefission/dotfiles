@@ -99,8 +99,8 @@ git_prompt() {
         if [ $GIT_STATUS_UNMERGED  -gt 0 ]; then
             BRANCH_COLOUR=$GIT_STATUS_UNMERGED_COLOUR
             um_colour='\[\e[0;37;'"$GIT_STATUS_UNMERGED_COLOUR"';1m\]'
-            um_symbol="$GIT_STATUS_UNMERGED""$GIT_STATUS_UNMERGED_SYMBOL"'\[\e[0m\]|'
-            umerged="${um_colour}${um_symbol}"
+            um_symbol="$GIT_STATUS_UNMERGED""$GIT_STATUS_UNMERGED_SYMBOL"'\[\e[0m\]'
+            unmerged="${um_colour}${um_symbol}"
             GIT_REPO_CLEAN=1
         fi
         echo -n ' \[\e[0;37;'"$BRANCH_COLOUR"';1m\]'"$branch"'\[\e[0m\]|'
