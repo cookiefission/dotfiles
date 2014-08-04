@@ -81,7 +81,10 @@ nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>[ i<space><esc>l
 nnoremap <Leader>] a<space><esc>h
 
-" Count occurence of pattern -- to be inputted
+nnoremap <Leader>j ddp
+nnoremap <Leader>k ddkP
+
+" Count occurence of pattern to -- to be inputted
 nnoremap <Leader>K :%s///gn<Left><Left><Left><Left>
 
 augroup php
