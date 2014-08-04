@@ -30,6 +30,7 @@ Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rking/ag.vim'
 
 " Done setting up Vundle
 call vundle#end()
@@ -187,10 +188,10 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 " Use ag for grepping
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-    command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-endif
+" if executable('ag')
+"     set grepprg=ag\ --nogroup\ --nocolor
+"     command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+" endif
 
 " List chars
 set listchars=tab:>#,nbsp:_,trail:~
