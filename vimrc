@@ -25,11 +25,11 @@ Plugin 'AndrewRadev/sideways.vim'
 " Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'sean-kenny/splitjoin.vim'
 Plugin 'vim-scripts/UltiSnips'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'Lokaltog/vim-easymotion'
 
 " Done setting up Vundle
 call vundle#end()
@@ -62,11 +62,9 @@ nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
 nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
 nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
-nnoremap <leader>st :call MoveBufferToTabIfSplit()<CR>
 
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <Leader>qf :call QuickfixToggle()<CR>
-nnoremap <Leader>pp :tabclose<CR>
+nnoremap <Leader>qp :tabclose<CR>
 nnoremap <Leader>li :set list!<CR>
 
 nnoremap <Leader>ga :Git add
@@ -80,7 +78,10 @@ nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
 nnoremap <Leader>d; ddkA;<esc>
 
-" Count occurence of pattern to -- to be inputted
+nnoremap <Leader>[ i<space><esc>l
+nnoremap <Leader>] a<space><esc>h
+
+" Count occurence of pattern -- to be inputted
 nnoremap <Leader>K :%s///gn<Left><Left><Left><Left>
 
 augroup php
@@ -88,6 +89,11 @@ augroup php
     autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
     autocmd FileType php map <Leader>php :!php %<CR>
     autocmd FileType php map <Leader>cj :tabe composer.json<CR>
+augroup END
+
+augroup scratch
+    autocmd!
+    autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
 augroup END
 
 " Auto centering
@@ -192,21 +198,3 @@ let g:ctrlp_working_path_mode = 0
 
 " Trim whitespace
 autocmd BufWritePre *.* :%s/\s\+$//e
-
-" Toggle Quickfix
-let g:quickfix_is_open = 0
-
-function! QuickfixToggle()
-    if g:quickfix_is_open
-        cclose
-        let g:quickfix_is_open = 0
-    else
-        copen
-        let g:quickfix_is_open = 1
-    endif
-endfunction
-
-" Move buffer into a new tab if it is a split
-function! MoveBufferToTabIfSplit()
-
-endfunction
