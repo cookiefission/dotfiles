@@ -60,3 +60,7 @@ vimf() {
     file=$(fzf --query="$1" --select-1 --exit-0)
     [ -n "$file" ] && vim "$file"
 }
+
+mkcd() {
+    mkdir -p "$@" && cd "$@"
+}
