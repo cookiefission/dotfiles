@@ -72,7 +72,7 @@ git_prompt() {
         local IFS=$'\n'
         local count=${#status_arr[@]}
         for (( i=1; i<$count; i++ )); do
-            _parse_change ${status_arr[$i]:0:2}
+            _parse_change "${status_arr[$i]:0:2}"
         done
         GIT_REPO_CLEAN=0
         if [ $GIT_STATUS_UNTRACKED -gt 0 ]; then
