@@ -2,6 +2,14 @@ global !p
 from snippet_helpers import *
 endglobal
 
+snippet cnstr
+public function __construct(
+    $1 \$`!p snip.rv = lcfirst(t[1])`
+) {
+    \$this->set$1(\$`!p snip.rv = lcfirst(t[1])`);
+}
+endsnippet
+
 snippet getset
 public function set$1($1 \$`!p snip.rv = lcfirst(t[1])`)
 {

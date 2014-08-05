@@ -92,8 +92,8 @@ nnoremap <Leader>[ i<space><esc>l
 nnoremap <Leader>] a<space><esc>h
 
 " Move lines up and down
-nnoremap <Leader>j ddp
-nnoremap <Leader>k ddkP
+nnoremap <Leader>jj ddp
+nnoremap <Leader>kk ddkP
 
 " Count occurence of pattern -- to be inputted
 nnoremap <Leader>K :%s///n<Left><Left><Left>
