@@ -60,7 +60,7 @@ let g:mapleader = "\<space>"
 ""
 nnoremap Y y$
 map <Leader>nh :noh<CR>
-map <Leader>== mmgg=G'm:w<CR>
+map <Leader>== mmgg=G'mzz:w<CR>
 
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
@@ -94,9 +94,6 @@ nnoremap <Leader>] a<space><esc>h
 " Move lines up and down
 nnoremap <Leader>jj ddp
 nnoremap <Leader>kk ddkP
-
-" Count occurence of pattern -- to be inputted
-nnoremap <Leader>K :%s///n<Left><Left><Left>
 
 " Change first word of line
 nnoremap <Leader>cw ^cw
