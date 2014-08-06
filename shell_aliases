@@ -18,3 +18,5 @@ alias l='ls -CF'
 
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
+
+alias cpbranch='git rev-parse --abbrev-ref HEAD | xsel --clipboard'
