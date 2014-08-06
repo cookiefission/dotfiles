@@ -37,6 +37,7 @@ Plugin 'bling/vim-airline'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rking/ag.vim'
+Plugin 'honza/vim-snippets'
 
 ""
 " Done setting up Vundle
@@ -137,6 +138,12 @@ set splitright
 ""
 let NERDTreeShowLineNumbers=1
 map <C-n> :NERDTreeToggle<CR>
+
+""
+" UltiSnips
+""
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 ""
 " Codefolding
