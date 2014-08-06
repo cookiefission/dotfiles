@@ -69,6 +69,8 @@ case "$OP" in
     d)
         if [ $# -eq 0 ]; then
             git diff
+        elif [ $1 == "-" ]; then
+            git diff @{-1}
         else
             case $1 in
                 h) git diff HEAD ;;
