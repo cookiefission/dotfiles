@@ -144,6 +144,7 @@ map <C-n> :NERDTreeToggle<CR>
 ""
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 ""
 " Codefolding
