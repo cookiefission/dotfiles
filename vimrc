@@ -38,6 +38,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
+Plugin 'vim-ruby/vim-ruby'
 
 ""
 " Done setting up Vundle
