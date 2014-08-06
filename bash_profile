@@ -58,7 +58,7 @@ zd() {
 vimf() {
     local file
     file=$(fzf --query="$1" --select-1 --exit-0)
-    [ -n "$file" ] && vim "$file"
+    [ -n "$file" ] && vim -p "$file"
 }
 
 mkcd() {
