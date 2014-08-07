@@ -6,7 +6,7 @@ _branch_complete() {
     COMPREPLY=()
     cur=${COMP_WORDS[COMP_CWORD]}
 
-    COMPREPLY=( $( compgen -W '`git branch -a 2>&1`' -- $cur ) )
+    COMPREPLY=( $( compgen -W "`git for-each-ref --format='%(refname:short)'`" -- $cur ) )
 
     return 0
 }
