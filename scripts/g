@@ -8,6 +8,10 @@ if [ $# -eq 0 ]; then
     exit 0
 fi
 
+_fuzzy_branch() {
+    git branch -a | sed 's|remotes/||' | fzf +m
+}
+
 _is_master () {
     local branches=( develop master )
     local e
@@ -108,6 +112,8 @@ case "$OP" in
     ch)
         if [ $# -eq 0 ]; then
             git checkout -
+        elif [ $1 == "-z" ]; then
+            branch=$(_fuzzy_branch) && git checkout $branch
         else
             git checkout $@
         fi
