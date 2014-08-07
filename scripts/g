@@ -72,6 +72,9 @@ case "$OP" in
             git diff
         elif [ $1 == "-" ]; then
             git diff @{-1}
+        elif [ $1 == "-z" ]; then
+            shift
+            branch=$(_fuzzy_branch "$@") && git diff $branch
         else
             case $1 in
                 h) git diff HEAD ;;
@@ -102,6 +105,9 @@ case "$OP" in
         elif [ $1 == "--pull" ]; then
             shift
             _git_pull_merge $1
+        elif [ $1 == "-z" ]; then
+            shift
+            branch=$(_fuzzy_branch "$@") && git merge $branch
         else
             git merge $@
         fi
