@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
 fi
 
 _fuzzy_branch() {
-    git for-each-ref --format='%(refname:short)' | fzf +m
+    git for-each-ref --format='%(refname:short)' | fzf +m --query="$@"
 }
 
 _is_master () {
@@ -110,7 +110,8 @@ case "$OP" in
         if [ $# -eq 0 ]; then
             git checkout -
         elif [ $1 == "-z" ]; then
-            branch=$(_fuzzy_branch) && git checkout $branch
+            shift
+            branch=$(_fuzzy_branch "$@") && git checkout $branch
         else
             git checkout $@
         fi
