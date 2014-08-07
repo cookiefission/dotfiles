@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# Fuzzy checkout
-# branch=$(git branch -a | sed 's|remotes/||' | fzf +m) && git checkout $branch
-
 if [ $# -eq 0 ]; then
     git status
     exit 0
 fi
 
 _fuzzy_branch() {
-    git branch -a | sed 's|remotes/||' | fzf +m
+    git for-each-ref --format='%(refname:short)' | fzf +m
 }
 
 _is_master () {
