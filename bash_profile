@@ -28,12 +28,9 @@ fi
 if [ -d ~/.bash_completion.d ]; then
     . ~/.bash_completion.d/*
 fi
-
-# View markdown file in man pages style
-# Function because aliases don't accept arguments
-manmd() {
-    pandoc -s -f markdown -t man $1 | man -l -
-}
+if [ -s ~/.shell_functions ]; then
+    . ~/.shell_functions/*
+fi
 
 # This is quite probably the best function of all time
 z() {
