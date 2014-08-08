@@ -33,4 +33,5 @@ Clean     |   ✓
 Lots      |   ↔
 
 N.B append CONFLICTS with red background to any prompt with Unmerged count
-N.B.B Lots is there in case the prompt is too slow parsing lots of changes
+
+N.B.B Lots is there in case a repository is slow to respond or something else. 50+ untracked files gave no obvious difference though
