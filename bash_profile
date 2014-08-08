@@ -31,29 +31,3 @@ fi
 if [ -s ~/.shell_functions ]; then
     . ~/.shell_functions/*
 fi
-
-# This is quite probably the best function of all time
-z() {
-    local zdir
-    zdir=$(cd ~ && find * -path '*/\.*' -prune \
-    -o -type d -print 2> /dev/null | \
-    fzf +m --select-1 --query="$@") &&
-  cd "$HOME/$zdir"
-}
-
-zd() {
-    local dir
-    dir=$(find ${1:-*} -path '*/\.*' -prune \
-        -o -type d -print 2> /dev/null | fzf +m) &&
-        cd "$dir"
-}
-
-vimf() {
-    local file
-    file=$(fzf --query="$1" --select-1 --exit-0)
-    [ -n "$file" ] && vim -p "$file"
-}
-
-mkcd() {
-    mkdir -p "$@" && cd "$@"
-}
