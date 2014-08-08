@@ -20,14 +20,14 @@ shopt -s cmdhist
 
 #Includes
 if [ -f ~/.profile ]; then
-    . ~/.profile
+    source  ~/.profile
 fi
 if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
+    source  /opt/local/etc/bash_completion
 fi
 if [ -d ~/.bash_completion.d ]; then
-    . ~/.bash_completion.d/*
+    source  ~/.bash_completion.d/*
 fi
 if [ -s ~/.shell_functions ]; then
-    . ~/.shell_functions/*
+    source  ~/.shell_functions/*
 fi
