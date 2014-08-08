@@ -9,6 +9,29 @@ _fuzzy_branch() {
     git for-each-ref --format='%(refname:short)' | fzf +m --query="$@"
 }
 
+_fuzzy_commit() {
+    git log --pretty=oneline | fzf -m | cut -c 1-40
+}
+
+_fuzzy_show() {
+    commit=$(_fuzzy_commit) && git show $commit
+}
+
+_fuzzy_git() {
+    while true; do
+        echo "Select an option:"
+        echo -ne "\t- show"
+        echo -ne "\n:"
+        read opt
+        case "$opt" in
+            show)
+                _fuzzy_show
+                break
+                ;;
+        esac
+    done
+}
+
 _is_master () {
     local branches=( develop master )
     local e
@@ -138,6 +161,7 @@ case "$OP" in
             git pull $@
         fi
         ;;
+    z) _fuzzy_git "$@" ;;
     *)
         git $OP $@
         ;;
