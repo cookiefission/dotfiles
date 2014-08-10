@@ -20,11 +20,11 @@ _fuzzy_show() {
 _fuzzy_git() {
     while true; do
         echo "Select an option:"
-        echo -ne "\t- show"
+        echo -ne "\t1 - show"
         echo -ne "\n:"
         read opt
         case "$opt" in
-            show)
+            1)
                 _fuzzy_show
                 break
                 ;;
