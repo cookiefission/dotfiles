@@ -109,15 +109,15 @@ nnoremap <Leader>, A,<CR>
 nnoremap <Leader>d; ddkA;<esc>
 
 augroup php
-    autocmd!
-    autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
-    autocmd FileType php map <Leader>php :!php %<CR>
-    autocmd FileType php map <Leader>cj :tabe composer.json<CR>
+  autocmd!
+  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+  autocmd FileType php map <Leader>php :!php %<CR>
+  autocmd FileType php map <Leader>cj :tabe composer.json<CR>
 augroup END
 
 augroup scratch
-    autocmd!
-    autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
+  autocmd!
+  autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
 augroup END
 
 ""
@@ -153,6 +153,12 @@ let g:UltiSnipsEditSplit="vertical"
 " vim-json
 ""
 let g:vim_json_syntax_conceal = 0
+
+""
+" vim-indent-guides
+""
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 ""
 " Codefolding
@@ -238,7 +244,7 @@ set directory=~/.vim/tmp,.
 " Enable mouse if available
 ""
 if has("mouse")
-    set mouse=a
+  set mouse=a
 endif
 
 ""
