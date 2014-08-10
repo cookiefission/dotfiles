@@ -149,6 +149,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 ""
+" vim-json
+""
+let g:vim_json_syntax_conceal = 0
+
+""
 " Codefolding
 ""
 set foldmethod=indent
