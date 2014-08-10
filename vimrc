@@ -40,7 +40,6 @@ Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
-Plugin 'nathanaelkane/vim-indent-guides'
 
 ""
 " Done setting up Vundle
@@ -153,12 +152,6 @@ let g:UltiSnipsEditSplit="vertical"
 " vim-json
 ""
 let g:vim_json_syntax_conceal = 0
-
-""
-" vim-indent-guides
-""
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
 
 ""
 " Codefolding
