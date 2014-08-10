@@ -28,6 +28,6 @@ fi
 if [ -d ~/.bash_completion.d ]; then
     source  ~/.bash_completion.d/*
 fi
-if [ -d ~/.shell_functions ]; then
+if [ -s ~/.shell_functions ]; then
     source  ~/.shell_functions/*
 fi
