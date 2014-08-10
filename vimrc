@@ -40,6 +40,7 @@ Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 ""
 " Done setting up Vundle
