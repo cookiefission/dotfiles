@@ -25,8 +25,22 @@ endsnippet
 
 snippet try
 try {
-	$0
+    ${VISUAL}$2
 } catch ($1 \$e) {
-
+    $3
 }
+endsnippet
+
+snippet if
+if (${1:/* condition */}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet die
+die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
+endsnippet
+
+snippet vdd
+var_dump(${VISUAL}${0}); die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
 endsnippet
