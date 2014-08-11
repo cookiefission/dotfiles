@@ -39,6 +39,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'elzr/vim-json'
 
 ""
 " Done setting up Vundle
@@ -107,15 +108,15 @@ nnoremap <Leader>, A,<CR>
 nnoremap <Leader>d; ddkA;<esc>
 
 augroup php
-    autocmd!
-    autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
-    autocmd FileType php map <Leader>php :!php %<CR>
-    autocmd FileType php map <Leader>cj :tabe composer.json<CR>
+  autocmd!
+  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+  autocmd FileType php map <Leader>php :!php %<CR>
+  autocmd FileType php map <Leader>cj :tabe composer.json<CR>
 augroup END
 
 augroup scratch
-    autocmd!
-    autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
+  autocmd!
+  autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
 augroup END
 
 ""
@@ -146,6 +147,11 @@ map <C-n> :NERDTreeToggle<CR>
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+""
+" vim-json
+""
+let g:vim_json_syntax_conceal = 0
 
 ""
 " Codefolding
@@ -231,7 +237,7 @@ set directory=~/.vim/tmp,.
 " Enable mouse if available
 ""
 if has("mouse")
-    set mouse=a
+  set mouse=a
 endif
 
 ""
