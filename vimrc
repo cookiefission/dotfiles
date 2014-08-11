@@ -151,7 +151,8 @@ let g:UltiSnipsEditSplit="vertical"
 ""
 " vim-json
 ""
-let g:vim_json_syntax_conceal = 0
+" Uncomment in event of concealment getting annoying as fuck
+" let g:vim_json_syntax_conceal = 0
 
 ""
 " Codefolding
