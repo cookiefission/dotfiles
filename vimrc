@@ -94,10 +94,6 @@ nnoremap <Leader>git :Git
 nnoremap <Leader>[ i<space><esc>l
 nnoremap <Leader>] a<space><esc>h
 
-" Move lines up and down
-nnoremap <Leader>jj ddp
-nnoremap <Leader>kk ddkP
-
 " Change first word of line
 nnoremap <Leader>cw ^cw
 
