@@ -67,6 +67,8 @@ map <Leader>== mmgg=G:w<CR>'mzz
 
 nnoremap <Leader>[ :tabp<CR>
 nnoremap <Leader>] :tabn<CR>
+map <F7> :tabp<CR>
+map <F8> :tabn<CR>
 
 nmap j gj
 nmap k gk
@@ -88,6 +90,7 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -a<CR>i
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gg :Gstatus<CR>
+nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>git :Git
 
 " Change first word of line
@@ -145,6 +148,7 @@ let g:UltiSnipsEditSplit="vertical"
 ""
 " Uncomment in event of concealment getting annoying as fuck
 " let g:vim_json_syntax_conceal = 0
+let g:vim_json_warnings=0
 
 ""
 " Codefolding
