@@ -1,8 +1,0 @@
-#!bin/bash
-
-# View markdown file in man pages style
-# Function because aliases don't accept arguments
-manmd() {
-    pandoc -s -f markdown -t man $1 | man -l -
-}
-
