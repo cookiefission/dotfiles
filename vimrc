@@ -65,8 +65,8 @@ nnoremap Y y$
 map <Leader>nh :noh<CR>
 map <Leader>== mmgg=G:w<CR>'mzz
 
-map <F7> :tabp<CR>
-map <F8> :tabn<CR>
+nnoremap <Leader>[ :tabp<CR>
+nnoremap <Leader>] :tabn<CR>
 
 nmap j gj
 nmap k gk
@@ -89,10 +89,6 @@ nnoremap <Leader>gc :Gcommit -a<CR>i
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gg :Gstatus<CR>
 nnoremap <Leader>git :Git
-
-" Add a space before and after cursor
-nnoremap <Leader>[ i<space><esc>l
-nnoremap <Leader>] a<space><esc>h
 
 " Change first word of line
 nnoremap <Leader>cw ^cw
