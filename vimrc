@@ -40,6 +40,8 @@ Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'edkolev/tmuxline.vim'
 
 ""
 " Done setting up Vundle
@@ -146,8 +148,6 @@ let g:UltiSnipsEditSplit="vertical"
 ""
 " vim-json
 ""
-" Uncomment in event of concealment getting annoying as fuck
-" let g:vim_json_syntax_conceal = 0
 let g:vim_json_warnings=0
 
 ""
@@ -259,6 +259,11 @@ set list
 " CtrlP.vim
 ""
 let g:ctrlp_working_path_mode = 0
+
+""
+" vim-airline
+""
+let g:airline_powerline_fonts = 1
 
 ""
 " Trim whitespace
