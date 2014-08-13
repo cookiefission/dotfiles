@@ -42,6 +42,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'flazz/vim-colorschemes'
 
 ""
 " Done setting up Vundle
