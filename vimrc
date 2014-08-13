@@ -63,6 +63,7 @@ let g:mapleader = "\<space>"
 ""
 nnoremap Y y$
 map <Leader>nh :noh<CR>
+nnoremap <CR><CR> :noh<CR>
 map <Leader>== mmgg=G:w<CR>'mzz
 
 nnoremap <Leader>[ :tabp<CR>
@@ -73,7 +74,7 @@ map <F8> :tabn<CR>
 nmap j gj
 nmap k gk
 
-nnoremap <Leader>vi :tabe ~/.vim/vimrc<CR>
+nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>
 
 nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
