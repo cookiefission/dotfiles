@@ -87,9 +87,9 @@ _git_pull_merge() {
 OP=$1
 shift
 case "$OP" in
-    a) git add $@ ;;
-    b) git blame $@ ;;
-    c) git commit $@ ;;
+    a) git add "$@" ;;
+    b) git blame "$@" ;;
+    c) git commit "$@" ;;
     d)
         if [ $# -eq 0 ]; then
             git diff
@@ -101,13 +101,13 @@ case "$OP" in
         else
             case $1 in
                 h) git diff HEAD ;;
-                *) git diff $@
+                *) git diff "$@"
             esac
         fi
         ;;
-    f) git fetch $@ ;;
-    l) git log $@ ;;
-    r) git reset $@ ;;
+    f) git fetch "$@" ;;
+    l) git log "$@" ;;
+    r) git reset "$@" ;;
     s)
         if [ $# -eq 0 ]; then
             git stash
@@ -116,12 +116,12 @@ case "$OP" in
                 a) git stash apply ;;
                 d) git stash drop ;;
                 p) git stash pop ;;
-                *) git stash $@ ;;
+                *) git stash "$@" ;;
             esac
         fi
         ;;
-    st) git status $@ ;;
-    li) git ls-files $@ ;;
+    st) git status "$@" ;;
+    li) git ls-files "$@" ;;
     m)
         if [ $# -eq 0 ]; then
             git merge -
@@ -132,24 +132,27 @@ case "$OP" in
             shift
             branch=$(_fuzzy_branch "$@") && git merge $branch
         else
-            git merge $@
+            git merge "$@"
         fi
         ;;
     ch)
         if [ $# -eq 0 ]; then
             git checkout -
+        elif [ $1 == "-m" ]; then
+            shift
+            _checkout_merge "$@"
         elif [ $1 == "-z" ]; then
             shift
             branch=$(_fuzzy_branch "$@") && git checkout $branch
         else
-            git checkout $@
+            git checkout "$@"
         fi
         ;;
     ps)
         if [ $# -eq 0 ]; then
             git push origin $(git rev-parse --abbrev-ref HEAD)
         else
-            git push $@
+            git push "$@"
         fi
         ;;
     pl)
@@ -158,11 +161,11 @@ case "$OP" in
         elif [ $1 == "--recurse" ]; then
             _git_pull_recurse
         else
-            git pull $@
+            git pull "$@"
         fi
         ;;
     z) _fuzzy_git "$@" ;;
     *)
-        git $OP $@
+        git $OP "$@"
         ;;
 esac
