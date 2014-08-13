@@ -61,6 +61,13 @@ let mapleader = "\<space>"
 let g:mapleader = "\<space>"
 
 ""
+" Goto last location in non-empty files and centre it
+""
+autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
+                   \|     exe "normal! g`\"zz"
+                   \|  endif
+
+""
 "  Mappings
 ""
 nnoremap Y y$
