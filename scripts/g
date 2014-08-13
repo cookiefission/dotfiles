@@ -32,7 +32,15 @@ _fuzzy_git() {
     done
 }
 
-_is_master () {
+_checkout_merge() {
+    if [ -z "$@" ]; then
+        git checkout - && git merge -
+    else
+        git checkout "$@" && git merge -
+    fi
+}
+
+_is_master() {
     local branches=( develop master )
     local e
     for e in "${branches[@]}"; do [[ "$e" == "$1" ]] && return 0; done
