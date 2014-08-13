@@ -93,13 +93,9 @@ nnoremap <Leader>gg :Gstatus<CR>
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>git :Git
 
-" Change first word of line
 nnoremap <Leader>cw ^cw
-
-" Add , to current line and edit new line
 nnoremap <Leader>, A,<CR>
-
-" Delete current line and add ; to end of previous
+nnoremap <Leader>; A;<CR><CR>
 nnoremap <Leader>d; ddkA;<esc>
 
 augroup php
@@ -107,11 +103,6 @@ augroup php
   autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
   autocmd FileType php map <Leader>php :!php %<CR>
   autocmd FileType php map <Leader>cj :tabe composer.json<CR>
-augroup END
-
-augroup scratch
-  autocmd!
-  autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
 augroup END
 
 ""
@@ -139,8 +130,8 @@ map <C-n> :NERDTreeToggle<CR>
 ""
 " UltiSnips
 ""
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 ""
