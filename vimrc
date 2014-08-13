@@ -146,8 +146,6 @@ let g:UltiSnipsEditSplit="vertical"
 ""
 " vim-json
 ""
-" Uncomment in event of concealment getting annoying as fuck
-" let g:vim_json_syntax_conceal = 0
 let g:vim_json_warnings=0
 
 ""
