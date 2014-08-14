@@ -58,9 +58,6 @@ filetype plugin indent on
 set t_Co=256
 hi Comment ctermfg=yellow
 
-let mapleader = "\<space>"
-let g:mapleader = "\<space>"
-
 ""
 " Goto last location in non-empty files and centre it
 ""
@@ -71,6 +68,9 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 ""
 "  Mappings
 ""
+let mapleader = "\<space>"
+let g:mapleader = "\<space>"
+
 nnoremap Y y$
 map <Leader>nh :noh<CR>
 nnoremap <CR><CR> :noh<CR>
@@ -266,6 +266,16 @@ let g:ctrlp_working_path_mode = 0
 " vim-airline
 ""
 let g:airline_powerline_fonts = 1
+
+""
+" tmuxline.vim
+""
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'y'    : ['%R', '%a', '%Y'],
+      \'z'    : '#H'}
 
 ""
 " Trim whitespace
