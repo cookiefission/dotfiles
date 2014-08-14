@@ -73,6 +73,7 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 ""
 nnoremap Y y$
 map <Leader>nh :noh<CR>
+nnoremap <CR><CR> :noh<CR>
 map <Leader>== mmgg=G:w<CR>'mzz
 
 nnoremap <Leader>[ :tabp<CR>
@@ -83,7 +84,7 @@ map <F8> :tabn<CR>
 nmap j gj
 nmap k gk
 
-nnoremap <Leader>vi :tabe ~/.vim/vimrc<CR>
+nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>
 
 nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
@@ -93,6 +94,7 @@ nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
 
 nnoremap <Leader>qp :tabclose<CR>
 nnoremap <Leader>li :set list!<CR>
+nnoremap <Leader>wr :set wrap!<CR>
 
 " Fugitive/Git maps
 nnoremap <Leader>ga :Git add
@@ -103,25 +105,17 @@ nnoremap <Leader>gg :Gstatus<CR>
 nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>git :Git
 
-" Change first word of line
 nnoremap <Leader>cw ^cw
-
-" Add , to current line and edit new line
 nnoremap <Leader>, A,<CR>
-
-" Delete current line and add ; to end of previous
+nnoremap <Leader>; A;<CR><CR>
 nnoremap <Leader>d; ddkA;<esc>
+nnoremap <Leader>d, ddk$x
 
 augroup php
   autocmd!
-  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+  autocmd FileType php map <Leader>t :!vendor/bin/phpunit<CR>
   autocmd FileType php map <Leader>php :!php %<CR>
   autocmd FileType php map <Leader>cj :tabe composer.json<CR>
-augroup END
-
-augroup scratch
-  autocmd!
-  autocmd BufRead,BufNewFile,BufEnter /tmp/scratch.* nnoremap <Leader>CA gg0cG
 augroup END
 
 ""
@@ -149,8 +143,8 @@ map <C-n> :NERDTreeToggle<CR>
 ""
 " UltiSnips
 ""
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 ""
