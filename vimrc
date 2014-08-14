@@ -98,10 +98,11 @@ nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
 nnoremap <Leader>; A;<CR><CR>
 nnoremap <Leader>d; ddkA;<esc>
+nnoremap <Leader>d, ddk$x
 
 augroup php
   autocmd!
-  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+  autocmd FileType php map <Leader>t :!vendor/bin/phpunit<CR>
   autocmd FileType php map <Leader>php :!php %<CR>
   autocmd FileType php map <Leader>cj :tabe composer.json<CR>
 augroup END
