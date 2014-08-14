@@ -91,6 +91,7 @@ nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
 
 nnoremap <Leader>qp :tabclose<CR>
 nnoremap <Leader>li :set list!<CR>
+nnoremap <Leader>wr :set wrap!<CR>
 
 " Fugitive/Git maps
 nnoremap <Leader>ga :Git add
