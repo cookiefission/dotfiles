@@ -174,6 +174,7 @@ set laststatus=2
 set ttyfast
 set nowrap
 set clipboard=unnamed
+set noshowmode
 
 ""
 " Key press timeout
@@ -267,13 +268,14 @@ let g:ctrlp_working_path_mode = 0
 " vim-airline
 ""
 let g:airline_powerline_fonts = 1
-let g:airline_theme="murmur"
+let g:airline_theme = "murmur"
 
 ""
 " tmuxline.vim
 ""
 let g:tmuxline_preset = {
       \'a'    : '#S',
+      \'b'    : [ '#(whoami)' ],
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
       \'y'    : ['%R', '%a', '%Y'],
