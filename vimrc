@@ -260,6 +260,12 @@ set list
 let g:ctrlp_working_path_mode = 0
 
 ""
+" vim-airline
+""
+let g:airline_powerline_fonts = 1
+
+
+""
 " Trim whitespace
 ""
 autocmd BufWritePre *.* :%s/\s\+$//e
