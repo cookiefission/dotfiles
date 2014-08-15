@@ -266,7 +266,7 @@ let g:ctrlp_working_path_mode = 0
 " vim-airline
 ""
 let g:airline_powerline_fonts = 1
-let g:airline_theme="badwolf"
+let g:airline_theme="murmur"
 
 ""
 " tmuxline.vim
