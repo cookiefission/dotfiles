@@ -56,6 +56,7 @@ filetype plugin indent on
 " Colour settings
 ""
 set t_Co=256
+colorscheme toothpik
 hi Comment ctermfg=yellow
 
 ""
