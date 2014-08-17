@@ -11,7 +11,7 @@ autoload -Uz compinit
 compinit
 
 if [ -d ~/.zsh ]; then
-
+    source $HOME/.zsh/prompt
 fi
 if [ -e ~/.shell_aliases ]; then
     source ~/.shell_aliases
