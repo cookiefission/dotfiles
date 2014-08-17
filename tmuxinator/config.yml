@@ -4,4 +4,5 @@ root: ~/.vim
 windows:
   - .vim:
   - dotfiles: cd ~/Documents/dotfiles ; \clear
+  - cheatsheet: cd ~/Documents/cheatsheet ; \clear
 
