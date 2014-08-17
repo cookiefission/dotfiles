@@ -3,5 +3,5 @@ root: ~/.vim
 
 windows:
   - .vim:
-  - dotfiles: cd ~/Documents/dotfiles
+  - dotfiles: cd ~/Documents/dotfiles ; \clear
 
