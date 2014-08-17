@@ -1,5 +1,5 @@
 
-HISTFILE=~/.histfile
+HISTFILE=$HOME/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory extendedglob notify
@@ -10,14 +10,14 @@ zstyle :compinstall filename '/home/sean/.zshrc'
 autoload -Uz compinit
 compinit
 
-if [ -d ~/.zsh ]; then
+if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/prompt
 fi
-if [ -e ~/.shell_aliases ]; then
-    source ~/.shell_aliases
+if [ -e $HOME/.shell_aliases ]; then
+    source $HOME/.shell_aliases
 fi
-if [ -e ~/.shell_functions ]; then
-    source ~/.shell_functions
+if [ -e $HOME/.shell_functions ]; then
+    source $HOME/.shell_functions
 fi
 
-source ~/.fzf.zsh
+source $HOME/.fzf.zsh
