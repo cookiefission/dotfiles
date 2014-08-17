@@ -1,0 +1,7 @@
+name: config
+root: ~/.vim
+
+windows:
+  - .vim:
+  - dotfiles: cd ~/Documents/dotfiles
+
