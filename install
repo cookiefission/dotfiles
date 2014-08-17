@@ -1,0 +1,28 @@
+#!/bin/bash
+
+PS3=">"
+
+_install() {
+    local FILE="$1"
+    echo "Install ${FILE}?"
+    select REPLY in yes no; do
+        case $REPLY in
+            yes)
+                echo "Installing $FILE to $HOME"
+                ln -sf $PWD/$FILE $HOME/.$FILE
+                break
+                ;;
+            no)
+                echo "Not installing $FILE"
+                break
+                ;;
+        esac
+    done
+}
+
+_install "shell_aliases"
+_install "shell_functions"
+_install "gemrc"
+_install "irbrc"
+_install "gitconfig"
+_install "gitignore.global"
