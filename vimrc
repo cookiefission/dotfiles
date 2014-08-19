@@ -53,18 +53,63 @@ syntax on
 filetype plugin indent on
 
 ""
+" CtrlP.vim
+""
+let g:ctrlp_working_path_mode = 0
+
+""
+" vim-airline
+""
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "murmur"
+
+""
+" tmuxline.vim
+""
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : [ '#(whoami)' ],
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'y'    : ['%R', '%a', '%Y'],
+      \'z'    : '#H'}
+
+""
+" dragvisuals.vim
+""
+runtime plugin/dragvisuals.vim
+
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+vmap  <expr>  <C-D>    DVB_Duplicate()
+
+""
+" NERDTree
+""
+let NERDTreeShowLineNumbers=1
+map <C-n> :NERDTreeToggle<CR>
+
+""
+" UltiSnips
+""
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+
+""
+" vim-json
+""
+let g:vim_json_warnings=0
+
+""
 " Colour settings
 ""
 set t_Co=256
 colorscheme peachpuff
 hi Comment ctermfg=yellow
-
-""
-" Goto last location in non-empty files and centre it
-""
-autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
-                   \|     exe "normal! g`\"zz"
-                   \|  endif
 
 ""
 "  Mappings
@@ -130,28 +175,17 @@ nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
 
 ""
+" Goto last location in non-empty files and centre it
+""
+autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
+                   \|     exe "normal! g`\"zz"
+                   \|  endif
+
+""
 " More Natural Splits
 ""
 set splitbelow
 set splitright
-
-""
-" NERDTree
-""
-let NERDTreeShowLineNumbers=1
-map <C-n> :NERDTreeToggle<CR>
-
-""
-" UltiSnips
-""
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
-
-""
-" vim-json
-""
-let g:vim_json_warnings=0
 
 ""
 " Codefolding
@@ -258,40 +292,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 ""
 set listchars=tab:>#,nbsp:_,trail:~
 set list
-
-""
-" CtrlP.vim
-""
-let g:ctrlp_working_path_mode = 0
-
-""
-" vim-airline
-""
-let g:airline_powerline_fonts = 1
-let g:airline_theme = "murmur"
-
-""
-" tmuxline.vim
-""
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : [ '#(whoami)' ],
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'y'    : ['%R', '%a', '%Y'],
-      \'z'    : '#H'}
-
-""
-" dragvisuals.vim
-""
-runtime plugin/dragvisuals.vim
-
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
-vmap  <expr>  <C-D>    DVB_Duplicate()
 
 ""
 " Trim whitespace
