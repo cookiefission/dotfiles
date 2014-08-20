@@ -1,8 +1,5 @@
 #!/usr/bin/sh
 
-# Allow for sudoing of aliases
-alias sudo='sudo '
-
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -15,8 +12,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
-
 alias cpbranch='git rev-parse --abbrev-ref HEAD | xsel --clipboard'
+alias define='surfraw google define'
