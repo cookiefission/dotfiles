@@ -143,7 +143,7 @@ nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
 nnoremap <Leader>qp :tabclose<CR>
 nnoremap <Leader>li :set list!<CR>
 nnoremap <Leader>wr :set wrap!<CR>
-nnoremap <Leader>nu :set relativenumber!<CR>
+nnoremap <Leader>nl :set relativenumber!<CR>
 
 nnoremap <Leader>ga :Git add
 nnoremap <Leader>gb :Gblame<CR>
