@@ -6,6 +6,6 @@ Vim Set Up for me. Should someone happen across this and is thinking about using
 ## Install
 
 ```
-git clone git@github.com:sean-kenny/dotvim.git ~/.vim --recursive
+git clone git@github.com:sean-kenny/dotvim.git ~/.vim
 vim +PluginInstall +qall
 ```
