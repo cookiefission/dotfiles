@@ -1,7 +1,4 @@
 " Vim global plugin for dragging virtual blocks
-" Last change: Tue Jul 24 07:19:35 EST 2012
-" Maintainer:	Damian Conway
-" License:	This file is placed in the public domain.
 
 "#########################################################################
 "##                                                                     ##
@@ -198,7 +195,7 @@ function! s:Drag_Lines (dir)
             return   "O\<ESC>gv"
 
         " Otherwise, just cut-move-paste-reselect...
-        else 
+        else
             return   s:NO_REPORT
                  \ . 'gvxp'
                  \ . s:PREV_REPORT
