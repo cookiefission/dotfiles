@@ -6,7 +6,7 @@ let loaded_composer = 1
 command ComposerJson call composer#OpenComposerJson()
 command ComposerUpdate call composer#ComposerUpdate()
 command ComposerInstall call composer#ComposerInstall()
-command ComposerInstalled call composer#ShowInstalledLibraries()
+command ComposerShowInstalled call composer#ShowInstalledLibraries()
 
 function! composer#OpenComposerJson()
   tabe composer.json
