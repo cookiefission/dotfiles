@@ -16,3 +16,9 @@ alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
 alias cpbranch='git rev-parse --abbrev-ref HEAD | xsel --clipboard'
 alias define='surfraw google define'
+
+if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+    alias tclear='tmux set-window-option synchronize-panes on ;\
+        tmux send-keys 'C-l' ;\
+        tmux set-window-option synchronize-panes off'
+fi
