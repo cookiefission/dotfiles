@@ -133,7 +133,7 @@ case "$OP" in
     m)
         if [ $# -eq 0 ]; then
             git merge -
-        elif [ $1 == "--pull" ]; then
+        elif [ $1 == "-p" ]; then
             shift
             _git_pull_merge $1
         elif [ $1 == "-z" ]; then
