@@ -31,3 +31,7 @@ vimf() {
     file=$(fzf --query="$1" --select-1 --exit-0 -m)
     [ -n "$file" ] && vim -p "$file"
 }
+
+r() {
+    eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --query="$@" | sed 's/ *[0-9]* *//')
+}
