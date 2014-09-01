@@ -9,9 +9,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias lt='ls -alt'
 alias ...='cd ../../..'
 alias clear='echo "Use Ctrl-L idiot"'
 alias cpbranch='git rev-parse --abbrev-ref HEAD | xsel --clipboard'
