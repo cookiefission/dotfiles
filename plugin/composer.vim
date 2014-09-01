@@ -1,4 +1,4 @@
-if exists("loaded_composer")
+if exists('loaded_composer') || &cp || version < 700
   finish
 endif
 let loaded_composer = 1

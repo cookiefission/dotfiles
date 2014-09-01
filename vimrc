@@ -163,7 +163,9 @@ augroup php
   autocmd!
   autocmd FileType php map <Leader>t :!vendor/bin/phpunit<CR>
   autocmd FileType php map <Leader>php :!php %<CR>
-  autocmd FileType php map <Leader>cj :tabe composer.json<CR>
+  autocmd FileType php map <Leader>cj :ComposerJson<CR>
+  autocmd FileType php map <Leader>cu :ComposerUpdate<CR>
+  autocmd FileType php map <Leader>ci :ComposerInstall<CR>
 augroup END
 
 ""
