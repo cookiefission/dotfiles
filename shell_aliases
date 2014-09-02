@@ -9,6 +9,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+    alias tclear='tmux set-window-option synchronize-panes on ;\
+        tmux send-keys 'C-l' ;\
+        tmux set-window-option synchronize-panes off'
+fi
+
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
@@ -18,9 +24,4 @@ alias clear='echo "Use Ctrl-L idiot"'
 alias cpbranch='git rev-parse --abbrev-ref HEAD | xsel --clipboard'
 alias define='surfraw google define'
 alias rl='[ -n "$R_OUTPUT" ] && eval "$R_OUTPUT" || echo -e "\$R_OUTPUT not set, run r or rr"'
-
-if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-    alias tclear='tmux set-window-option synchronize-panes on ;\
-        tmux send-keys 'C-l' ;\
-        tmux set-window-option synchronize-panes off'
-fi
+alias openchanges='vim -p $(git diff HEAD --name-only)'
