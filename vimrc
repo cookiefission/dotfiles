@@ -155,9 +155,12 @@ nnoremap <Leader>git :Git
 
 nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
-nnoremap <Leader>; A;<CR><CR>
+nnoremap <Leader>; A;<CR>
 nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>d, ddk$x
+
+nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
+nnoremap <Leader>s% :%s///c<Left><Left><Left>
 
 augroup php
   autocmd!
@@ -301,3 +304,15 @@ set list
 " Trim whitespace
 ""
 autocmd BufWritePre *.* :%s/\s\+$//e
+
+""
+" Return the syntax highlight group under the " cursor
+""
+function! CurrentHighlight()
+    let name = synIDattr(synID(line('.'),col('.'),1),'name')
+    if name == ''
+        echo ''
+    else
+        echo '[' . name . ']'
+    endif
+endfunction
