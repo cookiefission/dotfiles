@@ -145,6 +145,8 @@ nnoremap <Leader>li :set list!<CR>
 nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>nl :set relativenumber!<CR>
 
+nnoremap <Leader>mt :call MergeTabs()<CR>
+
 nnoremap <Leader>ga :Git add
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -a<CR>i
@@ -314,4 +316,22 @@ function! CurrentHighlight()
     else
         echo '[' . name . ']'
     endif
+endfunction
+
+""
+" Merge a tab into a split in the previous window
+""
+function! MergeTabs()
+  if tabpagenr() == 1
+    return
+  endif
+  let bufferName = bufname("%")
+  if tabpagenr("$") == tabpagenr()
+    close!
+  else
+    close!
+    tabprev
+  endif
+  vsplit
+  execute "buffer " . bufferName
 endfunction
