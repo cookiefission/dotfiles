@@ -33,7 +33,8 @@ vimf() {
 }
 
 r() {
-    ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --query="$@" | sed 's/ *[0-9]* *//'
+    R_OUTPUT=`([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --query="$@" | sed 's/ *[0-9]* *//'`
+    echo $R_OUTPUT
 }
 
 rr() {
