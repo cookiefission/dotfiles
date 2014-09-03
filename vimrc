@@ -198,25 +198,6 @@ set splitbelow
 set splitright
 
 ""
-" Buffer/Tab switching
-""
-function! NextTabOrBuffer()
-  if tabpagenr('$') == 1
-    bnext
-  else
-    tabnext
-  endif
-endfunction
-
-function! PreviousTabOrBuffer()
-  if tabpagenr('$') == 1
-    bprevious
-  else
-    tabprevious
-  endif
-endfunction
-
-""
 " Codefolding
 ""
 set foldmethod=indent
@@ -355,4 +336,23 @@ function! MergeTabs()
   endif
   vsplit
   execute "buffer " . bufferName
+endfunction
+
+""
+" Buffer/Tab switching
+""
+function! NextTabOrBuffer()
+  if tabpagenr('$') == 1
+    bnext
+  else
+    tabnext
+  endif
+endfunction
+
+function! PreviousTabOrBuffer()
+  if tabpagenr('$') == 1
+    bprevious
+  else
+    tabprevious
+  endif
 endfunction
