@@ -21,5 +21,5 @@ function! composer#ComposerInstall()
 endfunction
 
 function! composer#ShowInstalledLibraries()
-  !composer show --installed
+  silent! cexpr system('composer show --installed') | copen
 endfunction

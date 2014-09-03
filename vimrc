@@ -309,7 +309,7 @@ set list
 autocmd BufWritePre *.* :%s/\s\+$//e
 
 ""
-" Return the syntax highlight group under the " cursor
+" Return the syntax highlight group under the cursor
 ""
 function! CurrentHighlight()
     let name = synIDattr(synID(line('.'),col('.'),1),'name')
