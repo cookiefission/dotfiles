@@ -212,7 +212,7 @@ function! PreviousTabOrBuffer()
   if tabpagenr('$') == 1
     bprevious
   else
-    tabnext
+    tabprevious
   endif
 endfunction
 
