@@ -126,8 +126,8 @@ map <Leader>nh :noh<CR>
 nnoremap <CR><CR> :noh<CR>
 map <Leader>== mmgg=G:w<CR>'mzz
 
-nnoremap <Leader>[ :tabp<CR>
-nnoremap <Leader>] :tabn<CR>
+nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
+nnoremap <Leader>] :call NextTabOrBuffer()<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 
@@ -196,6 +196,25 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 ""
 set splitbelow
 set splitright
+
+""
+" Buffer/Tab switching
+""
+function! NextTabOrBuffer()
+  if tabpagenr('$') == 1
+    bnext
+  else
+    tabnext
+  endif
+endfunction
+
+function! PreviousTabOrBuffer()
+  if tabpagenr('$') == 1
+    bprevious
+  else
+    tabnext
+  endif
+endfunction
 
 ""
 " Codefolding
