@@ -65,6 +65,7 @@ let g:ctrlp_working_path_mode = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "murmur"
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_y = airline#section#create_right(['filetype', 'ffenc'])
 
 ""
 " tmuxline.vim
@@ -98,8 +99,8 @@ map <C-n> :NERDTreeToggle<CR>
 ""
 " UltiSnips
 ""
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 ""
