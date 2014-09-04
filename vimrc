@@ -166,6 +166,7 @@ nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>d, ddk$x
 
 nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
+nnoremap <Leader>ss :s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
