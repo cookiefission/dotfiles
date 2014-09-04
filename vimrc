@@ -125,8 +125,8 @@ nnoremap Y y$
 nnoremap <CR><CR> :noh<CR>
 map <Leader>== mmgg=G:w<CR>'mzz
 
-nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
 nnoremap <Leader>] :call NextTabOrBuffer()<CR>
+nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 
@@ -142,6 +142,7 @@ nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
 nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
 
 nnoremap <Leader>qp :tabclose<CR>
+nnoremap <Leader>qb :bdelete<CR>
 nnoremap <Leader>li :set list!<CR>
 nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>nl :set relativenumber!<CR>
