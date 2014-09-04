@@ -223,6 +223,7 @@ set ttyfast
 set nowrap
 set clipboard=unnamed
 set noshowmode
+set hidden
 
 ""
 " Key press timeout
