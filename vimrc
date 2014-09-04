@@ -129,6 +129,8 @@ nnoremap <Leader>] :call NextTabOrBuffer()<CR>
 nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
+map <Leader>pb :CtrlPBuffer<CR>
+map <Leader>pm :CtrlPMRUFiles<CR>
 
 nmap j gj
 nmap k gk
@@ -143,11 +145,11 @@ nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
 
 nnoremap <Leader>qp :tabclose<CR>
 nnoremap <Leader>qb :bdelete<CR>
+nnoremap <Leader>mt :call MergeTabs()<CR>
+
 nnoremap <Leader>li :set list!<CR>
 nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>nl :set relativenumber!<CR>
-
-nnoremap <Leader>mt :call MergeTabs()<CR>
 
 nnoremap <Leader>ga :Git add
 nnoremap <Leader>gb :Gblame<CR>
