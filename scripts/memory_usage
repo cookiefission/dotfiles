@@ -1,4 +1,6 @@
 #!/bin/sh
+# Print out used memory percentage
+# For use in tmux statusline
 
 free -m | \
 awk '{ if (NR == 2) print $3/$2*100 }' | \
