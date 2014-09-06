@@ -10,6 +10,7 @@ autoload -Uz compinit
 compinit
 
 if [ -d $HOME/.zsh ]; then
+    source $HOME/.zsh/gitprompt.sh
     source $HOME/.zsh/prompt
 fi
 if [ -e $HOME/.shell_aliases ]; then
