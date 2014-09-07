@@ -94,7 +94,7 @@ function git_prompt() {
             unmerged="%F{$GIT_STATUS_UNMERGED_COLOUR}$GIT_STATUS_UNMERGED$GIT_STATUS_UNMERGED_SYMBOL"
             GIT_REPO_CLEAN=1
         fi
-        GIT_PROMPTLINE="%F{$BRANCH_COLOUR}$branch%f|"
+        GIT_PROMPTLINE=" %F{$BRANCH_COLOUR}$branch%f|"
         GIT_PROMPTLINE+=$staged
         GIT_PROMPTLINE+=$unstaged
         GIT_PROMPTLINE+=$untracked
