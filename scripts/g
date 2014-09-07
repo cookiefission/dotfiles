@@ -1,9 +1,8 @@
 #!/bin/bash
 
-if [ $# -eq 0 ]; then
-    git status --short -b
-    exit 0
-fi
+_git_status() {
+    git status
+}
 
 _fuzzy_branch() {
     git for-each-ref --format='%(refname:short)' | fzf +m --query="$@"
@@ -91,6 +90,11 @@ _git_pull_merge() {
     git checkout -
     git merge -
 }
+
+if [ $# -eq 0 ]; then
+    _git_status
+    exit 0
+fi
 
 OP=$1
 shift
