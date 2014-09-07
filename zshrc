@@ -19,3 +19,4 @@ if [ -e $HOME/.shell_functions ]; then
 fi
 
 source $HOME/.fzf.zsh
+export FZF_DEFAULT_OPTS="--reverse +i"
