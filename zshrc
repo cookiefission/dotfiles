@@ -11,7 +11,7 @@ compinit
 
 if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/gitprompt.sh
-    PROMPT='%F{5}[%F{2}%T%F{5}] %F{7}%2~ %f%# '
+    PROMPT='%F{5}[%F{2}%T%F{5}] %F{7}%2~$(git_prompt)%f%# '
 fi
 if [ -e $HOME/.shell_aliases ]; then
     source $HOME/.shell_aliases
