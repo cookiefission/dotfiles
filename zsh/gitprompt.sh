@@ -22,7 +22,7 @@ GIT_STATUS_UNSTAGED_COLOUR=213
 GIT_STATUS_UNTRACKED_COLOUR=230
 GIT_STATUS_UNMERGED_COLOUR=1
 GIT_REPO_CLEAN_COLOUR=2
-GIT_REPO_CLEAN_LINE='%F{$GIT_REPO_CLEAN_COLOUR}${GIT_REPO_CLEAN_SYMBOL}'
+GIT_REPO_CLEAN_LINE="%F{$GIT_REPO_CLEAN_COLOUR}$GIT_REPO_CLEAN_SYMBOL"
 BRANCH_COLOUR=$GIT_REPO_CLEAN_COLOUR
 
 ##
@@ -71,7 +71,7 @@ function git_prompt() {
         local branch="`_parse_branch ${status_arr[1]} 2>&1`"
         local IFS=$'\n'
         local count=${#status_arr[@]}
-        for (( i=2; i<$count; i++ )); do
+        for (( i=2; i<=$count; i++ )); do
             _parse_change "${status_arr[$i]:0:2}"
         done
         GIT_REPO_CLEAN=0
@@ -95,7 +95,7 @@ function git_prompt() {
             unmerged="%F{$GIT_STATUS_UNMERGED_COLOUR}$GIT_STATUS_UNMERGED$GIT_STATUS_UNMERGED_SYMBOL"
             GIT_REPO_CLEAN=1
         fi
-        GIT_PROMPTLINE=" %F{$BRANCH_COLOUR}$branch%f|"
+        GIT_PROMPTLINE="%F{$BRANCH_COLOUR}$branch%f|"
         GIT_PROMPTLINE+=$staged
         GIT_PROMPTLINE+=$unstaged
         GIT_PROMPTLINE+=$untracked
