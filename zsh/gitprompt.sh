@@ -53,12 +53,12 @@ function _parse_change() {
 #       ## HEAD (no branch)
 ##
 function _parse_branch() {
-    local branchline=$2
+    local branchline=$1
     if [[ "$branchline" == HEAD ]]; then
         echo "(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
             echo HEAD`)"
     else
-        echo ${branchline%%...*}
+        echo ${${branchline%%...*}:3}
     fi
 }
 
@@ -68,10 +68,10 @@ function git_prompt() {
     status_arr=( `git status --porcelain -b 2>&1` )
     if ! [[ "${status_arr[@]}" =~ Not\ a\ git\ repo ]]; then
         unset IFS
-        local branch="`_parse_branch ${status_arr[0]} 2>&1`"
+        local branch="`_parse_branch ${status_arr[1]} 2>&1`"
         local IFS=$'\n'
         local count=${#status_arr[@]}
-        for (( i=1; i<$count; i++ )); do
+        for (( i=2; i<$count; i++ )); do
             _parse_change "${status_arr[$i]:0:2}"
         done
         GIT_REPO_CLEAN=0
@@ -95,7 +95,7 @@ function git_prompt() {
             unmerged="%F{$GIT_STATUS_UNMERGED_COLOUR}$GIT_STATUS_UNMERGED$GIT_STATUS_UNMERGED_SYMBOL"
             GIT_REPO_CLEAN=1
         fi
-        GIT_PROMPTLINE=" %F{1}$branch|"
+        GIT_PROMPTLINE=" %F{$BRANCH_COLOUR}$branch%f|"
         GIT_PROMPTLINE+=$staged
         GIT_PROMPTLINE+=$unstaged
         GIT_PROMPTLINE+=$untracked
