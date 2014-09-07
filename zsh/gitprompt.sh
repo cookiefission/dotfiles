@@ -54,9 +54,8 @@ function _parse_change() {
 ##
 function _parse_branch() {
     local branchline=${1:3}
-    if [[ "$branchline" == HEAD ]]; then
-        echo "(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
-            echo HEAD`)"
+    if [[ "$branchline" == "HEAD (no branch)" ]]; then
+        echo "(`git rev-parse --short HEAD`)"
     else
         echo ${branchline%%...*}
     fi
