@@ -3,4 +3,4 @@
 setopt prompt_subst
 
 source $HOME/.zsh/gitprompt.sh
-PROMPT='%F{5}[%F{2}%T%F{5}] %F{7}%~$(git_prompt) %f→ '
+PROMPT='%F{5}[%F{2}%T%F{5}] %F{7}%3~$(git_prompt) %f→ '
