@@ -9,7 +9,7 @@ if [[ -f ~/.bash/gitprompt.sh ]]; then
 fi
 
 _prompt_command() {
-    PS1="\e]2;\u@\h: \w\a\\A \[\033[1m\]\W\[\033[0m\]`git_prompt`\$ "
+    PS1="\e]2;\u@\h: \w\a\\A \[\033[1m\]\W\[\033[0m\]`git_prompt`→ "
 }
 PROMPT_COMMAND=_prompt_command
 
