@@ -75,6 +75,7 @@ let g:tmuxline_preset = {
       \'b'    : [ '#(whoami)' ],
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
+      \'x'    : [ 'Mem: #(memory_usage)\%' ],
       \'y'    : ['%R', '%a %d ', '%Y'],
       \'z'    : '#H'}
 
