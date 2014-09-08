@@ -11,6 +11,7 @@ compinit
 
 if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/prompt
+    source $HOME/.zsh/aliases.zsh
 fi
 if [ -e $HOME/.shell_aliases ]; then
     source $HOME/.shell_aliases
