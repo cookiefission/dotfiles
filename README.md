@@ -7,6 +7,14 @@ My Dotfiles.
 
 ## Setup
 
+### Required things
+
+- ruby
+- zsh
+- fzf (as below)
+- tmux
+- tmuxinator
+
 ### Misc
 
 - Using Terminator, go to Preferences > Profiles > Command and tick Run command as login shell. Otherwise .bash_profile won't take affect
