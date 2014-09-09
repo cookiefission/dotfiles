@@ -4,6 +4,12 @@ _git_status() {
     git status
 }
 
+_git_pull() {
+    git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
+    echo "Log:"
+    git log --color --pretty=oneline --abbrev-commit HEAD@{1}.. | sed 's/^/  /'
+}
+
 _fuzzy_branch() {
     git for-each-ref --format='%(refname:short)' | fzf +m --query="$@"
 }
@@ -169,7 +175,7 @@ case "$OP" in
         ;;
     pl)
         if [ $# -eq 0 ]; then
-            git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
+            _git_pull
         elif [ $1 == "--recurse" ]; then
             _git_pull_recurse
         else
