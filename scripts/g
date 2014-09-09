@@ -155,7 +155,7 @@ case "$OP" in
         ;;
     ch)
         if [ $# -eq 0 ]; then
-            git checkout -
+            git checkout -q -
         elif [ $1 == "-m" ]; then
             shift
             _checkout_merge "$@"
@@ -163,7 +163,7 @@ case "$OP" in
             shift
             branch=$(_fuzzy_branch "$@") && git checkout $branch
         else
-            git checkout "$@"
+            git checkout -q "$@"
         fi
         ;;
     ps)
