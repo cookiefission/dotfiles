@@ -124,7 +124,13 @@ case "$OP" in
         fi
         ;;
     f) git fetch "$@" ;;
-    l) git log "$@" ;;
+    l)
+        if [ $# -eq 0 ]; then
+            git log --stat
+        else
+            git log "$@"
+        fi
+        ;;
     r) git reset "$@" ;;
     s)
         if [ $# -eq 0 ]; then
