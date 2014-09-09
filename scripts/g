@@ -183,6 +183,14 @@ case "$OP" in
         fi
         ;;
     z) _fuzzy_git "$@" ;;
+    wtf)
+        shift
+        if hash git-wtf 2>/dev/null; then
+            git-wtf "$@"
+        else
+            echo "git-wtf not installed from dotfiles"
+        fi
+        ;;
     *)
         git $OP "$@"
         ;;
