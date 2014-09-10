@@ -13,7 +13,12 @@ My Dotfiles.
 - zsh
 - fzf (as below)
 - tmux
-- tmuxinator
+- vagrant
+- Gems:
+    - tmuxinator
+    - chef
+    - sass
+    - compass
 
 ### Misc
 
