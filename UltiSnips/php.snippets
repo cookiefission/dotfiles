@@ -10,6 +10,32 @@ public function __construct(
 }
 endsnippet
 
+snippet addsv
+public function add`!p snip.rv = ucfirst(t[1])`(\$$1)
+{
+	\$this->$1s[] = \$$1;
+	return \$this;
+}
+
+public function get`!p snip.rv = ucfirst(t[1])`s()
+{
+	return \$this->$1s;
+}
+endsnippet
+
+snippet addso
+public function add$1($1 \$`!p snip.rv = lcfirst(t[1])`)
+{
+	\$this->`!p snip.rv = lcfirst(t[1])`s[] = \$`!p snip.rv = lcfirst(t[1])`;
+	return \$this;
+}
+
+protected function get$1()
+{
+	return \$this->`!p snip.rv = lcfirst(t[1])`s;
+}
+endsnippet
+
 snippet gsv
 public function set`!p snip.rv = ucfirst(t[1])`(\$$1)
 {
