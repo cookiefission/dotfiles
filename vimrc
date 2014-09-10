@@ -133,7 +133,7 @@ nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
 nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
 
 nnoremap <Leader>qp :tabclose<CR>
-nnoremap <Leader>qb :bdelete<CR>
+nnoremap <Leader>qq :bdelete<CR>
 nnoremap <Leader>mt :call MergeTabs()<CR>
 nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
 
