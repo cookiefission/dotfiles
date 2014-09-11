@@ -24,3 +24,4 @@ export EDITOR=vim
 
 source $HOME/.fzf.zsh
 export FZF_DEFAULT_OPTS="--reverse +i"
+export PATH=/usr/local/bin:$PATH
