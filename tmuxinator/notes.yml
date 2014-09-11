@@ -4,5 +4,4 @@ name: notes
 root: ~/Documents/notes
 
 windows:
-  - notes:
-  - htop: htop
+  - notes: vim .
