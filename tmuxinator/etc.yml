@@ -1,8 +1,7 @@
 name: etc
-root: ~/.vim
+root: ~/Documents/dotfiles
 
 windows:
-  - .vim:
-  - dotfiles: cd ~/Documents/dotfiles ; \clear
-  - cheatsheet: cd ~/Documents/cheatsheet ; \clear
+    - dotfiles:
+    - cheatsheet: cd ~/Documents/cheatsheet ; \clear
 
