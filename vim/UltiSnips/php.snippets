@@ -1,0 +1,99 @@
+global !p
+from snippet_helpers import *
+endglobal
+
+snippet cnstr
+public function __construct(
+    $1 \$`!p snip.rv = lcfirst(t[1])`
+) {
+    \$this->set$1(\$`!p snip.rv = lcfirst(t[1])`);
+}
+endsnippet
+
+snippet addsv
+public function add`!p snip.rv = ucfirst(t[1])`(\$$1)
+{
+	\$this->$1s[] = \$$1;
+	return \$this;
+}
+
+public function get`!p snip.rv = ucfirst(t[1])`s()
+{
+	return \$this->$1s;
+}
+endsnippet
+
+snippet addso
+public function add$1($1 \$`!p snip.rv = lcfirst(t[1])`)
+{
+	\$this->`!p snip.rv = lcfirst(t[1])`s[] = \$`!p snip.rv = lcfirst(t[1])`;
+	return \$this;
+}
+
+protected function get$1()
+{
+	return \$this->`!p snip.rv = lcfirst(t[1])`s;
+}
+endsnippet
+
+snippet gsv
+public function set`!p snip.rv = ucfirst(t[1])`(\$$1)
+{
+	\$this->$1 = \$$1;
+	return \$this;
+}
+
+public function get`!p snip.rv = ucfirst(t[1])`()
+{
+	return \$this->$1;
+}
+endsnippet
+
+snippet gso
+public function set$1($1 \$`!p snip.rv = lcfirst(t[1])`)
+{
+	\$this->`!p snip.rv = lcfirst(t[1])` = \$`!p snip.rv = lcfirst(t[1])`;
+	return \$this;
+}
+
+protected function get$1()
+{
+	return \$this->`!p snip.rv = lcfirst(t[1])`;
+}
+endsnippet
+
+snippet try
+try {
+    ${VISUAL}$2
+} catch ($1 \$e) {
+    $3
+}
+endsnippet
+
+snippet if
+if (${1:/* condition */}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet die
+die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
+endsnippet
+
+snippet vdd
+var_dump(${VISUAL}${0});
+die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
+endsnippet
+
+snippet foocl
+class Foo
+{
+	${VISUAL}${0}
+}
+
+\$foo = new Foo();
+endsnippet
+
+snippet usephpunit
+use PHPUnit_Framework_TestCase;
+endsnippet
