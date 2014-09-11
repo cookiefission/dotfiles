@@ -20,5 +20,7 @@ if [ -e $HOME/.shell_functions ]; then
     source $HOME/.shell_functions
 fi
 
+export EDITOR=vim
+
 source $HOME/.fzf.zsh
 export FZF_DEFAULT_OPTS="--reverse +i"
