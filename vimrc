@@ -75,7 +75,6 @@ let g:tmuxline_preset = {
       \'b'    : [ '#(whoami)' ],
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
-      \'x'    : [ 'Mem: #(memory_usage)\%' ],
       \'y'    : ['%R', '%a %d ', '%Y'],
       \'z'    : '#H'}
 
@@ -154,6 +153,8 @@ nnoremap <Leader>, A,<CR>
 nnoremap <Leader>; A;<CR>
 nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>d, ddk$x
+nnoremap <leader>D mz"dyy"dp`z
+vnoremap <leader>D "dymz"dP`z
 
 nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
