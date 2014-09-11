@@ -19,6 +19,9 @@ fi
 if [ -e $HOME/.shell_functions ]; then
     source $HOME/.shell_functions
 fi
+if [ -e $HOME/.zshrc.local ]; then
+    source $HOME/.zshrc.local
+fi
 
 export EDITOR=vim
 
