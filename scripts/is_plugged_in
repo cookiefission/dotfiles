@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ `pmset -g batt` =~ AC\ Power ]]; then
+    exit 0
+else
+    exit 1
+fi
