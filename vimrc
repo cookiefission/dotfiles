@@ -217,6 +217,11 @@ set noshowmode
 set hidden
 
 ""
+" Fix backspace not deleting new lines
+""
+set backspace=indent,eol,start
+
+""
 " Key press timeout
 ""
 set timeoutlen=500
