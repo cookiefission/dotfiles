@@ -75,10 +75,9 @@ let g:tmuxline_preset = {
       \'b'    : [ '#(whoami)' ],
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
-      \'x'    : ['🔋  #(battery_status)'],
+      \'x'    : ['#(is_plugged_in && echo 🔌  || echo 🔋  )  #(battery_status)'],
       \'y'    : ['%R', '%a %d ', '%Y'],
       \'z'    : '#H'}
-
 ""
 " NERDTree
 ""
