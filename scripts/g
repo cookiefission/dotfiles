@@ -215,6 +215,7 @@ case "$OP" in
     z) _fuzzy_git "$@" ;;
     clone)
         if [ $# -eq 0 ]; then
+            PS3="g> "
             _short_clone
         else
             git clone "$@"
