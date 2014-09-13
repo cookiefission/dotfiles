@@ -213,6 +213,13 @@ case "$OP" in
         fi
         ;;
     z) _fuzzy_git "$@" ;;
+    clone)
+        if [ $# -eq 0 ]; then
+            _short_clone
+        else
+            git clone "$@"
+        fi
+        ;;
     wtf)
         shift
         if hash git-wtf 2>/dev/null; then
