@@ -23,7 +23,20 @@ _fuzzy_show() {
 }
 
 _short_clone() {
-    echo clone
+    local git_hosts="GitHub BitBucket"
+    local git_suffix='.git'
+
+    select host in $git_hosts; do
+        case $host in
+            "GitHub")
+                local selected_host='git@github.com:'
+                break ;;
+            'BitBucket')
+                local selected_host='git@bitbucket.org:'
+                break ;;
+        esac
+    done
+    echo $selected_host
 }
 
 _fuzzy_git() {
