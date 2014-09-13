@@ -22,17 +22,26 @@ _fuzzy_show() {
     commit=$(_fuzzy_commit) && git show $commit
 }
 
+_short_clone() {
+    echo clone
+}
+
 _fuzzy_git() {
-    while true; do
-        echo "Select an option:"
-        echo -ne "\t1 - show"
-        echo -ne "\n:"
-        read opt
-        case "$opt" in
-            1)
+    PS3="g> "
+    local git_options="show clone"
+
+    select cmd in $git_options; do
+        case $cmd in
+            "show")
                 _fuzzy_show
-                break
+                exit 0
                 ;;
+            "clone")
+                _short_clone
+                exit 0
+                ;;
+            *)
+                echo "Bad Option"
         esac
     done
 }
