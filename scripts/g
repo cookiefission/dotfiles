@@ -36,7 +36,9 @@ _short_clone() {
                 break ;;
         esac
     done
-    echo $selected_host
+    read -p "Repository: " repo
+    local repo_url="${selected_host}${repo}${git_suffix}"
+    git clone $repo_url
 }
 
 _fuzzy_git() {
