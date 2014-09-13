@@ -213,7 +213,6 @@ match Error /\s\+$/
 set laststatus=2
 set ttyfast
 set nowrap
-set clipboard=unnamed
 set noshowmode
 set hidden
 
