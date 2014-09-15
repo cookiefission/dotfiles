@@ -38,7 +38,7 @@ _short_clone() {
     done
     read -p "Repository: " repo
     local repo_url="${selected_host}${repo}${git_suffix}"
-    git clone $repo_url && cd ${repo##*/}
+    git clone $repo_url
 }
 
 _fuzzy_git() {
