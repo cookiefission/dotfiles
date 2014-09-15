@@ -1,3 +1,12 @@
 #!/usr/bin/env ruby
 
-puts "TODO: Implement this script"
+def format_todo(todo_name, todo_body)
+  [todo_name, todo_body].join(" ")
+end
+
+puts Time.now.strftime('%d-%m-%y %H:%M')
+
+todo_name = ARGV.shift
+todo_body = ARGV.join(" ")
+
+puts format_todo(todo_name, todo_body)
