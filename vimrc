@@ -289,7 +289,7 @@ endif
 " Cursorline Settings
 ""
 set cul
-hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
+hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE
 
 ""
 " Highlight column when over 80 characters
