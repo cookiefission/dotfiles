@@ -1,12 +1,23 @@
 #!/usr/bin/env ruby
 
+require "yaml"
+
+TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo.yml')
+
+todo = YAML.load_file(TODO_FILE)
+p todo['test']
+
+todo['test2'] = 'Hello'
+
+YAML.write_file(TODO_FILE, todo)
+
 def format_todo(todo_name, todo_body)
   [todo_name, todo_body].join(" ")
 end
 
-puts Time.now.strftime('%d-%m-%y %H:%M')
+# puts Time.now.strftime('%d-%m-%y %H:%M')
 
-todo_name = ARGV.shift
-todo_body = ARGV.join(" ")
+# todo_name = ARGV.shift
+# todo_body = ARGV.join(" ")
 
-puts format_todo(todo_name, todo_body)
+# puts format_todo(todo_name, todo_body)
