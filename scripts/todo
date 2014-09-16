@@ -1,23 +1,42 @@
 #!/usr/bin/env ruby
 
+# I'm aware this is probably terrible ruby
+
 require "yaml"
 
 TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo.yml')
 
-todo = YAML.load_file(TODO_FILE)
-p todo['test']
-
-todo['test2'] = 'Hello'
-
-YAML.write_file(TODO_FILE, todo)
-
-def format_todo(todo_name, todo_body)
-  [todo_name, todo_body].join(" ")
+def write_yaml(todos)
+  File.open(TODO_FILE, "w") do |file|
+    file.write todos.to_yaml
+  end
 end
 
-# puts Time.now.strftime('%d-%m-%y %H:%M')
+def print_todos(todos)
+  return if todos == nil
+  todos.each do |name, body|
+    puts [name, "-", body].join(" ")
+  end
+end
 
-# todo_name = ARGV.shift
-# todo_body = ARGV.join(" ")
+if File.file?(TODO_FILE)
+  todos = YAML.load_file(TODO_FILE)
+  todos = {} if todos == nil
+else
+  todos = {}
+  write_yaml todos
+end
 
-# puts format_todo(todo_name, todo_body)
+if ARGV.count == 0
+  print_todos todos
+  exit 0
+end
+
+todo_name = ARGV.shift
+
+if "--count" == todo_name
+  puts todos.count
+else
+  todos[todo_name] = ARGV.join(" ")
+  write_yaml todos
+end
