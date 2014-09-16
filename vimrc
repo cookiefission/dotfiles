@@ -136,6 +136,9 @@ nnoremap <Leader>qq :bdelete<CR>
 nnoremap <Leader>mt :call MergeTabs()<CR>
 nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
 
+nnoremap <Leader>sv :vsplit<space>
+nnoremap <Leader>sh :split<space>
+
 nnoremap <Leader>li :set list!<CR>
 nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>nl :set relativenumber!<CR>
