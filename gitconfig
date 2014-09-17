@@ -2,7 +2,7 @@
 	email = sean.kenny@hotmail.com
 	name = Sean Kenny
 [core]
-	excludesfile = /home/sean/.gitignore.global
+	excludesfile = /Users/sean/.gitignore.global
 [alias]
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	today = log --since=1am
