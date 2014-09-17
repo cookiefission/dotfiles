@@ -10,7 +10,7 @@ def first_depth_count(hash)
   total
 end
 
-TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo2.yml')
+TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo.yml')
 
 def write_yaml(todos)
   File.open(TODO_FILE, "w") do |file|
