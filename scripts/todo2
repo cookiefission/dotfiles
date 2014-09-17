@@ -2,7 +2,15 @@
 
 require "yaml"
 
-TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo.yml')
+def first_depth_count(hash)
+  total = 0
+  hash.each do |value|
+    total += value.count
+  end
+  total
+end
+
+TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo2.yml')
 
 def write_yaml(todos)
   File.open(TODO_FILE, "w") do |file|
@@ -13,7 +21,10 @@ end
 def print_todos(todos)
   return if todos == nil
   todos.each do |name, body|
-    puts [name, "-", body].join(" ")
+    puts name
+    body.each do |todo|
+      puts "\t- " + todo
+    end
   end
 end
 
@@ -25,6 +36,7 @@ else
   write_yaml todos
 end
 
+
 if ARGV.count == 0
   print_todos todos
   exit 0
@@ -33,8 +45,9 @@ end
 todo_name = ARGV.shift
 
 if "--count" == todo_name
-  puts todos.count
+  puts first_depth_count todos
 else
-  todos[todo_name] = ARGV.join(" ")
+  todos[todo_name] = [] if todos[todo_name].nil?
+  todos[todo_name] = todos[todo_name].push(ARGV.join(" "))
   write_yaml todos
 end
