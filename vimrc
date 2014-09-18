@@ -166,6 +166,7 @@ nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
 augroup php
   autocmd!
+  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
   autocmd FileType php map <Leader>php :!php %<CR>
   autocmd FileType php map <Leader>cj :ComposerJson<CR>
   autocmd FileType php map <Leader>cu :ComposerUpdate<CR>
