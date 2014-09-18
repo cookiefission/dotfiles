@@ -6,5 +6,6 @@
 [alias]
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	today = log --since=1am
+	exec = "!exec "
 [push]
 	default = simple
