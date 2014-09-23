@@ -40,3 +40,8 @@ r() {
 rr() {
     eval $(r "$@")
 }
+
+git-nuke() {
+    git branch -D $1
+    git push origin :$1
+}
