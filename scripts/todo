@@ -6,9 +6,7 @@ TODO_FILE = File.join(ENV['HOME'], 'Desktop', 'todo.yml')
 
 def first_depth_count(hash)
   total = 0
-  hash.each do |value|
-    total += value[1].count
-  end
+  hash.each { |value| total += value[1].count }
   total
 end
 
