@@ -183,6 +183,7 @@ case "$OP" in
             git merge "$@"
         fi
         ;;
+    br) git branch "$@" ;;
     ch)
         if [ $# -eq 0 ]; then
             git checkout -q -
