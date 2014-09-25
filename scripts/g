@@ -63,9 +63,9 @@ _fuzzy_git() {
 
 _checkout_merge() {
     if [ -z "$@" ]; then
-        git checkout - && git merge -
+        git checkout -q - && git merge -
     else
-        git checkout "$@" && git merge -
+        git checkout -q "$@" && git merge -
     fi
 }
 
@@ -115,9 +115,9 @@ _git_pull_recurse() {
 
 _git_pull_merge() {
     branch=$1
-    git checkout $branch
-    git pull origin $branch
-    git checkout -
+    git checkout -q $branch
+    git pull origin $branch > /dev/null
+    git checkout -q -
     git merge -
 }
 
