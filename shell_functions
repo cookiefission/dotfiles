@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # This is quite probably the best function of all time
 z() {
     local zdir
@@ -44,4 +42,8 @@ rr() {
 git-nuke() {
     git branch -D $1
     git push origin :$1
+}
+
+vm-nuke() {
+        VBoxManage list runningvms | awk '{print $2;}' | xargs -I vmid VBoxManage controlvm vmid poweroff
 }
