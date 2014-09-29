@@ -47,3 +47,11 @@ git-nuke() {
 vm-nuke() {
         VBoxManage list runningvms | awk '{print $2;}' | xargs -I vmid VBoxManage controlvm vmid poweroff
 }
+
+tclear() {
+    if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+        tmux set-window-option synchronize-panes on
+        tmux send-keys 'C-l'
+        tmux set-window-option synchronize-panes off
+    fi
+}
