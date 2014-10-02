@@ -20,3 +20,4 @@ alias openchanges='(cd "$(git rev-parse --show-toplevel)" && vim $(git status --
 alias vimcj='vim composer.json'
 alias vimrc='vim ~/.vimrc'
 alias gitignored='git ls-files --others -i --exclude-standard'
+alias hr='hr -'
