@@ -1,0 +1,59 @@
+#!/bin/bash
+
+git rev-parse || exit
+
+_usage() {
+    echo "Wrong number of arguments"
+    echo "Usage: "
+    echo "git-publish <branch-to-publish> <branch-to-publish-to>"
+    exit 1
+}
+
+_nuke_it_from_orbit() {
+    git branch -D "$1" > /dev/null 2>&1
+    git push --delete origin "$1" > /dev/null 2>&1
+}
+
+_is_branch() {
+    git show-ref --verify --quiet refs/heads/"$1" || return 1
+    git show-ref --verify --quiet refs/remotes/origin/"$1" || return 2
+    return 0
+}
+
+_validate_branch() {
+    _is_branch "$1"
+    is_branch=$?
+
+    case $is_branch in
+        1)
+            echo "Branch $1 is not a branch locally"
+            exit 1
+            ;;
+        2)
+            echo "Branch $1 is not a branch on origin"
+            exit 2
+            ;;
+        0)
+            return 0 ;;
+    esac
+}
+
+if [ "$#" -ne 2 ]; then
+    _usage
+fi
+
+branch="$1"
+publish_branch="$2"
+_validate_branch $branch
+_validate_branch $publish_branch
+
+CHANGED=$(git diff-index --name-only HEAD-)
+if [ -n "$CHANGED" ]; then
+    echo "Uncommitted changes, aborting"
+    exit 1
+fi
+
+git checkout "$publish_branch" &&
+    git merge "$branch" &&
+    git push origin "$publish_branch" &&
+    _nuke_it_from_orbit "$branch"
