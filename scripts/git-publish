@@ -53,7 +53,7 @@ publish_branch="$2"
 _validate_branch $branch
 _validate_branch $publish_branch
 
-CHANGED=$(git diff-index --name-only HEAD-)
+CHANGED=$(git diff-index --name-only HEAD)
 if [ -n "$CHANGED" ]; then
     echo "Uncommitted changes, aborting"
     exit 1
