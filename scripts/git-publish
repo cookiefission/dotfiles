@@ -38,6 +38,12 @@ _validate_branch() {
     esac
 }
 
+_merge_and_push() {
+    git checkout "$2" &&
+    git merge "$1" &&
+    git push origin "$2"
+}
+
 if [ "$#" -ne 2 ]; then
     _usage
 fi
@@ -53,7 +59,4 @@ if [ -n "$CHANGED" ]; then
     exit 1
 fi
 
-git checkout "$publish_branch" &&
-    git merge "$branch" &&
-    git push origin "$publish_branch" &&
-    _nuke_it_from_orbit "$branch"
+_merge_and_push "$branch" "$publish_branch" && _nuke_it_from_orbit "$branch"
