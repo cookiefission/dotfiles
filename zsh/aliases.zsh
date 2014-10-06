@@ -1,3 +1,5 @@
 alias reload!='. ~/.zshrc && echo "Zshrc Reloaded"'
 alias -g ...='../../..'
 alias -g groot='"$(git rev-parse --show-toplevel)"'
+alias -g changes='git status --porcelain | cut -c 4- | grep -v lock'
+alias openchanges='(cd groot && vim $(changes))'
