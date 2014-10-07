@@ -163,12 +163,6 @@ nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
-" Remap arrow keys to something semi useful
-map <Up> [e
-map <Down> ]e
-map <Left> xhP
-map <Right> xp
-
 augroup php
   autocmd!
   autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
