@@ -159,6 +159,7 @@ nnoremap <Leader>D mz"dyy"dp`zj
 vnoremap <Leader>D "dymz"dP`z
 nnoremap <Leader>X mzkdd`z
 nnoremap <Leader>x mzjdd`z
+nnoremap <Leader><Backspace> mz$x`z
 
 nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
