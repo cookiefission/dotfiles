@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # This is quite probably the best function of all time
 z() {
     local zdir
@@ -54,4 +56,8 @@ tclear() {
         tmux send-keys 'C-l'
         tmux set-window-option synchronize-panes off
     fi
+}
+
+git-init() {
+    mkdir -p "$1" && cd "$1" && git init
 }
