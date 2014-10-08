@@ -43,6 +43,7 @@ Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'whatyouhide/vim-gotham'
 
 ""
 " Done setting up Vundle
@@ -98,7 +99,8 @@ let g:vim_json_warnings=0
 " Colour settings
 ""
 set t_Co=256
-colorscheme peachpuff
+" colorscheme peachpuff
+colorscheme gotham256
 hi Comment ctermfg=yellow
 
 ""
