@@ -42,7 +42,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'whatyouhide/vim-gotham'
 
 ""
