@@ -306,7 +306,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 ""
 " List chars
 ""
-set listchars=tab:>#,nbsp:_,trail:~
+set listchars=tab:>#,nbsp:_
 set list
 
 ""
