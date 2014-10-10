@@ -3,5 +3,5 @@ root: ~/Documents/dotfiles
 
 windows:
     - dotfiles:
-    - cheatsheet: cd ~/Documents/cheatsheet ; \clear
-
+    - cheatsheet: cd ~/Documents/cheatsheet ; clear
+    - misc: cd ~/Repositories/learning ; clear
