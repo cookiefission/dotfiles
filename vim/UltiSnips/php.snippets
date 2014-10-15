@@ -91,6 +91,16 @@ try {
 }
 endsnippet
 
+snippet trydie
+try {
+    ${VISUAL}$2
+} catch (\Exception \$e) {
+	var_dump(get_class($e));
+    var_dump($e->getTraceAsString());
+	die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
+}
+endsnippet
+
 snippet if
 if (${1:/* condition */}) {
 	${VISUAL}${0}
