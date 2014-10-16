@@ -150,7 +150,7 @@ case "$OP" in
     f) git fetch "$@" ;;
     l)
         if [ $# -eq 0 ]; then
-            git log --stat
+            git log --pretty=format:'%C(yellow)%h %Cred%ad %C(magenta)%an%Cgreen%d %Creset%s' --date=short
         else
             git log "$@"
         fi
