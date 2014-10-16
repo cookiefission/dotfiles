@@ -11,3 +11,5 @@
 	top-five = !git shortlog -sb | sort -r | head -n 5
 [push]
 	default = simple
+[color]
+	ui = true
