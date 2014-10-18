@@ -1,22 +1,16 @@
 #!/usr/bin/sh
 
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+alias ls='ls --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias lt='ls -alt'
 alias rl='[ -n "$R_OUTPUT" ] && eval "$R_OUTPUT" || echo -e "\$R_OUTPUT not set, run r or rr"'
-alias vimcj='vim composer.json'
-alias vimrc='vim ~/.vimrc'
-alias gitignored='git ls-files --others -i --exclude-standard'
 alias hr='hr -'
 alias :q='clear'
 alias :w='git commit && git push origin $(git rev-parse --abbrev-ref HEAD)'
