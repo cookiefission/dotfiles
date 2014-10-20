@@ -6,6 +6,7 @@ setopt appendhistory extendedglob notify auto_cd
 unsetopt beep
 zstyle :compinstall filename '/home/sean/.zshrc'
 
+setopt HIST_IGNORE_SPACE
 setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
