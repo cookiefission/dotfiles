@@ -8,3 +8,8 @@ alias openchanges='(cd groot && vim $(changes))'
 alias openunstagedchanges='(cd groot && vim $(unstagedchanges))'
 alias openlast='(cd groot && vim $(lastchanges))'
 alias repo='basename groot'
+
+# Ignore in history
+alias fg=' fg'
+alias bg=' bg'
+alias clear=' clear'
