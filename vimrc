@@ -172,6 +172,8 @@ nnoremap <Leader>, A,<CR>
 nnoremap <Leader>; A;<CR>
 nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>d, ddk$x
+nnoremap <Leader>a; mzA;<Esc>`z
+nnoremap <Leader>a, mzA,<Esc>`z
 nnoremap <Leader>D mz"dyy"dp`zj
 vnoremap <Leader>D "dymz"dP`z
 nnoremap <Leader>X mzkdd`z
