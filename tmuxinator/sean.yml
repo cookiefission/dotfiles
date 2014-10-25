@@ -1,0 +1,14 @@
+# ~/.tmuxinator/sean.yml
+
+name: sean
+root: ~/Repositories/sean
+
+windows:
+  - code:
+      layout: main-vertical
+      panes:
+        - vim
+        - guard
+  - console: bundle exec rails console
+  - logs: tail -f log/development.log
+  - server: bundle exec rails server --binding 127.0.0.1

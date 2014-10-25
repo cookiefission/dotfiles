@@ -1,7 +1,0 @@
-# ~/.tmuxinator/notes.yml
-
-name: notes
-root: ~/Documents/notes
-
-windows:
-  - notes: vim .

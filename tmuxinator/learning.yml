@@ -1,8 +1,0 @@
-# ~/.tmuxinator/learning.yml
-
-name: learning
-root: ~/Repositories/learning
-
-windows:
-    - learning:
-        panes: ls
