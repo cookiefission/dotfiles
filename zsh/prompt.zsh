@@ -2,7 +2,7 @@
 
 setopt prompt_subst
 
-source $HOME/.zsh/gitprompt.sh
+source $HOME/.zsh/prompt/git.zsh
 PROMPT='%F{5}[%F{2}%T%F{5}] %F{7}%2~$(git_prompt) %F{51}→ %f'
 
 _here_be_dragons() {
