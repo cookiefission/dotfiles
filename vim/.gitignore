@@ -1,5 +1,5 @@
 .netrwhist
 tmp/*
-pythonx/snippet_helpers.pyc
+*.pyc
 UltiSnips/modula2.snippets
 bundle/*

@@ -1,6 +1,37 @@
 global !p
 from snippet_helpers import *
+from php_snippet_helpers import *
 endglobal
+
+snippet c "Generate Class" b
+<?php
+namespace `!p snip.rv = get_namespace(path)`;
+
+class `!p snip.rv = get_classname(fn)`
+{
+	$0
+}
+endsnippet
+
+snippet i "Generate Interface" b
+<?php
+namespace `!p snip.rv = get_namespace(path)`;
+
+interface `!p snip.rv = get_classname(fn)`
+{
+	$0
+}
+endsnippet
+
+snippet t "Generate Interface" b
+<?php
+namespace `!p snip.rv = get_namespace(path)`;
+
+trait `!p snip.rv = get_classname(fn)`
+{
+	$0
+}
+endsnippet
 
 snippet cnstr
 public function __construct(
