@@ -104,6 +104,7 @@ let g:switch_custom_definitions =
     \     '\<\(\u\l\+\)\(\u\l\+\)\+\>': '\=tolower(submatch(1)) . submatch(2)',
     \   }
     \ ]
+
 autocmd FileType php let b:switch_custom_definitions =
     \ [
     \   ['public', 'protected'],
@@ -167,6 +168,8 @@ nnoremap <Leader>gl :Glog<CR>
 nnoremap <Leader>git :Git
 
 nnoremap <Leader>- :Switch<CR>
+nnoremap <Leader>< :SidewaysLeft<CR>
+nnoremap <Leader>> :SidewaysRight<CR>
 
 nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
