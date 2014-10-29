@@ -14,6 +14,13 @@ export PROMPT_EOL_MARK=""
 autoload -Uz compinit
 compinit
 
+export EDITOR=vim
+
+source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--reverse +i"
+export PATH=/usr/local/bin:$PATH
+export PATH=/opt/local/bin:$PATH
+
 if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/prompt.zsh
     source $HOME/.zsh/aliases.zsh
@@ -28,11 +35,11 @@ fi
 if [ -e $HOME/.zshrc.local ]; then
     source $HOME/.zshrc.local
 fi
-
-export EDITOR=vim
-
-
-source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--reverse +i"
-export PATH=/usr/local/bin:$PATH
-export PATH=/opt/local/bin:$PATH
+if [ -d $HOME/.zsh-syntax-highlighting ]; then
+    source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+    ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+fi
+if [ -d $HOME/.zsh-history-substring-search ]; then
+    source ~/.zsh-history-substring-search/zsh-history-substring-search.zsh
+fi
