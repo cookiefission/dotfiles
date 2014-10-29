@@ -25,6 +25,7 @@ if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/prompt.zsh
     source $HOME/.zsh/aliases.zsh
     source $HOME/.zsh/plugins.zsh
+    source $HOME/.zsh/completions.zsh
 fi
 if [ -e $HOME/.shell_aliases ]; then
     source $HOME/.shell_aliases
