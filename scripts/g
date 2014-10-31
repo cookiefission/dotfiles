@@ -4,10 +4,14 @@ _git_status() {
     git status
 }
 
-_git_pull() {
-    git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
+_git_log_last() {
     echo "Log:"
     git log --color --pretty=oneline --abbrev-commit HEAD@{1}.. | sed 's/^/  /'
+}
+
+_git_pull() {
+    git fetch && git pull origin $(git rev-parse --abbrev-ref HEAD)
+    _git_log_last
 }
 
 _fuzzy_branch() {
@@ -151,6 +155,8 @@ case "$OP" in
     l)
         if [ $# -eq 0 ]; then
             git log --pretty=format:'%C(220)%h %C(92)%ad %C(83)%an%Cgreen%d %Creset%s' --date=short -n 20
+        elif [ $1 == "--last" ]; then
+            _git_log_last
         else
             git log "$@"
         fi
