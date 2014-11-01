@@ -1,4 +1,4 @@
-CP = cp -f
+LN = ln -sf
 
 INSTALL_DIR = /usr/local/bin/
 
@@ -9,10 +9,10 @@ MEMORY_USAGE = scripts/memory_usage
 .PHONY: phptags g memory_usage
 
 phptags:
-	${CP} ${PHPTAGS} ${INSTALL_DIR}
+	${LN} ${PHPTAGS} ${INSTALL_DIR}
 
 g:
-	${CP} ${G} ${INSTALL_DIR}
+	${LN} ${G} ${INSTALL_DIR}
 
 memory_usage:
-	${CP} ${MEMORY_USAGE} ${INSTALL_DIR}
+	${LN} ${MEMORY_USAGE} ${INSTALL_DIR}
