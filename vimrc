@@ -28,6 +28,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'AndrewRadev/switch.vim'
+Plugin 'AndrewRadev/sideways.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'vim-scripts/UltiSnips'
 Plugin 'kien/ctrlp.vim'
@@ -190,6 +191,8 @@ nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
+
+cmap w!! w !sudo tee % >/dev/null
 
 augroup php
   autocmd!
