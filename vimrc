@@ -43,6 +43,8 @@ Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-markdown'
 
 ""
 " Done setting up Vundle
