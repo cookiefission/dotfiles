@@ -2,4 +2,5 @@
 tmp/*
 *.pyc
 UltiSnips/modula2.snippets
+UltiSnips/markdown_private.snippets
 bundle/*
