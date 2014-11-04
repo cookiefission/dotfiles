@@ -141,6 +141,7 @@ map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 map <Leader>pb :CtrlPBuffer<CR>
 map <Leader>pm :CtrlPMRUFiles<CR>
+map <Leader>pp :CtrlPMixed<CR>
 map <Leader>f :CtrlPLine<CR>
 
 nmap j gj
