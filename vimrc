@@ -46,6 +46,8 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-markdown'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'sgur/ctrlp-extensions.vim'
 
 ""
 " Done setting up Vundle
@@ -59,6 +61,7 @@ filetype plugin indent on
 " CtrlP.vim
 ""
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring', 'menu']
 
 ""
 " vim-airline
@@ -138,6 +141,7 @@ map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 map <Leader>pb :CtrlPBuffer<CR>
 map <Leader>pm :CtrlPMRUFiles<CR>
+map <Leader>f :CtrlPLine<CR>
 
 nmap j gj
 nmap k gk
