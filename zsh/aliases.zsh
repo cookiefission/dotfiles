@@ -13,3 +13,5 @@ alias repo='basename groot'
 alias fg=' fg'
 alias bg=' bg'
 alias clear=' clear'
+
+alias -g JSON='| python -m json.tool'
