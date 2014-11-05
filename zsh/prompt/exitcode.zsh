@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+LAST_COMMAND_SUCCESS='✓'
+LAST_COMMAND_FAILURE='✗'
+
+LAST_COMMAND_SUCCESS_COLOUR=40
+LAST_COMMAND_FAILURE_COLOUR=196
+
+function exit_code_prompt() {
+    local LAST_EXIT_CODE=$?
+
+    if [ $LAST_EXIT_CODE -eq 0 ]; then
+        echo "%F{$LAST_COMMAND_SUCCESS_COLOUR}$LAST_COMMAND_SUCCESS%f"
+    else
+        echo "%F{$LAST_COMMAND_FAILURE_COLOUR}$LAST_COMMAND_FAILURE $LAST_EXIT_CODE%f"
+    fi
+}
