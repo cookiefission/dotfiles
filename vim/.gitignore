@@ -2,5 +2,6 @@
 tmp/*
 *.pyc
 UltiSnips/modula2.snippets
-UltiSnips/markdown_private.snippets
+UltiSnips/markdown_work.snippets
+UltiSnips/php_work.snippets
 bundle/*
