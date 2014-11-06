@@ -15,3 +15,4 @@ alias bg=' bg'
 alias clear=' clear'
 
 alias -g JSON='| python -m json.tool'
+alias -g XML='| xmllint --format -'
