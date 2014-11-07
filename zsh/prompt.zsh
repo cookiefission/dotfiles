@@ -8,4 +8,4 @@ done
 
 PROMPT='%F{5}[%F{2}%T%F{5}] %F{7}%2~$(git_prompt) %F{51}→ %f'
 
-RPROMPT='$(here_be_dragons) '
+RPROMPT='$(here_be_dragons) %(?:%F{2}✓:%F{1}✘)%f'
