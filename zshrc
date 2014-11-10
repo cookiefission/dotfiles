@@ -2,9 +2,10 @@ HISTFILE=$HOME/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
-setopt appendhistory extendedglob notify auto_cd correct
+setopt appendhistory extendedglob notify auto_cd correct menu_complete
 unsetopt beep
 zstyle :compinstall filename '/home/sean/.zshrc'
+zstyle ':completion:*' menu select
 
 setopt HIST_IGNORE_SPACE
 setopt PROMPT_CR
