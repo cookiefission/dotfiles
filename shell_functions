@@ -52,3 +52,7 @@ tclear() {
 gmkcd() {
     mkdir -p "$1" && cd "$1" && git init
 }
+
+vimag() {
+    vim $(ag -l --nocolor "$1")
+}
