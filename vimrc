@@ -48,6 +48,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-markdown'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'sgur/ctrlp-extensions.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 ""
 " Done setting up Vundle
@@ -56,6 +58,11 @@ call vundle#end()
 
 syntax on
 filetype plugin indent on
+
+""
+" Misc Runtime
+""
+runtime macros/matchit.vim
 
 ""
 " CtrlP.vim
