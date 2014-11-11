@@ -54,5 +54,5 @@ gmkcd() {
 }
 
 vimag() {
-    vim $(ag -l --nocolor "$1")
+    vim $(ag -l -U --nocolor "$1")
 }
