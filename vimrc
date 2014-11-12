@@ -121,6 +121,7 @@ let g:switch_custom_definitions =
 autocmd FileType php let b:switch_custom_definitions =
     \ [
     \   ['public', 'protected'],
+    \   ['var_dump', 'print_r'],
     \   ['use', 'namespace']
     \ ]
 
