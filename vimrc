@@ -177,6 +177,7 @@ nnoremap <Leader>nl :set relativenumber!<CR>
 
 nnoremap <Leader>ga :Git add
 nnoremap <Leader>gb :Gblame<CR>
+vmap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -a<CR>i
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gg :Gstatus<CR>
