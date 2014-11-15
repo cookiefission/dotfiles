@@ -21,23 +21,7 @@ export PROMPT_EOL_MARK=""
 
 export EDITOR=vim
 
-source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--reverse +i"
-export PATH=/usr/local/bin:$PATH
-export PATH=/opt/local/bin:$PATH
-
-if [ -d $HOME/.zsh ]; then
-    source $HOME/.zsh/prompt.zsh
-    source $HOME/.zsh/aliases.zsh
-    source $HOME/.zsh/plugins.zsh
-    source $HOME/.zsh/completions.zsh
-fi
-if [ -e $HOME/.shell_aliases ]; then
-    source $HOME/.shell_aliases
-fi
-if [ -e $HOME/.shell_functions ]; then
-    source $HOME/.shell_functions
-fi
-if [ -e $HOME/.zshrc.local ]; then
-    source $HOME/.zshrc.local
-fi
+[ -d $HOME/.zsh             ] &&source $HOME/.zsh/*.zsh
+[ -e $HOME/.shell_aliases   ] && source $HOME/.shell_aliases
+[ -e $HOME/.shell_functions ] && source $HOME/.shell_functions
+[ -e $HOME/.zshrc.local     ] && source $HOME/.zshrc.local
