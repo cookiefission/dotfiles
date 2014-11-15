@@ -21,7 +21,7 @@ export PROMPT_EOL_MARK=""
 
 export EDITOR=vim
 
-[ -d $HOME/.zsh             ] &&source $HOME/.zsh/*.zsh
+[ -d $HOME/.zsh             ] && source $HOME/.zsh/*.zsh
 [ -e $HOME/.shell_aliases   ] && source $HOME/.shell_aliases
 [ -e $HOME/.shell_functions ] && source $HOME/.shell_functions
 [ -e $HOME/.zshrc.local     ] && source $HOME/.zshrc.local

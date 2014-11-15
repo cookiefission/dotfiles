@@ -1,5 +1,5 @@
 #!/bin/zsh
 
-for aliases in $HOME/.zsh/aliases/*; do
-    source $aliases
+for aliases_file in $HOME/.zsh/aliases/*; do
+    source $aliases_file
 done
