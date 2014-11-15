@@ -41,16 +41,3 @@ fi
 if [ -e $HOME/.zshrc.local ]; then
     source $HOME/.zshrc.local
 fi
-if [ -d $HOME/.zsh-syntax-highlighting ]; then
-    source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line)
-    ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
-fi
-if [ -d $HOME/.zsh-history-substring-search ]; then
-    source ~/.zsh-history-substring-search/zsh-history-substring-search.zsh
-    bindkey -M emacs '^P' history-substring-search-up
-    bindkey -M emacs '^N' history-substring-search-down
-
-    bindkey -M vicmd 'k' history-substring-search-up
-    bindkey -M vicmd 'j' history-substring-search-down
-fi
