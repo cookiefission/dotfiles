@@ -21,11 +21,6 @@ export PROMPT_EOL_MARK=""
 
 export EDITOR=vim
 
-source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--reverse +i"
-export PATH=/usr/local/bin:$PATH
-export PATH=/opt/local/bin:$PATH
-
 if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/prompt.zsh
     source $HOME/.zsh/aliases.zsh
