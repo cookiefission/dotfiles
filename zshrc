@@ -19,8 +19,6 @@ setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
 
-export EDITOR=vim
-
 if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/prompt.zsh
     source $HOME/.zsh/aliases.zsh
