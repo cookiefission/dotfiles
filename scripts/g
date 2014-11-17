@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 _git_status() {
     git status
