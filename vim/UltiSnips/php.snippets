@@ -177,14 +177,7 @@ snippet usephpunit
 use PHPUnit_Framework_TestCase;
 endsnippet
 
-snippet { "Expand to { } " b
-{
-    $0
-}
-endsnippet
-
-snippet [ "Expand to [ ] " b
-[
-    $0
-]
+snippet trace "Dump out stack trace" b
+var_dump((new \Exception())->getTraceAsString());
+die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
 endsnippet
