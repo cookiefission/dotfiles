@@ -8,3 +8,4 @@ alias openchanges='(cd groot && vim $(changes))'
 alias openunstagedchanges='(cd groot && vim $(unstagedchanges))'
 alias openlast='(cd groot && vim $(lastchanges))'
 alias repo='basename groot'
+alias last-tag="git tag --sort=v:refname | egrep '^[v]*\d+(?:\.\d+)*' | tail -n 1"
