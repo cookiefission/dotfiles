@@ -183,5 +183,6 @@ die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
 endsnippet
 
 snippet todoe "Throw todo exception" b
-throw new \Exception('TODO: Implement method');
+throw new \Exception('TODO: ${1:Implement method}');
+$0
 endsnippet
