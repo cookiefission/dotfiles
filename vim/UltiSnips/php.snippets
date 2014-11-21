@@ -181,3 +181,7 @@ snippet trace "Dump out stack trace" b
 var_dump((new \Exception())->getTraceAsString());
 die(__CLASS__ . " " . __FUNCTION__ . " " . __LINE__);
 endsnippet
+
+snippet todoe "Throw todo exception" b
+throw new \Exception('TODO: Implement method');
+endsnippet
