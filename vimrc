@@ -122,7 +122,8 @@ autocmd FileType php let b:switch_custom_definitions =
     \ [
     \   ['public', 'protected'],
     \   ['var_dump', 'print_r'],
-    \   ['use', 'namespace']
+    \   ['use', 'namespace'],
+    \   ['time()', 'microtime(true)']
     \ ]
 
 ""
