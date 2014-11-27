@@ -2,3 +2,4 @@ tags
 Session.vim
 .DS_Store
 .idea/
+*.deb
