@@ -207,6 +207,8 @@ nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
+nnoremap <Leader>ag :Ag<C-r><C-w><CR>
+
 cmap w!! w !sudo tee % >/dev/null
 
 augroup php
