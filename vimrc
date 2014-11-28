@@ -157,7 +157,7 @@ nmap j gj
 nmap k gk
 
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
-nnoremap <Leader>so :so $MYVIMRC<CR>
+nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 
 nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
 nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
