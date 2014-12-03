@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-CRAPPER="$1"
+CRAPPER="$@"
 NOTIFIER="terminal-notifier -message '$CRAPPER crashed out like a tit'"
 
 if ! [ -n "$CRAPPER" ]; then
