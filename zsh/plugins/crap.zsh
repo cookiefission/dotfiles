@@ -5,7 +5,7 @@ crap() {
     NOTIFIER="terminal-notifier -message '$CRAPPER crashed out like a tit'"
 
     if ! [ -n "$CRAPPER" ]; then
-        echo "No command given" && exit 1
+        echo "No command given" && return 1
     fi
 
     eval "$CRAPPER"
