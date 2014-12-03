@@ -190,3 +190,25 @@ endsnippet
 snippet aset "isset in an array" b
 isset($${2:data}['$1']) ? $$2['$1']: ${3:null}$0
 endsnippet
+
+snippet pub "Override annoying snippet" b
+public
+endsnippet
+
+snippet pro "Override annoying snippet" b
+protected
+endsnippet
+
+snippet puf "Public class method" b
+public function $1(${2:})
+{
+	$0
+}
+endsnippet
+
+snippet prf "Protected class method" b
+protected function $1(${2:})
+{
+	$0
+}
+endsnippet
