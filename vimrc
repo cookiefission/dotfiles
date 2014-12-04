@@ -68,7 +68,7 @@ runtime macros/matchit.vim
 " CtrlP.vim
 ""
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring', 'menu']
+let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
 
 ""
 " vim-airline
