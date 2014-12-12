@@ -50,6 +50,7 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'sgur/ctrlp-extensions.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'junegunn/goyo.vim'
 
 ""
 " Done setting up Vundle
@@ -106,6 +107,11 @@ let g:UltiSnipsEditSplit="vertical"
 " vim-json
 ""
 let g:vim_json_warnings=0
+
+""
+" goyo.vim
+""
+let g:goyo_width = 110
 
 ""
 " switch.vim
