@@ -201,6 +201,7 @@ vnoremap <Leader>D "dymz"dP`z
 nnoremap <Leader>X mzkdd`z
 nnoremap <Leader>x mzjdd`z
 nnoremap <Leader><Backspace> mz$x`z:w<CR>
+nnoremap <Leader>~ ~hi
 
 nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
