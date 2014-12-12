@@ -6,6 +6,6 @@ function s() {
         return 1
     fi
     local SPLIT_COMMAND="$*"
-    tmux split-window -v "$SPLIT_COMMAND; sleep 2"
+    tmux split-window -v "($SPLIT_COMMAND && sleep 2) || sleep 300"
     tmux last-pane
 }
