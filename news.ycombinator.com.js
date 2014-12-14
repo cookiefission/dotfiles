@@ -14,4 +14,4 @@ if(window.location.pathname == '/'){
     css('padding', '25px')
 }
 
-$('a').attr('target', '_blank');
+newTab(['a']);

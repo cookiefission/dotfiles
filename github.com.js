@@ -1,1 +1,4 @@
-$('.repository-website a').attr('target', '_blank');
+newTab([
+    '.repository-website a',
+    '.author a'
+]);
