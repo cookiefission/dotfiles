@@ -95,6 +95,25 @@ public function get`!p snip.rv = ucfirst(t[1])`()
 }
 endsnippet
 
+snippet gsa
+/**
+ * @return self
+ */
+public function set`!p snip.rv = ucfirst(t[1])`(array \$$1)
+{
+	\$this->$1 = \$$1;
+	return \$this;
+}
+
+/**
+ * @return array
+ */
+public function get`!p snip.rv = ucfirst(t[1])`()
+{
+	return \$this->$1;
+}
+endsnippet
+
 snippet gso
 /**
  * @return self
