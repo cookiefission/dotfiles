@@ -253,7 +253,10 @@ set splitright
 ""
 " Codefolding
 ""
-set foldmethod=indent
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 set foldlevel=20 " Folds available but open
 
 ""
