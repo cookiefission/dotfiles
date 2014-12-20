@@ -51,6 +51,7 @@ Plugin 'sgur/ctrlp-extensions.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'junegunn/goyo.vim'
+Plugin 'mhinz/vim-startify'
 
 ""
 " Done setting up Vundle
@@ -131,6 +132,22 @@ autocmd FileType php let b:switch_custom_definitions =
     \   ['use', 'namespace'],
     \   ['time()', 'microtime(true)']
     \ ]
+
+""
+" vim-startify
+""
+let g:startify_custom_header = map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['']
+
+let g:startify_list_order = [
+      \ ['   MRU:'],
+      \ 'dir',
+      \ ['   MRU (all):'],
+      \ 'files' ,
+      \ ['   Sessions:'],
+      \ 'sessions',
+      \ ['   Bookmarks:'],
+      \ 'bookmarks',
+      \ ]
 
 ""
 " Colour settings
