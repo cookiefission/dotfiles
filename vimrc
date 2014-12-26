@@ -52,6 +52,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'jplaut/vim-arduino-ino'
 
 ""
 " Done setting up Vundle
@@ -148,6 +149,14 @@ let g:startify_list_order = [
       \ ['   Bookmarks:'],
       \ 'bookmarks',
       \ ]
+
+""
+" vim-arduino-ino
+""
+let g:vim_arduino_map_keys = 0
+command ArduinoCompile       call ArduinoCompile()
+command ArduinoDeploy        call ArduinoDeploy()
+command ArduinoSerialMonitor call ArduinoSerialMonitor()
 
 ""
 " Colour settings
