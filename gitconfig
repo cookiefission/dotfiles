@@ -9,6 +9,7 @@
 	exec = "!exec "
 	nuke = { git branch -D $1 && git push origin --delete $1 } _git_nuke
 	top-five = !git shortlog -sb | sort -r | head -n 5
+	ignored = ls-files --other --ignored --exclude-standard
 [push]
 	default = simple
 [color]
