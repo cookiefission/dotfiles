@@ -53,6 +53,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'jplaut/vim-arduino-ino'
+Plugin 'vim-scripts/Auto-Pairs'
 
 ""
 " Done setting up Vundle
