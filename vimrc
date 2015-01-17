@@ -160,6 +160,13 @@ command ArduinoDeploy        call ArduinoDeploy()
 command ArduinoSerialMonitor call ArduinoSerialMonitor()
 
 ""
+" synastic
+""
+" Syntastic is more annoying than useful for html files, given that 90% of the
+" time there is templating in there as well or partials
+let g:syntastic_ignore_files = ['\mhtml$']
+
+""
 " Colour settings
 ""
 set t_Co=256
