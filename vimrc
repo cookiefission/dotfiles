@@ -218,7 +218,7 @@ nnoremap <Leader>nl :set relativenumber!<CR>
 
 nnoremap <Leader>ga :Git add
 nnoremap <Leader>gb :Gblame<CR>
-vmap <Leader>gb :Gblame<CR>
+vmap     <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -a<CR>i
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gg :Gstatus<CR>
@@ -249,6 +249,8 @@ nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
 nnoremap <Leader>ag :Ag <C-r><C-w><CR>
+
+imap :w<CR> <Esc>:w<CR>
 
 cmap w!! w !sudo tee % >/dev/null
 
