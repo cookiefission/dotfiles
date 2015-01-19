@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
 # Add composer global bin to path
-export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # Homebrew
 export PATH=/usr/local/bin:$PATH
