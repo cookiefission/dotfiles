@@ -212,6 +212,7 @@ case "$OP" in
             git push "$@"
         fi
         ;;
+    psu) git push -u origin $(git rev-parse --abbrev-ref HEAD) ;;
     pl)
         if [ $# -eq 0 ]; then
             _git_pull
