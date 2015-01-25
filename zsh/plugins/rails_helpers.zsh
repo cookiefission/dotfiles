@@ -9,6 +9,16 @@ rmodel() {
     vim -O app/models/$model.rb spec/models/${model}_spec.rb
 }
 
+rctrl() {
+    local controller="$1"
+    if [[ -z "$controller" ]]; then
+        echo "No controller name provided"
+        return 1
+    fi
+    local controller="${controller}_controller"
+    vim -O app/controllers/$controller.rb spec/controllers/${controller}_spec.rb
+}
+
 rview() {
     local view="$1"
     if [[ -z "$view" ]]; then
