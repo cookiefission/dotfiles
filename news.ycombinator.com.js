@@ -14,4 +14,4 @@ if(window.location.pathname == '/'){
     css('padding', '25px')
 }
 
-newTab(['a']);
+newTab('td.title span.deadmark + a');
