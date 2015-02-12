@@ -7,3 +7,4 @@ alias lastchange='git diff-tree --no-commit-id --name-only -r HEAD | grep -v loc
 alias ochg='(cd groot && vim $(chg))'
 alias olast='(cd groot && vim $(lastchange))'
 alias last-tag="git tag --sort=v:refname | egrep '^[v]*\d+(?:\.\d+)*' | tail -n 1"
+alias glast='git show HEAD'
