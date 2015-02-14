@@ -175,8 +175,6 @@ colorscheme gotham256
 hi Comment ctermfg=yellow
 
 ""
-"  Mappings
-""
 let mapleader = "\<space>"
 let g:mapleader = "\<space>"
 
@@ -191,6 +189,7 @@ map <F8> :tabn<CR>
 map <Leader>pb :CtrlPBuffer<CR>
 map <Leader>pm :CtrlPMRUFiles<CR>
 map <Leader>pp :CtrlPMixed<CR>
+map <Leader>py :CtrlPYankring<CR>
 map <Leader>f :CtrlPLine<CR>
 
 nmap j gj
