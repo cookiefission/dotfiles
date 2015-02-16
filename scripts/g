@@ -228,14 +228,6 @@ case "$OP" in
             git clone "$@"
         fi
         ;;
-    wtf)
-        shift
-        if hash git-wtf 2>/dev/null; then
-            git-wtf "$@"
-        else
-            echo "git-wtf not installed from dotfiles"
-        fi
-        ;;
     *)
         git $OP "$@"
         ;;
