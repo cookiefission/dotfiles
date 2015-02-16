@@ -159,7 +159,6 @@ case "$OP" in
             git log "$@"
         fi
         ;;
-    r) git reset "$@" ;;
     s)
         if [ $# -eq 0 ]; then
             git stash
@@ -172,8 +171,6 @@ case "$OP" in
             esac
         fi
         ;;
-    st) git status "$@" ;;
-    li) git ls-files "$@" ;;
     m)
         if [ $# -eq 0 ]; then
             git merge -
@@ -187,7 +184,6 @@ case "$OP" in
             git merge "$@"
         fi
         ;;
-    br) git branch "$@" ;;
     ch)
         if [ $# -eq 0 ]; then
             git checkout -q -

@@ -14,8 +14,12 @@
 	theirs = checkout --theirs
 	a = add
 	b = blame
+	br = branch
 	c = commit
 	f = fetch
+    li = ls-files
+	r = reset
+	st = status
 [push]
 	default = simple
 [color]
