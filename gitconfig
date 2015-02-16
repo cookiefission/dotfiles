@@ -12,6 +12,10 @@
 	ignored = ls-files --other --ignored --exclude-standard
 	ours = checkout --ours
 	theirs = checkout --theirs
+	a = add
+	b = blame
+	c = commit
+	f = fetch
 [push]
 	default = simple
 [color]

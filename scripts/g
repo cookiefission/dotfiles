@@ -135,9 +135,6 @@ fi
 OP=$1
 shift
 case "$OP" in
-    a) git add "$@" ;;
-    b) git blame "$@" ;;
-    c) git commit "$@" ;;
     d)
         if [ $# -eq 0 ]; then
             git diff
@@ -153,7 +150,6 @@ case "$OP" in
             esac
         fi
         ;;
-    f) git fetch "$@" ;;
     l)
         if [ $# -eq 0 ]; then
             git log --pretty=format:'%C(220)%h %C(92)%ad %C(83)%an%Cgreen%d %Creset%s' --date=short -n 20
