@@ -54,6 +54,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'jplaut/vim-arduino-ino'
 Plugin 'vim-scripts/Auto-Pairs'
+Plugin 'AndrewRadev/linediff.vim'
 
 ""
 " Done setting up Vundle
