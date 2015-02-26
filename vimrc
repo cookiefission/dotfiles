@@ -56,6 +56,8 @@ Plugin 'jplaut/vim-arduino-ino'
 Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 ""
 " Done setting up Vundle
@@ -167,6 +169,16 @@ command ArduinoSerialMonitor call ArduinoSerialMonitor()
 " Syntastic is more annoying than useful for html files, given that 90% of the
 " time there is templating in there as well or partials
 let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$']
+
+""
+" vim-easytags
+""
+set tags=./tags;,~/.vimtags
+let g:easytags_events = ['BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
 
 ""
 " Colour settings
