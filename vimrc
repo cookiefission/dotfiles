@@ -55,6 +55,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'jplaut/vim-arduino-ino'
 Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'AndrewRadev/linediff.vim'
+Plugin 'majutsushi/tagbar'
 
 ""
 " Done setting up Vundle
@@ -191,6 +192,7 @@ map <Leader>pm :CtrlPMRUFiles<CR>
 map <Leader>pp :CtrlPMixed<CR>
 map <Leader>py :CtrlPYankring<CR>
 map <Leader>f :CtrlPLine<CR>
+map <silent> <leader>t :TagbarToggle<CR>
 
 nmap j gj
 nmap k gk
