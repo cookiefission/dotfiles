@@ -7,8 +7,6 @@
 [alias]
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	today = log --since=1am
-	exec = "!exec "
-	nuke = { git branch -D $1 && git push origin --delete $1 } _git_nuke
 	top-five = !git shortlog -sb | sort -r | head -n 5
 	ignored = ls-files --other --ignored --exclude-standard
 	conflicted = diff --name-only --diff-filter=U
@@ -19,7 +17,7 @@
 	br = branch
 	c = commit
 	f = fetch
-    li = ls-files
+	li = ls-files
 	r = reset
 	st = status
 [push]
