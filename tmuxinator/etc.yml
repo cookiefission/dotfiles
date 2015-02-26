@@ -5,4 +5,3 @@ windows:
     - dotfiles:
     - cheatsheet: cd ~/Documents/cheatsheet ; clear
     - misc: cd ~/Repositories/learning ; clear
-    - .js: cd ~/.js ; clear
