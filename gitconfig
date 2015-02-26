@@ -3,7 +3,7 @@
 	name = Sean Kenny
 [core]
 	excludesfile = /Users/sean/.gitignore.global
-	editor = vim -u NONE +\"syntax on\"
+	editor = vim -u ~/.vimrc.mini --noplugin
 [alias]
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	today = log --since=1am

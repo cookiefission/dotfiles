@@ -171,7 +171,6 @@ let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$']
 " Colour settings
 ""
 set t_Co=256
-" colorscheme peachpuff
 colorscheme gotham256
 hi Comment ctermfg=yellow
 
