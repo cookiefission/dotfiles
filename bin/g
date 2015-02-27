@@ -102,23 +102,6 @@ _prompt_pull() {
     pull="`git pull origin $branch 2>&1`"
 }
 
-_git_pull_recurse() {
-    local base_branch="`git rev-parse --abbrev-ref HEAD 2>&1`"
-    if ! [[ "$base_branch" =~ Not\ a\ git\ repo ]]; then
-        while true; do
-            read -p "You are currently in a git repository, are you sure you want to pull recursively? " bb
-            case "$bb" in
-                [Yy]*) break;;
-                [Nn]*) exit 1;;
-            esac
-        done
-    fi
-    for path in $(pwd)/*; do
-        [ -d "${path}" ] || continue
-        (cd ${path} && _prompt_pull)
-    done
-}
-
 _git_pull_merge() {
     branch=$1
     git checkout -q $branch
@@ -197,24 +180,7 @@ case "$OP" in
             git checkout -q "$@"
         fi
         ;;
-    ps)
-        if [ $# -eq 0 ]; then
-            git push origin $(git rev-parse --abbrev-ref HEAD)
-        else
-            git push "$@"
-        fi
-        ;;
-    pst) git push origin "$(git rev-parse --abbrev-ref HEAD)" --tags ;;
     psu) git push -u origin $(git rev-parse --abbrev-ref HEAD) ;;
-    pl)
-        if [ $# -eq 0 ]; then
-            _git_pull
-        elif [ $1 == "--recurse" ]; then
-            _git_pull_recurse
-        else
-            git pull "$@"
-        fi
-        ;;
     z) _fuzzy_git "$@" ;;
     clone)
         if [ $# -eq 0 ]; then

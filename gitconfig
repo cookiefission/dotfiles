@@ -18,6 +18,9 @@
 	c = commit
 	f = fetch
 	li = ls-files
+	pl = pull --rebase
+	ps = push
+	pst = push --tags
 	r = reset
 	st = status
 [push]
