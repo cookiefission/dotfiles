@@ -76,7 +76,7 @@ runtime macros/matchit.vim
 ""
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
-let g:ctrlp_root_markers = ['composer.json', 'Gemfile']
+let g:ctrlp_root_markers = ['composer.json', 'Gemfile', 'Vagrantfile']
 
 ""
 " vim-airline
