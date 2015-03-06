@@ -74,7 +74,7 @@ runtime macros/matchit.vim
 ""
 " CtrlP.vim
 ""
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
 let g:ctrlp_root_markers = ['composer.json', 'Gemfile', 'Vagrantfile']
 
