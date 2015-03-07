@@ -56,6 +56,7 @@ Plugin 'jplaut/vim-arduino-ino'
 Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'justinmk/vim-sneak'
+Plugin 'fatih/vim-go'
 
 ""
 " Done setting up Vundle
