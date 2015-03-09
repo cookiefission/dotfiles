@@ -55,7 +55,6 @@ Plugin 'mhinz/vim-startify'
 Plugin 'jplaut/vim-arduino-ino'
 Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'majutsushi/tagbar'
-Plugin 'justinmk/vim-sneak'
 Plugin 'fatih/vim-go'
 
 ""
@@ -176,105 +175,6 @@ let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$']
 set t_Co=256
 colorscheme gotham256
 hi Comment ctermfg=yellow
-
-""
-let mapleader = "\<space>"
-let g:mapleader = "\<space>"
-
-nnoremap Y y$
-nnoremap <CR><CR> :noh<CR>
-map <Leader>== mmgg=G:w<CR>'mzz
-
-nnoremap <Leader>] :call NextTabOrBuffer()<CR>
-nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
-map <F7> :tabp<CR>
-map <F8> :tabn<CR>
-map <Leader>pb :CtrlPBuffer<CR>
-map <Leader>pm :CtrlPMRUFiles<CR>
-map <Leader>pp :CtrlPMixed<CR>
-map <Leader>py :CtrlPYankring<CR>
-map <Leader>f :CtrlPLine<CR>
-map <silent> <leader>t :TagbarToggle<CR>
-
-nmap j gj
-nmap k gk
-
-nnoremap <Leader>vi :tabe $MYVIMRC<CR>
-nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
-
-nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
-nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
-nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
-nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
-
-nnoremap <Leader>qp :tabclose<CR>
-nnoremap <Leader>qq :bdelete<CR>
-nnoremap <Leader>mt :call MergeTabs()<CR>
-nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
-
-nnoremap <Leader>sv :vsplit<space>
-nnoremap <Leader>sh :split<space>
-
-nnoremap <Leader>li :set list!<CR>
-nnoremap <Leader>wr :set wrap!<CR>
-nnoremap <Leader>nl :set relativenumber!<CR>
-
-nnoremap <Leader>ga :Git add
-nnoremap <Leader>gb :Gblame<CR>
-vmap     <Leader>gb :Gblame<CR>
-nnoremap <Leader>gc :Gcommit -a<CR>i
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gg :Gstatus<CR>
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>git :Git
-
-nnoremap <Leader>- :Switch<CR>
-nnoremap <Leader>< :SidewaysLeft<CR>
-nnoremap <Leader>> :SidewaysRight<CR>
-
-nnoremap <Leader>cw ^cw
-nnoremap <Leader>, A,<CR>
-nnoremap <Leader>; A;<CR>
-nnoremap <Leader>d; ddkA;<esc>
-nnoremap <Leader>d, ddk$x
-nnoremap <Leader>a; mzA;<Esc>`z:w<CR>
-nnoremap <Leader>a, mzA,<Esc>`z:w<CR>
-nnoremap <Leader>D mz"dyy"dp`zj
-vnoremap <Leader>D "dymz"dP`z
-nnoremap <Leader>X mzkdd`z
-nnoremap <Leader>x mzjdd`z
-nnoremap <Leader><Backspace> mz$x`z:w<CR>
-nnoremap <Leader>~ ~hi
-
-nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
-nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
-nnoremap <Leader>s% :%s///c<Left><Left><Left>
-nnoremap <Leader>g<space> :g/<C-r><C-w>/
-
-nnoremap <Leader>ag :Ag <C-r><C-w><CR>
-
-imap :w<CR> <Esc>:w<CR>
-
-cmap w!! w !sudo tee % >/dev/null
-
-augroup php
-  autocmd!
-  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
-  autocmd FileType php map <Leader>php :!php %<CR>
-  autocmd FileType php map <Leader>cj :ComposerJson<CR>
-  autocmd FileType php map <Leader>cu :ComposerUpdate<CR>
-  autocmd FileType php map <Leader>ci :ComposerInstall<CR>
-augroup END
-
-""
-" Auto centering
-""
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
-nnoremap <silent> g* g*zz
-nnoremap <silent> g# g#zz
 
 ""
 " Goto last location in non-empty files and centre it
@@ -410,6 +310,115 @@ set list
 ""
 autocmd BufWritePre *.* :%s/\s\+$//e
 
+""
+" Mappings
+""
+let mapleader = "\<space>"
+let g:mapleader = "\<space>"
+
+nnoremap Y y$
+nnoremap <CR><CR> :noh<CR>
+map <Leader>== mmgg=G:w<CR>'mzz
+
+nnoremap <Leader>] :call NextTabOrBuffer()<CR>
+nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
+map <F7> :tabp<CR>
+map <F8> :tabn<CR>
+map <Leader>pb :CtrlPBuffer<CR>
+map <Leader>pm :CtrlPMRUFiles<CR>
+map <Leader>pp :CtrlPMixed<CR>
+map <Leader>py :CtrlPYankring<CR>
+map <Leader>f :CtrlPLine<CR>
+map <silent> <leader>t :TagbarToggle<CR>
+
+nmap j gj
+nmap k gk
+
+nnoremap <Leader>vi :tabe $MYVIMRC<CR>
+nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
+
+nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
+nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
+nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
+nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
+
+nnoremap <Leader>qp :tabclose<CR>
+nnoremap <Leader>qq :bdelete<CR>
+nnoremap <Leader>mt :call MergeTabs()<CR>
+nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
+
+nnoremap <Leader>sv :vsplit<space>
+nnoremap <Leader>sh :split<space>
+
+nnoremap <Leader>li :set list!<CR>
+nnoremap <Leader>wr :set wrap!<CR>
+nnoremap <Leader>nl :set relativenumber!<CR>
+
+nnoremap <Leader>ga :Git add
+nnoremap <Leader>gb :Gblame<CR>
+vmap     <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit -a<CR>i
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gg :Gstatus<CR>
+nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>git :Git
+
+nnoremap <Leader>- :Switch<CR>
+nnoremap <Leader>< :SidewaysLeft<CR>
+nnoremap <Leader>> :SidewaysRight<CR>
+
+nnoremap <Leader>cw ^cw
+nnoremap <Leader>, A,<CR>
+nnoremap <Leader>; A;<CR>
+nnoremap <Leader>d; ddkA;<esc>
+nnoremap <Leader>d, ddk$x
+nnoremap <Leader>a; mzA;<Esc>`z:w<CR>
+nnoremap <Leader>a, mzA,<Esc>`z:w<CR>
+nnoremap <Leader>D mz"dyy"dp`zj
+vnoremap <Leader>D "dymz"dP`z
+nnoremap <Leader>X mzkdd`z
+nnoremap <Leader>x mzjdd`z
+nnoremap <Leader><Backspace> mz$x`z:w<CR>
+nnoremap <Leader>~ ~hi
+
+nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
+nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
+nnoremap <Leader>s% :%s///c<Left><Left><Left>
+nnoremap <Leader>g<space> :g/<C-r><C-w>/
+
+nnoremap <Leader>ag :Ag <C-r><C-w><CR>
+
+imap :w<CR> <Esc>:w<CR>
+
+cmap w!! w !sudo tee % >/dev/null
+
+""
+" Auto centering
+""
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
+""
+" Filetype specific
+""
+augroup php
+  autocmd!
+  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
+  autocmd FileType php map <Leader>php :!php %<CR>
+  autocmd FileType php map <Leader>cj :ComposerJson<CR>
+  autocmd FileType php map <Leader>cu :ComposerUpdate<CR>
+  autocmd FileType php map <Leader>ci :ComposerInstall<CR>
+augroup END
+
+
+augroup go
+  autocmd!
+  autocmd Filetype go set nolist
+augroup END
 ""
 " Return the syntax highlight group under the cursor
 ""
