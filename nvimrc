@@ -1,4 +1,4 @@
-" Bare minimum for git commits
+" Minimal vim config for git commits and servers
 syntax on
 
 set showmode
@@ -13,3 +13,5 @@ hi Comment ctermfg=yellow
 
 set cul
 hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE
+
+command NoNum set nonu norelativenumber
