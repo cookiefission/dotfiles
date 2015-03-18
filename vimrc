@@ -298,6 +298,7 @@ hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE
 ""
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('Error', '\%121v', 100)
 
 ""
 " List chars
