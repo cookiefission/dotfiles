@@ -390,6 +390,8 @@ nnoremap <Leader>g<space> :g/<C-r><C-w>/
 nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 
 imap :w<CR> <Esc>:w<CR>
+imap <C-a> <C-o>^
+imap <C-e> <C-o>$
 
 cmap w!! w !sudo tee % >/dev/null
 
