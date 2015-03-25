@@ -168,7 +168,7 @@ command ArduinoSerialMonitor call ArduinoSerialMonitor()
 ""
 " Syntastic is more annoying than useful for html files, given that 90% of the
 " time there is templating in there as well or partials
-let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$']
+let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$', '\mhbs$']
 
 ""
 " Colour settings
@@ -269,6 +269,7 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html.handlebars setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
