@@ -1,8 +1,10 @@
 #!/bin/bash
 
-set -e
+set -e -o pipefail
 
-CURRENT_TAG="`git tag --sort=v:refname 2>&1 | egrep '^[v]*\d+(?:\.\d+)*' | tail -n 1`"
+echo "Work in progress"
+
+CURRENT_TAG="`git tag --sort=v:refname | egrep '^[v]*\d+(?:\.\d+)*' | tail -n 1`"
 
 if [ -z "$CURRENT_TAG" ]; then
     echo "Not at git repository or no semver tag found"
