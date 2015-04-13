@@ -336,6 +336,8 @@ map <silent> <leader>t :TagbarToggle<CR>
 nmap j gj
 nmap k gk
 
+omap p i)
+
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 

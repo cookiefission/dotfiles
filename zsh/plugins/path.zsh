@@ -12,6 +12,7 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$HOME/bin:$PATH
 
 # Homebrew
+export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # MacPorts
