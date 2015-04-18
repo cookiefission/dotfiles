@@ -1,4 +1,4 @@
 #!/bin/zsh
 
 alias 'vim$'='vim $_'
-alias vm=vim
+alias 'vim!'='vim `$(fc -ln -1)`'
