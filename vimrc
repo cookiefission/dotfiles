@@ -338,6 +338,11 @@ nmap k gk
 
 omap p i)
 
+cmap Qa qa
+cmap Wqa wqa
+cmap Wq wq
+cmap W w
+
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 
