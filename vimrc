@@ -382,8 +382,11 @@ nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>d, ddk$x
 nnoremap <Leader>a; mzA;<Esc>`z:w<CR>
 nnoremap <Leader>a, mzA,<Esc>`z:w<CR>
-nnoremap <Leader>D mz"dyy"dp`zj
-vnoremap <Leader>D "dymz"dP`z
+
+nnoremap <Leader><Up> mz"dyy"dp`z
+nnoremap <Leader><Down> mz"dyy"dp`zj
+vnoremap <Leader><Down> "dymz"dP`z
+
 nnoremap <Leader>X mzkdd`z
 nnoremap <Leader>x mzjdd`z
 nnoremap <Leader><Backspace> mz$x`z:w<CR>
