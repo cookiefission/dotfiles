@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git tag --sort=v:refname |
+egrep '^[v]*\d+(?:\.\d+)*' |
+tail -n 1
