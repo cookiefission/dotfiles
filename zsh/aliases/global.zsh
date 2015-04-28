@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-alias -g JSON='| python -m json.tool'
+alias -g JSON='| jq "."'
 alias -g XML='| xmllint --format -'
 alias -g G='| grep'
 alias -g P='>&2'
