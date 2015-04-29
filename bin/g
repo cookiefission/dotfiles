@@ -135,7 +135,7 @@ case "$OP" in
         ;;
     l)
         if [ $# -eq 0 ]; then
-            git log --pretty=format:'%C(220)%h %C(92)%ad %C(83)%an%Cgreen%d %Creset%s' --date=short -n 20
+            git log --pretty=format:'%C(220)%h %C(92)%ad %C(83)%an%Cgreen%d %Creset%s' --date=short
         elif [ $1 == "--last" ]; then
             _git_log_last
         else
