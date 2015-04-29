@@ -4,3 +4,4 @@ Session.vim
 .idea/
 *.deb
 *.tar*
+.zaw_dir_bookmarks
