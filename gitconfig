@@ -24,6 +24,7 @@
 	pst = push --tags
 	r = reset
 	st = status
+	aliases = config --get-regexp '^alias\\.'
 [push]
 	default = simple
 [color]
