@@ -1,4 +1,6 @@
 #!/bin/zsh
 
-source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--reverse +i"
+if [ -f $HOME/.fzf.zsh ]; then
+    source $HOME/.fzf.zsh
+    export FZF_DEFAULT_OPTS="--reverse +i"
+fi

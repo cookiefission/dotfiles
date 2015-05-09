@@ -17,3 +17,6 @@ export PATH=/usr/local/bin:$PATH
 
 # MacPorts
 export PATH=/opt/local/bin:$PATH
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin"
