@@ -21,6 +21,7 @@
 	li = ls-files
 	pl = pull --rebase
 	ps = push
+	ls = ls-files
 	pst = push --tags
 	r = reset
 	st = status
