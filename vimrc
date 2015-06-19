@@ -28,7 +28,6 @@ Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-tbone'
 Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -97,11 +96,6 @@ let g:tmuxline_preset = {
       \'x'    : ['📝  #(~/bin/todo --count)', '#(~/bin/is_plugged_in && echo ⛽️  || echo 🔋  )  #(~/bin/battery_status)'],
       \'y'    : ['%R', '%a %d ', '%Y'],
       \'z'    : '#H'}
-""
-" NERDTree
-""
-let NERDTreeShowLineNumbers=1
-map <C-n> :NERDTreeToggle<CR>
 
 ""
 " UltiSnips
