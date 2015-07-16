@@ -332,9 +332,11 @@ nmap k gk
 
 omap p i)
 
-cmap Qa qa
-cmap Wqa wqa
-cmap Wq wq
+command! Qa qa
+command! Wqa wqa
+command! Wq wq
+command! W w
+command! Q q
 
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
