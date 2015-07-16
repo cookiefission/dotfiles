@@ -25,6 +25,7 @@
 	pst = push --tags
 	r = reset
 	st = status
+	last = show HEAD
 	aliases = config --get-regexp '^alias\\.'
 [push]
 	default = simple
