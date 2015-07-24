@@ -1,7 +1,5 @@
 .netrwhist
 tmp/*
 *.pyc
-UltiSnips/modula2.snippets
-UltiSnips/markdown_work.snippets
-UltiSnips/php_work.snippets
+UltiSnips/*_work.snippets
 bundle/*
