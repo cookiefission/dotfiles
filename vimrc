@@ -154,9 +154,9 @@ let g:startify_list_order = [
 " vim-arduino-ino
 ""
 let g:vim_arduino_map_keys = 0
-command ArduinoCompile       call ArduinoCompile()
-command ArduinoDeploy        call ArduinoDeploy()
-command ArduinoSerialMonitor call ArduinoSerialMonitor()
+command! ArduinoCompile       call ArduinoCompile()
+command! ArduinoDeploy        call ArduinoDeploy()
+command! ArduinoSerialMonitor call ArduinoSerialMonitor()
 
 ""
 " synastic
@@ -260,7 +260,7 @@ set autoindent
 " Filetype Specific
 ""
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html.handlebars setlocal shiftwidth=2 tabstop=2 softtabstop=2
