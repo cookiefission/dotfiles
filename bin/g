@@ -28,6 +28,10 @@ _fuzzy_show() {
     commit=$(_fuzzy_commit) && git show $commit
 }
 
+_fuzzy_open_commit() {
+    commit=$(_fuzzy_commit) && vim $(git diff-tree --no-commit-id --name-only -r $commit | grep -v lock)
+}
+
 _short_clone() {
     local git_hosts="GitHub BitBucket"
     local git_suffix='.git'
@@ -49,7 +53,7 @@ _short_clone() {
 
 _fuzzy_git() {
     PS3="g> "
-    local git_options="show clone"
+    local git_options="show clone open_commit"
 
     select cmd in $git_options; do
         case $cmd in
@@ -59,6 +63,10 @@ _fuzzy_git() {
                 ;;
             "clone")
                 _short_clone
+                exit 0
+                ;;
+            "open_commit")
+                _fuzzy_open_commit
                 exit 0
                 ;;
             *)
