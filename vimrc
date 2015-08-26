@@ -38,7 +38,6 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
@@ -76,7 +75,7 @@ runtime macros/matchit.vim
 ""
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
-let g:ctrlp_root_markers = ['composer.json', 'Gemfile', 'Vagrantfile']
+let g:ctrlp_root_markers = ['Gemfile', 'Vagrantfile']
 
 ""
 " vim-airline
@@ -124,14 +123,6 @@ let g:switch_custom_definitions =
     \     '\<\(\l\)\(\l\+\(\u\l\+\)\+\)\>': '\=toupper(submatch(1)) . submatch(2)',
     \     '\<\(\u\l\+\)\(\u\l\+\)\+\>': '\=tolower(submatch(1)) . submatch(2)',
     \   }
-    \ ]
-
-autocmd FileType php let b:switch_custom_definitions =
-    \ [
-    \   ['public', 'protected'],
-    \   ['var_dump', 'print_r'],
-    \   ['use', 'namespace'],
-    \   ['time()', 'microtime(true)']
     \ ]
 
 ""
@@ -268,7 +259,6 @@ autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd BufRead composer.lock set filetype=json
 
 ""
 " Set up .swp files to ~/.vim/tmp
@@ -358,7 +348,7 @@ nnoremap <Leader>li :set list!<CR>
 nnoremap <Leader>wr :set wrap!<CR>
 nnoremap <Leader>nl :set relativenumber!<CR>
 
-nnoremap <Leader>ga :Git add
+nnoremap <Leader>ga :Git add<space>
 nnoremap <Leader>gb :Gblame<CR>
 vmap     <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -a<CR>i
@@ -373,10 +363,7 @@ nnoremap <Leader>> :SidewaysRight<CR>
 
 nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
-nnoremap <Leader>; A;<CR>
-nnoremap <Leader>d; ddkA;<esc>
 nnoremap <Leader>d, ddk$x
-nnoremap <Leader>a; mzA;<Esc>`z:w<CR>
 nnoremap <Leader>a, mzA,<Esc>`z:w<CR>
 
 nnoremap <Leader><Up> mz"dyy"dp`z
@@ -414,16 +401,6 @@ nnoremap <silent> g# g#zz
 ""
 " Filetype specific
 ""
-augroup php
-  autocmd!
-  autocmd FileType php map <Leader>pu :!vendor/bin/phpunit<CR>
-  autocmd FileType php map <Leader>php :!php %<CR>
-  autocmd FileType php map <Leader>cj :ComposerJson<CR>
-  autocmd FileType php map <Leader>cu :ComposerUpdate<CR>
-  autocmd FileType php map <Leader>ci :ComposerInstall<CR>
-augroup END
-
-
 augroup go
   autocmd!
   autocmd Filetype go set nolist
