@@ -5,9 +5,6 @@ export GOPATH=/Users/sean/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # Composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
@@ -17,3 +14,9 @@ export PATH=$HOME/.bin:$PATH
 # Homebrew
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+
+# MacPorts
+export PATH=/opt/local/bin:$PATH
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin"
