@@ -1,2 +1,1 @@
-DOTFILES_DIRS="/Users/sean/Documents/dotfiles"
 SYMLINK_DIRS="vim zsh bash tmux*"
