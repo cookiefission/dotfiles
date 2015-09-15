@@ -9,7 +9,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # Home
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.bin:$PATH
 
 # Homebrew
 export PATH=/usr/local/sbin:$PATH
