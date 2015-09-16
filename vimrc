@@ -305,6 +305,7 @@ let g:mapleader = "\<space>"
 
 nnoremap Y y$
 map <Leader>== mmgg=G:w<CR>'mzz
+map <Leader>bo :BufOnly<CR>
 
 nnoremap <Leader>] :call NextTabOrBuffer()<CR>
 nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
