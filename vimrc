@@ -330,6 +330,8 @@ command! Wq wq
 command! W w
 command! Q q
 
+command! Irb silent !tmux split-window -p 25 irb
+
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 
