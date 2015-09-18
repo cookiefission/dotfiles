@@ -3,7 +3,7 @@
 source $HOME/.fzf.bash
 
 _git_status() {
-    git status
+    git status -s
 }
 
 _git_log_last() {
@@ -143,7 +143,7 @@ case "$OP" in
         ;;
     l)
         if [ $# -eq 0 ]; then
-            git log --pretty=format:'%C(220)%h %C(92)%ad %C(83)%an%Cgreen%d %Creset%s' --date=short
+            git log --oneline --decorate --all --graph
         elif [ $1 == "--last" ]; then
             _git_log_last
         else

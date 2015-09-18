@@ -27,9 +27,12 @@
 	st = status
 	last = show HEAD
 	aliases = config --get-regexp '^alias\\.'
+	lg = log --oneline --decorate --all --graph
 [push]
 	default = simple
 [color]
 	ui = true
 [pull]
 	rebase = true
+[rerere]
+	enabled = true
