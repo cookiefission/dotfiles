@@ -31,3 +31,5 @@
 	default = simple
 [color]
 	ui = true
+[pull]
+	rebase = true
