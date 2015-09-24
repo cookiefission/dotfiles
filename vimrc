@@ -331,6 +331,7 @@ command! W w
 command! Q q
 
 command! Irb silent !tmux split-window -p 25 irb
+command! Bc silent !tmux split-window -p 25 "echo Calculator; bc -sq"
 
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
