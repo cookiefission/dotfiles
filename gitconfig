@@ -16,7 +16,7 @@
 	a = add
 	b = blame
 	br = branch
-	c = commit
+	c = commit --verbose
 	f = fetch
 	li = ls-files
 	pl = pull --rebase
