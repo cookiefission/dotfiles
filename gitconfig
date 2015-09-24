@@ -28,6 +28,7 @@
 	last = show HEAD
 	aliases = config --get-regexp '^alias\\.'
 	lg = log --oneline --decorate --all --graph
+    rb = rebase
 [push]
 	default = simple
 [color]
