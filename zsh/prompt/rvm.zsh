@@ -5,5 +5,5 @@ function rvm_prompt_info() {
     local rvm_prompt
     rvm_prompt=$($HOME/.rvm/bin/rvm-prompt 2>/dev/null)
     [[ "${rvm_prompt}x" == "x"  ]] && return 1
-    echo "%F{1}${rvm_prompt}%f | "
+    echo " | %F{1}${rvm_prompt}%f"
 }
