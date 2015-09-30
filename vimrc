@@ -28,6 +28,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-tbone'
+Plugin 'tpope/vim-rsi'
 Plugin 'scrooloose/syntastic'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AndrewRadev/sideways.vim'
@@ -388,8 +389,6 @@ nnoremap <Leader>g<space> :g/<C-r><C-w>/
 nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 
 imap :w<CR> <Esc>:w<CR>
-imap <C-a> <C-o>^
-imap <C-e> <C-o>$
 
 cmap w!! w !sudo tee % >/dev/null
 
