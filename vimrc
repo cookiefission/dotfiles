@@ -127,6 +127,11 @@ let g:switch_custom_definitions =
       \   }
       \ ]
 
+autocmd FileType ruby let g:switch_custom_definitions =
+      \ [
+      \   ['extend', 'include']
+      \]
+
 ""
 " vim-startify
 ""
