@@ -120,12 +120,12 @@ let g:goyo_width = 110
 " switch.vim
 ""
 let g:switch_custom_definitions =
-    \ [
-    \   {
-    \     '\<\(\l\)\(\l\+\(\u\l\+\)\+\)\>': '\=toupper(submatch(1)) . submatch(2)',
-    \     '\<\(\u\l\+\)\(\u\l\+\)\+\>': '\=tolower(submatch(1)) . submatch(2)',
-    \   }
-    \ ]
+      \ [
+      \   {
+      \     '\<\(\l\)\(\l\+\(\u\l\+\)\+\)\>': '\=toupper(submatch(1)) . submatch(2)',
+      \     '\<\(\u\l\+\)\(\u\l\+\)\+\>': '\=tolower(submatch(1)) . submatch(2)',
+      \   }
+      \ ]
 
 ""
 " vim-startify
@@ -169,8 +169,8 @@ hi Comment ctermfg=yellow
 " Goto last location in non-empty files and centre it
 ""
 autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
-                   \|     exe "normal! g`\"zz"
-                   \|  endif
+      \|     exe "normal! g`\"zz"
+      \|  endif
 
 ""
 " More Natural Splits
@@ -393,6 +393,13 @@ imap :w<CR> <Esc>:w<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 ""
+" Jump to end of pasted text
+""
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+""
 " Auto centering
 ""
 nnoremap <silent> n nzz
@@ -413,12 +420,12 @@ augroup END
 " Return the syntax highlight group under the cursor
 ""
 function! CurrentHighlight()
-    let name = synIDattr(synID(line('.'),col('.'),1),'name')
-    if name == ''
-        echo ''
-    else
-        echo '[' . name . ']'
-    endif
+  let name = synIDattr(synID(line('.'),col('.'),1),'name')
+  if name == ''
+    echo ''
+  else
+    echo '[' . name . ']'
+  endif
 endfunction
 
 ""
@@ -457,3 +464,16 @@ function! PreviousTabOrBuffer()
     tabprevious
   endif
 endfunction
+
+""
+" Don't Overwrite Register on vp
+""
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
