@@ -77,7 +77,7 @@ runtime macros/matchit.vim
 ""
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
-let g:ctrlp_root_markers = ['Gemfile', 'Vagrantfile']
+let g:ctrlp_root_markers = ['Gemfile']
 
 ""
 " vim-airline
@@ -395,6 +395,8 @@ nnoremap <Leader>g<space> :g/<C-r><C-w>/
 nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 
 imap :w<CR> <Esc>:w<CR>
+inoremap <Esc> <Nop>
+inoremap jj <Esc>
 
 cmap w!! w !sudo tee % >/dev/null
 
