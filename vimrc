@@ -331,6 +331,7 @@ nmap k gk
 
 omap p i)
 
+cmap w!! w !sudo tee % >/dev/null
 command! Qa qa
 command! Wqa wqa
 command! Wq wq
@@ -394,11 +395,11 @@ nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
 nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 
-imap :w<CR> <Esc>:w<CR>
+nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
+
+inoremap :w<CR> <Esc>:w<CR>
 inoremap <Esc> <Nop>
 inoremap jk <Esc>
-
-cmap w!! w !sudo tee % >/dev/null
 
 ""
 " Jump to end of pasted text
