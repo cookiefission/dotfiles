@@ -396,7 +396,7 @@ nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 
 imap :w<CR> <Esc>:w<CR>
 inoremap <Esc> <Nop>
-inoremap jj <Esc>
+inoremap jk <Esc>
 
 cmap w!! w !sudo tee % >/dev/null
 
