@@ -398,6 +398,7 @@ nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
 
 inoremap :w<CR> <Esc>:w<CR>
+inoremap :wq<CR> <Esc>:wq<CR>
 inoremap <Esc> <Nop>
 inoremap jk <Esc>
 
