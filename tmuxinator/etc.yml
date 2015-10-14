@@ -1,7 +1,6 @@
 name: etc
-root: ~/Documents/dotfiles
+root: ~/.dotfiles
 
 windows:
     - dotfiles:
     - cheatsheet: cd ~/Documents/cheatsheet ; clear
-    - misc: cd ~/Repositories/learning ; clear
