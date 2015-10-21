@@ -6,3 +6,4 @@ alias -s xml=vim
 alias -s rb=vim
 alias -s log='tail -f'
 alias -s md=atom
+alias -s git="git clone"
