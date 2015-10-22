@@ -9,11 +9,17 @@ z() {
     cd "$HOME/$zdir"
 }
 
+list_dirs() {
+    for dir in *; do
+        if [ -d "$dir" ]; then
+            echo "$dir/"
+        fi
+    done
+}
+
 zd() {
     local dir
-    dir=$(find ${1:-*} -path '*/\.*' -prune \
-        -o -type d -print 2> /dev/null | fzf +m --select-1 --query="$@") &&
-        cd "$dir"
+    dir=$(list_dirs | fzf +m --select-1 --query="$@") && cd "$dir"
 }
 
 mkcd() {
