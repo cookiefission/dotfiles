@@ -5,3 +5,4 @@ Session.vim
 *.deb
 *.tar*
 .zaw_dir_bookmarks
+.notes.md
