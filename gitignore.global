@@ -6,3 +6,4 @@ Session.vim
 *.tar*
 .zaw_dir_bookmarks
 .notes.md
+.notes/
