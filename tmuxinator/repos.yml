@@ -1,7 +1,0 @@
-# ~/.tmuxinator/repositories.yml
-
-name: repositories
-root: ~/Repositories
-
-windows:
-    - repo: ls

@@ -1,0 +1,7 @@
+# ~/.tmuxinator/code.yml
+
+name: code
+root: ~/Code
+
+windows:
+    - code: ls
