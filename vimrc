@@ -30,6 +30,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-rsi'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/NERDTree'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -58,6 +59,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'wikitopian/hardmode'
 
 ""
 " Done setting up Vundle
