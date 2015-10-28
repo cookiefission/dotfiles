@@ -330,6 +330,7 @@ map <silent> <leader>t :TagbarToggle<CR>
 
 nmap j gj
 nmap k gk
+nmap <Tab> %
 
 omap p i)
 
