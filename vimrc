@@ -128,6 +128,18 @@ autocmd FileType ruby let g:switch_custom_definitions =
       \   {
       \     'RSpec\.describe \(\w\+\) do': 'RSpec.describe \1, focus: true do',
       \     'RSpec\.describe \(\w\+\), focus: true do': 'RSpec.describe \1 do'
+      \   },
+      \   {
+      \     'it \(.\+\) do': 'it \1, focus: true do',
+      \     'it \(.\+\), focus: true do': 'it \1 do'
+      \   },
+      \   {
+      \     'context \(.\+\) do': 'context \1, focus: true do',
+      \     'context \(.\+\), focus: true do': 'context \1 do'
+      \   },
+      \   {
+      \     'describe \(.\+\) do': 'describe \1, focus: true do',
+      \     'describe \(.\+\), focus: true do': 'describe \1 do'
       \   }
       \]
 
