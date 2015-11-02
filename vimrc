@@ -36,6 +36,8 @@ Plugin 'AndrewRadev/sideways.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'vim-scripts/UltiSnips'
 Plugin 'vim-scripts/Auto-Pairs'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -58,7 +60,6 @@ Plugin 'jplaut/vim-arduino-ino'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'wikitopian/hardmode'
 
 ""
@@ -376,6 +377,9 @@ nnoremap <Leader>git :Git
 nnoremap <Leader>- :Switch<CR>
 nnoremap <Leader>< :SidewaysLeft<CR>
 nnoremap <Leader>> :SidewaysRight<CR>
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
