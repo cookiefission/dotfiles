@@ -122,17 +122,13 @@ let g:goyo_width = 110
 ""
 " switch.vim
 ""
-let g:switch_custom_definitions =
-      \ [
-      \   {
-      \     '\<\(\l\)\(\l\+\(\u\l\+\)\+\)\>': '\=toupper(submatch(1)) . submatch(2)',
-      \     '\<\(\u\l\+\)\(\u\l\+\)\+\>': '\=tolower(submatch(1)) . submatch(2)',
-      \   }
-      \ ]
-
 autocmd FileType ruby let g:switch_custom_definitions =
       \ [
-      \   ['extend', 'include']
+      \   ['extend', 'include'],
+      \   {
+      \     'RSpec\.describe \(\w\+\) do': 'RSpec.describe \1, focus: true do',
+      \     'RSpec\.describe \(\w\+\), focus: true do': 'RSpec.describe \1 do'
+      \   }
       \]
 
 ""
