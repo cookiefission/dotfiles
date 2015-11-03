@@ -9,13 +9,18 @@ open 'https://www.iterm2.com'
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Misx osx config
+# Dock
+## Add stack of recent applications
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1;  }; "tile-type" = "recents-tile";  }'
+killall Dock
 
+# Finder
 ## Show path in Finder
 defaults write com.apple.finder ShowPathbar -bool true
 
 ## Don't write .DS_Store on USBs
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Misx osx config
 ## Set high key repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0.02
