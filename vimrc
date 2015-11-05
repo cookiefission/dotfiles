@@ -269,7 +269,7 @@ set autoindent
 " Filetype Specific
 ""
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html.handlebars setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -295,7 +295,8 @@ endif
 ""
 " Cursorline Settings
 ""
-set cul
+set cursorline
+set cursorcolumn
 hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE
 
 ""
