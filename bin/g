@@ -2,8 +2,14 @@
 
 source $HOME/.fzf.bash
 
+if command -v hub >/dev/null 2>&1; then
+    GIT_COMMAND=hub
+else
+    GIT_COMMAND=git
+fi
+
 _git_status() {
-    git status -s
+    $GIT_COMMAND status -s
 }
 
 _git_log_last() {
@@ -199,6 +205,6 @@ case "$OP" in
         fi
         ;;
     *)
-        git $OP "$@"
+        $GIT_COMMAND $OP "$@"
         ;;
 esac
