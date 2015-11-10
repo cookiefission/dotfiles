@@ -38,25 +38,6 @@ _fuzzy_open_commit() {
     commit=$(_fuzzy_commit) && vim $(git diff-tree --no-commit-id --name-only -r $commit | grep -v lock)
 }
 
-_short_clone() {
-    local git_hosts="GitHub BitBucket"
-    local git_suffix='.git'
-
-    select host in $git_hosts; do
-        case $host in
-            "GitHub")
-                local selected_host='git@github.com:'
-                break ;;
-            'BitBucket')
-                local selected_host='git@bitbucket.org:'
-                break ;;
-        esac
-    done
-    read -p "Repository: " repo
-    local repo_url="${selected_host}${repo}${git_suffix}"
-    git clone $repo_url
-}
-
 _fuzzy_git() {
     PS3="g> "
     local git_options="show clone open_commit"
@@ -196,14 +177,6 @@ case "$OP" in
         ;;
     psu) git push -u origin $(git rev-parse --abbrev-ref HEAD) ;;
     z) _fuzzy_git "$@" ;;
-    clone)
-        if [ $# -eq 0 ]; then
-            PS3="g> "
-            _short_clone
-        else
-            git clone "$@"
-        fi
-        ;;
     *)
         $GIT_COMMAND $OP "$@"
         ;;
