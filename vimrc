@@ -26,6 +26,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-unimpaired'
@@ -242,30 +243,6 @@ set smartcase
 " Replace
 ""
 set gdefault
-
-""
-" Indentation
-""
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set autoindent
-
-""
-" Filetype Specific
-""
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html.handlebars setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 ""
 " Set up .swp files to ~/.vim/tmp
