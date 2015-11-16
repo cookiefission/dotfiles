@@ -33,21 +33,16 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/NERDTree'
 Plugin 'AndrewRadev/switch.vim'
-Plugin 'AndrewRadev/sideways.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'vim-scripts/UltiSnips'
 Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'terryma/vim-expand-region'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'rking/ag.vim'
-Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'elzr/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
@@ -55,13 +50,9 @@ Plugin 'whatyouhide/vim-gotham'
 Plugin 'godlygeek/tabular'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'sgur/ctrlp-extensions.vim'
-Plugin 'junegunn/goyo.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'jplaut/vim-arduino-ino'
-Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'wikitopian/hardmode'
 
 ""
 " Done setting up Vundle
@@ -114,11 +105,6 @@ let g:UltiSnipsEditSplit="vertical"
 " vim-json
 ""
 let g:vim_json_warnings=0
-
-""
-" goyo.vim
-""
-let g:goyo_width = 110
 
 ""
 " switch.vim
@@ -301,7 +287,6 @@ map <Leader>pm :CtrlPMRUFiles<CR>
 map <Leader>pp :CtrlPMixed<CR>
 map <Leader>py :CtrlPYankring<CR>
 map <Leader>f :CtrlPLine<CR>
-map <silent> <leader>t :TagbarToggle<CR>
 
 nmap j gj
 nmap k gk
@@ -322,38 +307,14 @@ command! Bc silent !tmux split-window -p 25 "echo Calculator; bc -sq"
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 
-nnoremap <Leader>db :tabe ~/Dropbox/work/debugging_log.md<CR>
-nnoremap <Leader>sc :execute 'tabe /tmp/scratch.' . &filetype<CR>
-nnoremap <Leader>sql :tabe /tmp/scratch.sql<CR>
-nnoremap <Leader>txt :tabe /tmp/scratch.txt<CR>
-
-nnoremap <Leader>qp :tabclose<CR>
 nnoremap <Leader>qq :bdelete<CR>
 nnoremap <Leader>mt :call MergeTabs()<CR>
 nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
 
-nnoremap <Leader>sv :vsplit<space>
-nnoremap <Leader>sh :split<space>
-
-nnoremap <Leader>li :set list!<CR>
-nnoremap <Leader>wr :set wrap!<CR>
-nnoremap <Leader>nl :set relativenumber!<CR>
-
-nnoremap <Leader>ga :Git add<space>
 nnoremap <Leader>gb :Gblame<CR>
-vmap     <Leader>gb :Gblame<CR>
-nnoremap <Leader>gc :Gcommit -a<CR>i
 nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gg :Gstatus<CR>
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>git :Git
 
 nnoremap <Leader>- :Switch<CR>
-nnoremap <Leader>< :SidewaysLeft<CR>
-nnoremap <Leader>> :SidewaysRight<CR>
-
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 nnoremap <Leader>cw ^cw
 nnoremap <Leader>, A,<CR>
@@ -364,23 +325,16 @@ nnoremap <Leader><Up> mz"dyy"dp`z
 nnoremap <Leader><Down> mz"dyy"dp`zj
 vnoremap <Leader><Down> "dymz"dP`z
 
-nnoremap <Leader>X mzkdd`z
-nnoremap <Leader>x mzjdd`z
 nnoremap <Leader><Backspace> mz$x`z:w<CR>
-nnoremap <Leader>~ ~hi
 
 nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
-nnoremap <Leader>ss :s/<C-r><C-w>//<Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
 nnoremap <Leader>ag :Ag <C-r><C-w><CR>
 
-nnoremap zl :let @z=@"<cr>x$p:let @"=@z<cr>
-
 inoremap :w<CR> <Esc>:w<CR>
 inoremap :wq<CR> <Esc>:wq<CR>
-inoremap jk <Esc>
 
 ""
 " Jump to end of pasted text
@@ -406,17 +360,6 @@ augroup go
   autocmd!
   autocmd Filetype go set nolist
 augroup END
-""
-" Return the syntax highlight group under the cursor
-""
-function! CurrentHighlight()
-  let name = synIDattr(synID(line('.'),col('.'),1),'name')
-  if name == ''
-    echo ''
-  else
-    echo '[' . name . ']'
-  endif
-endfunction
 
 ""
 " Merge a tab into a split in the previous window
