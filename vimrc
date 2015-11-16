@@ -247,7 +247,6 @@ endif
 " Cursorline Settings
 ""
 set cursorline
-set cursorcolumn
 hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE
 
 ""
@@ -310,6 +309,7 @@ nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 nnoremap <Leader>qq :bdelete<CR>
 nnoremap <Leader>mt :call MergeTabs()<CR>
 nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
+nnoremap <Leader>oc :set cursorcolumn!<CR>
 
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gd :Gdiff<CR>
