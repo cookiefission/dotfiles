@@ -7,6 +7,7 @@ set nu
 set relativenumber
 set tabstop=4
 set expandtab
+set textwidth=72
 
 set t_Co=256
 hi Comment ctermfg=yellow
