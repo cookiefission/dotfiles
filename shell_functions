@@ -28,7 +28,7 @@ mkcd() {
 
 vimf() {
     local file
-    file=$(ag -l -g "$1" | fzf --query="$1" --select-1 --exit-0 -m)
+    file=$(fzf --query="$1" --select-1 --exit-0 -m)
     [ -n "$file" ] && vim -p "$file"
 }
 
