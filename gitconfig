@@ -29,7 +29,6 @@
 	lg = log --oneline --decorate --all --graph
 	rb = rebase
 	ci = ci-status
-	pr = pull-request
 [push]
 	default = simple
 [color]

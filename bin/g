@@ -175,6 +175,7 @@ case "$OP" in
             git checkout -q "$@"
         fi
         ;;
+    pr) url=$($GIT_COMMAND pull-request) && open $url ;;
     psu) git push -u origin $(git rev-parse --abbrev-ref HEAD) ;;
     z) _fuzzy_git "$@" ;;
     *)
