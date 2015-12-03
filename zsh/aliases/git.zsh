@@ -10,3 +10,4 @@ alias olast='(cd groot && vim $(lastchange))'
 alias oconflicts='(cd groot && vim $(git diff --name-only --diff-filter=U))'
 alias last-tag="git tag --sort=v:refname | egrep '^[v]*\d+(?:\.\d+)*' | tail -n 1"
 alias h=g
+alias cpbr='git rev-parse --abbrev-ref HEAD | pbcopy'

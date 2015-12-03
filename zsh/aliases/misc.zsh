@@ -2,6 +2,6 @@
 
 alias reload!='. ~/.zshrc && echo "Zshrc Reloaded"'
 alias reset!='reset; tmux clear-history; clear'
-alias grip='grep -i'
 alias bc='bc -sq'
 alias less='less -r'
+alias hr='hr -'
