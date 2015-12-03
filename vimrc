@@ -53,6 +53,7 @@ Plugin 'sgur/ctrlp-extensions.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'jplaut/vim-arduino-ino'
 Plugin 'fatih/vim-go'
+Plugin 'ervandew/supertab'
 
 ""
 " Done setting up Vundle
