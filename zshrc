@@ -26,14 +26,6 @@ if [ -d $HOME/.zsh ]; then
     source $HOME/.zsh/completions.zsh
 fi
 
-if [ -e $HOME/.shell_aliases ]; then
-    source $HOME/.shell_aliases
-fi
-
-if [ -e $HOME/.shell_functions ]; then
-    source $HOME/.shell_functions
-fi
-
 if [ -e $HOME/.zshrc.local ]; then
     source $HOME/.zshrc.local
 fi

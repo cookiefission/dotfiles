@@ -28,6 +28,3 @@ fi
 if [ -d ~/.bash_completion.d ]; then
     source  ~/.bash_completion.d/*
 fi
-if [ -f ~/.shell_functions ]; then
-    source  ~/.shell_functions
-fi

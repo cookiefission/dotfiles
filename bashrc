@@ -72,10 +72,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.shell_aliases ]; then
-    . ~/.shell_aliases
-fi
-
 if [ -f ~/.bashrc.local ]; then
     . ~/.bashrc.local
 fi
