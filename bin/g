@@ -23,7 +23,7 @@ _git_pull() {
 }
 
 _fuzzy_branch() {
-    git for-each-ref --format='%(refname:short)' | fzf +m --query="$@"
+    git for-each-ref --format='%(refname:short)' | fzf +m --query="$@" --select-1
 }
 
 _fuzzy_commit() {
