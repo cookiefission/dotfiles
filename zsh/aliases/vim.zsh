@@ -3,3 +3,4 @@
 alias 'vim$'='vim $_'
 alias 'vim!'='vim `$(fc -ln -1)`'
 alias vims='vim -S'
+alias vimo='vim -O'
