@@ -98,6 +98,7 @@ let g:tmuxline_preset = {
 ""
 " UltiSnips
 ""
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 let g:UltiSnipsEditSplit="vertical"
