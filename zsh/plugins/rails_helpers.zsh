@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+_completion() {
+    [ -d "app/$1" ] || return
+
+    compadd `find app/$1 -name \*.rb | sed "s/app\/$1\/\|\.rb$//g"`
+}
+
 rmodel() {
     local model="$1"
     if [[ -z "$model" ]]; then
@@ -8,6 +14,12 @@ rmodel() {
     fi
     vim -O app/models/$model.rb spec/models/${model}_spec.rb
 }
+
+_rmodel() {
+    _completion models
+}
+
+compdef _rmodel rmodel
 
 rctrl() {
     local controller="$1"
@@ -18,6 +30,12 @@ rctrl() {
     local controller="${controller}_controller"
     vim -O app/controllers/$controller.rb spec/controllers/${controller}_spec.rb
 }
+
+_rctrl() {
+    _completion controllers
+}
+
+compdef _rctrl rctrl
 
 rview() {
     local view="$1"
