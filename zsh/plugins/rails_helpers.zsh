@@ -11,7 +11,16 @@ spec_or_test() {
 _completion() {
     [ -d "app/$1" ] || return
 
-    compadd `find app/$1 -name \*$2 | sed "s/app\/$1\/\|$2$//g"`
+    local state
+
+    _arguments \
+        '1: :->name'\
+        '*: :->other'
+
+    case $state in
+        name) compadd `find app/$1 -name \*$2 | sed "s/app\/$1\/\|$2$//g"` ;;
+        *) return
+    esac
 }
 
 rmodel() {
