@@ -11,7 +11,7 @@ spec_or_test() {
 _completion() {
     [ -d "app/$1" ] || return
 
-    compadd `find app/$1 -name \*.rb | sed "s/app\/$1\/\|\.rb$//g"`
+    compadd `find app/$1 -name \*$2 | sed "s/app\/$1\/\|$2$//g"`
 }
 
 rmodel() {
@@ -24,12 +24,12 @@ rmodel() {
 }
 
 _rmodel() {
-    _completion models
+    _completion models "\.rb"
 }
 
 compdef _rmodel rmodel
 
-rctrl() {
+rcont() {
     local controller="$1"
     if [[ -z "$controller" ]]; then
         echo "No controller name provided"
@@ -39,11 +39,11 @@ rctrl() {
     vim -O app/controllers/$controller.rb $(spec_or_test)/controllers/${controller}_spec.rb
 }
 
-_rctrl() {
-    _completion controllers
+_rcont() {
+    _completion controllers "_controller\.rb"
 }
 
-compdef _rctrl rctrl
+compdef _rcont rcont
 
 rview() {
     local view="$1"
@@ -54,10 +54,8 @@ rview() {
     vim app/views/$view.html.erb
 }
 
-rlayout() {
-    local layout="$1"
-    if [[ -z "$layout" ]]; then
-        layout="application"
-    fi
-    vim app/views/layouts/$layout.html.erb
+_rview() {
+    _completion views "\.html\.erb"
 }
+
+compdef _rview rview
