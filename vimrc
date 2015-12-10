@@ -109,18 +109,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:vim_json_warnings=0
 
 ""
-" switch.vim
-""
-autocmd FileType ruby let g:switch_custom_definitions =
-      \ [
-      \   ['extend', 'include'],
-      \   {
-      \     '\(\s*\%(RSpec\.\)*\)\(describe\|context\|it\) \(.\+\) do': '\1\2 \3, focus: true do',
-      \     '\(\s*\%(RSpec\.\)*\)\(describe\|context\|it\) \(.\+\), focus: true do': '\1\2 \3 do'
-      \   }
-      \]
-
-""
 " vim-startify
 ""
 let g:startify_custom_header = map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['']
@@ -135,14 +123,6 @@ let g:startify_list_order = [
       \ ['   Bookmarks:'],
       \ 'bookmarks',
       \ ]
-
-""
-" vim-arduino-ino
-""
-let g:vim_arduino_map_keys = 0
-command! ArduinoCompile       call ArduinoCompile()
-command! ArduinoDeploy        call ArduinoDeploy()
-command! ArduinoSerialMonitor call ArduinoSerialMonitor()
 
 ""
 " synastic
@@ -354,14 +334,6 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
-
-""
-" Filetype specific
-""
-augroup go
-  autocmd!
-  autocmd Filetype go set nolist
-augroup END
 
 ""
 " Merge a tab into a split in the previous window
