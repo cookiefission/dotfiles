@@ -10,5 +10,5 @@ list_dirs() {
 
 zd() {
     local dir
-    dir=$(list_dirs | fzf +m --select-1 --query="$@") && cd "$dir"
+    dir=$(list_dirs | fzf +m --select-1 --query="$@" --exit-0 ) && cd "$dir"
 }
