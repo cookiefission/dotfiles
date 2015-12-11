@@ -1,5 +1,6 @@
-def lcfirst(s):
-    return s[:1].lower() + s[1:] if s else ''
-
-def ucfirst(s):
-    return s[:1].upper() + s[1:] if s else ''
+def complete(t, opts):
+    if t:
+        opts = [ m[len(t):] for m in opts if m.startswith(t) ]
+    if len(opts) == 1:
+        return opts[0]
+    return '(' + '|'.join(opts) + ')'
