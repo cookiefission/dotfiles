@@ -259,8 +259,8 @@ nnoremap Y y$
 map <Leader>== mmgg=G:w<CR>'mzz
 map <Leader>bo :BufOnly<CR>
 
-nnoremap <Leader>] :call NextTabOrBuffer()<CR>
-nnoremap <Leader>[ :call PreviousTabOrBuffer()<CR>
+nnoremap <Leader>] :call misc#NextTabOrBuffer()<CR>
+nnoremap <Leader>[ :call misc#PreviousTabOrBuffer()<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
 map <Leader>pb :CtrlPBuffer<CR>
@@ -289,8 +289,8 @@ nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
 
 nnoremap <Leader>qq :bdelete<CR>
-nnoremap <Leader>mt :call MergeTabs()<CR>
-nnoremap <Leader>tm :tabnext<CR>:call MergeTabs()<CR>
+nnoremap <Leader>mt :call misc#MergeTabs()<CR>
+nnoremap <Leader>tm :tabnext<CR>:call misc#MergeTabs()<CR>
 nnoremap <Leader>oc :set cursorcolumn!<CR>
 
 nnoremap <Leader>gb :Gblame<CR>
@@ -334,43 +334,6 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
-
-""
-" Merge a tab into a split in the previous window
-""
-function! MergeTabs()
-  if tabpagenr() == 1
-    return
-  endif
-  let bufferName = bufname("%")
-  if tabpagenr("$") == tabpagenr()
-    close!
-  else
-    close!
-    tabprev
-  endif
-  vsplit
-  execute "buffer " . bufferName
-endfunction
-
-""
-" Buffer/Tab switching
-""
-function! NextTabOrBuffer()
-  if tabpagenr('$') == 1
-    bnext
-  else
-    tabnext
-  endif
-endfunction
-
-function! PreviousTabOrBuffer()
-  if tabpagenr('$') == 1
-    bprevious
-  else
-    tabprevious
-  endif
-endfunction
 
 ""
 " Don't Overwrite Register on vp
