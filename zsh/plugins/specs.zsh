@@ -3,9 +3,9 @@
 specs() {
     if [ -d spec ]; then
         if [ -f "$PWD/Gemfile" ]; then
-            bundle exec rspec
+            bundle exec rspec $@
         else
-            rspec
+            rspec $@
         fi
     else
         echo "No specs directory found"
