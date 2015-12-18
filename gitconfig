@@ -29,6 +29,7 @@
 	lg = log --oneline --decorate --all --graph
 	rb = rebase
 	ci = ci-status
+	open = browse
 [push]
 	default = simple
 [color]
