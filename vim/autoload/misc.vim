@@ -34,3 +34,15 @@ function! misc#PreviousTabOrBuffer()
     tabprevious
   endif
 endfunction
+
+""
+" Make CtrlPBuffer marginally more convienent
+""
+function! misc#SplitOrCtrlP()
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 2
+    vsplit
+    bnext
+  else
+    CtrlPBuffer
+  endif
+endfunction

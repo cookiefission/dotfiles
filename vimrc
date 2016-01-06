@@ -263,7 +263,7 @@ nnoremap <Leader>] :call misc#NextTabOrBuffer()<CR>
 nnoremap <Leader>[ :call misc#PreviousTabOrBuffer()<CR>
 map <F7> :tabp<CR>
 map <F8> :tabn<CR>
-map <Leader>pb :CtrlPBuffer<CR>
+map <Leader>pb :call misc#SplitOrCtrlP()<CR>
 map <Leader>pm :CtrlPMRUFiles<CR>
 map <Leader>pp :CtrlPMixed<CR>
 map <Leader>py :CtrlPYankring<CR>
