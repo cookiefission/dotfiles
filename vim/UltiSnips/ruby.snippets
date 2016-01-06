@@ -1,11 +1,14 @@
 global !p
-import re
-
 def show_if(to_show, length_of):
     return to_show if len(length_of) > 0 else ''
 
 def prefix_words(string, prefix):
     return re.sub(r'\b(\w)', prefix + r'\1', string)
+
+def classify(filename):
+    string = re.sub(r'\.rb$', '', filename)
+    return "".join(x.title() for x in string.split('_'))
+
 endglobal
 
 snippet attp "Add private attr_reader" b
@@ -17,5 +20,18 @@ endsnippet
 snippet init "Add constructor" b
 def initialize`!p snip.rv = show_if('(', t[1])`$1`!p snip.rv = show_if(')', t[1])`
   `!p snip.rv = prefix_words(t[1], '@')` `!p snip.rv = show_if('=', t[1])` $1$0
+end
+endsnippet
+
+snippet class "Add class with boilerplate" b
+class ${2:`!p snip.rv=classify(fn)`}
+
+  attr_reader `!p snip.rv = prefix_words(t[1], ':')`
+  private `!p snip.rv = prefix_words(t[1], ':')`
+
+  def initialize`!p snip.rv = show_if('(', t[1])`$1`!p snip.rv = show_if(')', t[1])`
+    `!p snip.rv = prefix_words(t[1], '@')` `!p snip.rv = show_if('=', t[1])` $1$0
+  end
+  $0
 end
 endsnippet
