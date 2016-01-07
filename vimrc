@@ -313,7 +313,7 @@ nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
 
-nnoremap <Leader>ag :Ag <C-r><C-w><CR>
+nnoremap <Leader>ag :call misc#AgWithFiletype('<C-r><C-w>')
 
 inoremap :w<CR> <Esc>:w<CR>
 inoremap :wq<CR> <Esc>:wq<CR>

@@ -1,6 +1,3 @@
-""
-" Merge a tab into a split in the previous window
-""
 function! misc#MergeTabs()
   if tabpagenr() == 1
     return
@@ -16,9 +13,6 @@ function! misc#MergeTabs()
   execute "buffer " . bufferName
 endfunction
 
-""
-" Buffer/Tab switching
-""
 function! misc#NextTabOrBuffer()
   if tabpagenr('$') == 1
     bnext
@@ -35,14 +29,14 @@ function! misc#PreviousTabOrBuffer()
   endif
 endfunction
 
-""
-" Make CtrlPBuffer marginally more convienent
-""
 function! misc#SplitOrCtrlP()
   if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 2
-    vsplit
-    bnext
+    vsplit | bnext
   else
     CtrlPBuffer
   endif
+endfunction
+
+function! misc#AgWithFiletype(search)
+  exec "Ag --" . &filetype . " " . a:search
 endfunction
