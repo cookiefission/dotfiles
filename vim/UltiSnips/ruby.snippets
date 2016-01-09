@@ -1,7 +1,4 @@
 global !p
-def show_if(to_show, length_of):
-    return to_show if len(length_of) > 0 else ''
-
 def prefix_words(string, prefix):
     return re.sub(r'\b(\w)', prefix + r'\1', string)
 
@@ -17,19 +14,19 @@ $0
 endsnippet
 
 snippet init "Add constructor" b
-def initialize`!p snip.rv = show_if('(', t[1])`$1`!p snip.rv = show_if(')', t[1])`
-  `!p snip.rv = prefix_words(t[1], '@')` `!p snip.rv = show_if('=', t[1])` $1$0
+def initialize${1/(.+)/(?1:\(:)/}$1${1/(.+)/(?1:\):)/}
+  `!p snip.rv = prefix_words(t[1], '@')` ${1/(.+)/(?1:=:)/} $1$0
 end
 endsnippet
 
 snippet class "Add class with boilerplate" b
-class ${2:`!p snip.rv=classify(snip.basename)`}
+class ${2:`!p snip.rv = classify(snip.basename)`}
 
   attr_reader `!p snip.rv = prefix_words(t[1], ':')`
   private `!p snip.rv = prefix_words(t[1], ':')`
 
-  def initialize`!p snip.rv = show_if('(', t[1])`$1`!p snip.rv = show_if(')', t[1])`
-    `!p snip.rv = prefix_words(t[1], '@')` `!p snip.rv = show_if('=', t[1])` $1$0
+  def initialize${1/(.+)/(?1:\(:)/}$1${1/(.+)/(?1:\):)/}
+    `!p snip.rv = prefix_words(t[1], '@')` ${1/(.+)/(?1:=:)/} $1$0
   end
   $0
 end
