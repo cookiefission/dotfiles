@@ -5,8 +5,7 @@ def show_if(to_show, length_of):
 def prefix_words(string, prefix):
     return re.sub(r'\b(\w)', prefix + r'\1', string)
 
-def classify(filename):
-    string = re.sub(r'\.rb$', '', filename)
+def classify(string):
     return "".join(x.title() for x in string.split('_'))
 
 endglobal
@@ -24,7 +23,7 @@ end
 endsnippet
 
 snippet class "Add class with boilerplate" b
-class ${2:`!p snip.rv=classify(fn)`}
+class ${2:`!p snip.rv=classify(snip.basename)`}
 
   attr_reader `!p snip.rv = prefix_words(t[1], ':')`
   private `!p snip.rv = prefix_words(t[1], ':')`
