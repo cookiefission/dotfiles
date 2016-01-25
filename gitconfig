@@ -30,6 +30,7 @@
 	rb = rebase
 	ci = ci-status
 	open = browse
+	pr = pull-request -o
 [push]
 	default = simple
 [color]
