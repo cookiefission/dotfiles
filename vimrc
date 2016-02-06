@@ -90,7 +90,7 @@ let g:tmuxline_preset = {
       \'b'    : [ '#(whoami)' ],
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
-      \'x'    : ['📝  #(~/.bin/todo --count)', '#(~/.bin/is_plugged_in && echo ⛽️  || echo 🔋  )  #(~/.bin/battery_status)'],
+      \'x'    : ['#(~/.bin/is_plugged_in && echo ⛽️  || echo 🔋  )  #(~/.bin/battery_status)'],
       \'y'    : ['%R', '%a %d ', '%Y'],
       \'z'    : '#H'}
 
