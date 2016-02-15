@@ -29,7 +29,7 @@ rmodel() {
         echo "No model name provided"
         return 1
     fi
-    vim -O app/models/$model.rb $(spec_or_test)/models/${model}_spec.rb
+    vim -O app/models/$model.rb $(spec_or_test)/models/${model}_$(spec_or_test).rb
 }
 
 _rmodel() {
@@ -45,7 +45,7 @@ rcont() {
         return 1
     fi
     local controller="${controller}_controller"
-    vim -O app/controllers/$controller.rb $(spec_or_test)/controllers/${controller}_spec.rb
+    vim -O app/controllers/$controller.rb $(spec_or_test)/controllers/${controller}_$(spec_or_test).rb
 }
 
 _rcont() {
