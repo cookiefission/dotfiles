@@ -54,6 +54,22 @@ _rcont() {
 
 compdef _rcont rcont
 
+rservice() {
+    local service="$1"
+    if [[ -z "$service" ]]; then
+        echo "No service name provided"
+        return 1
+    fi
+    local service="${service}_service"
+    vim -O app/services/$service.rb $(spec_or_test)/services/${service}_$(spec_or_test).rb
+}
+
+_rservice() {
+    _completion services "_service\.rb"
+}
+
+compdef _rservice rservice
+
 rview() {
     local view="$1"
     if [[ -z "$view" ]]; then
