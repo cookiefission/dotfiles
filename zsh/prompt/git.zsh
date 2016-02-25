@@ -65,7 +65,7 @@ function _parse_branch() {
 function git_prompt() {
     local IFS=$'\n'
     status_arr=( `git status --porcelain -b 2>&1` )
-    if ! [[ "${status_arr[@]}" =~ Not\ a\ git\ repo ]]; then
+    if [ $? -eq 0 ]; then
         unset IFS
         local branch="`_parse_branch ${status_arr[1]} 2>&1`"
         local IFS=$'\n'
