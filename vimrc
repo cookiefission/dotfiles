@@ -128,7 +128,7 @@ let g:startify_list_order = [
 ""
 " Syntastic is more annoying than useful for html files, given that 90% of the
 " time there is templating in there as well or partials
-let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$', '\mhbs$']
+let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$', '\mhbs$', '\mfeature$']
 
 ""
 " Colour settings
