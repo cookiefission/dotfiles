@@ -179,7 +179,7 @@ set hidden
 ""
 " Fix backspace not deleting new lines
 ""
-set backspace=indent,eol,start
+set backspace=indent,eol
 
 ""
 " Key press timeout
