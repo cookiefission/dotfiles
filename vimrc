@@ -175,6 +175,7 @@ set ttyfast
 set nowrap
 set noshowmode
 set hidden
+set winwidth=84
 
 ""
 " Fix backspace not deleting new lines
