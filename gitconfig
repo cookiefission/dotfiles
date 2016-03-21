@@ -31,6 +31,7 @@
 	ci = ci-status
 	open = browse
 	pr = pull-request -o
+	upup = pull --rebase upstream master
 [push]
 	default = simple
 [color]
