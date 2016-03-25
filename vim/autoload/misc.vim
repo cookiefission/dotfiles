@@ -40,3 +40,9 @@ endfunction
 function! misc#AgWithFiletype(search)
   exec "Ag --" . &filetype . " " . a:search
 endfunction
+
+function! misc#SplitIfTwoFiles()
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 2
+    vsplit | bnext
+  endif
+endfunction

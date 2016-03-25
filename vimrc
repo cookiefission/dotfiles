@@ -249,6 +249,9 @@ set list
 ""
 autocmd BufWritePre *.* :%s/\s\+$//e
 
+" Automatically split when two files are opened
+autocmd VimEnter * call misc#SplitIfTwoFiles()
+
 ""
 " Mappings
 ""
