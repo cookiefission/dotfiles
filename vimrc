@@ -1,20 +1,14 @@
 set nocompatible
 filetype off
 
-""
 " Vundle Setup
-""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-""
 " Let Vundle manage Vundle
-""
 Plugin 'gmarik/Vundle.vim'
 
-""
 " Plugin list
-""
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
@@ -54,37 +48,27 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-gotham'
 
-""
 " Done setting up Vundle
-""
 call vundle#end()
 
 syntax on
 filetype plugin indent on
 
-""
 " Misc Runtime
-""
 runtime macros/matchit.vim
 
-""
 " CtrlP.vim
-""
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
 let g:ctrlp_root_markers = ['Gemfile']
 
-""
 " vim-airline
-""
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "murmur"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_y = airline#section#create_right(['ffenc'])
 
-""
 " tmuxline.vim
-""
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : [ '#(whoami)' ],
@@ -94,22 +78,16 @@ let g:tmuxline_preset = {
       \'y'    : ['%R', '%a %d ', '%Y'],
       \'z'    : '#H'}
 
-""
 " UltiSnips
-""
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-""
 " vim-json
-""
 let g:vim_json_warnings=0
 
-""
 " vim-startify
-""
 let g:startify_custom_header = map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['']
 
 let g:startify_list_order = [
@@ -123,51 +101,37 @@ let g:startify_list_order = [
       \ 'bookmarks',
       \ ]
 
-""
 " synastic
-""
 " Syntastic is more annoying than useful for html files, given that 90% of the
 " time there is templating in there as well or partials
 let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$', '\mhbs$', '\mfeature$']
 
-""
 " Colour settings
-""
 set t_Co=256
 colorscheme gotham256
 hi Comment ctermfg=yellow
 
-""
 " Goto last location in non-empty files and centre it
-""
 autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
       \|     exe "normal! g`\"zz"
       \|  endif
 
-""
 " More Natural Splits
-""
 set splitbelow
 set splitright
 
-""
 " Codefolding
-""
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 set foldlevel=20 " Folds available but open
 
-""
 " Relative Number hybrid thing
-""
 set number
 set relativenumber
 
-""
 " Misc Settings
-""
 set ruler
 match Error /\s\+$/
 set laststatus=2
@@ -177,84 +141,58 @@ set noshowmode
 set hidden
 set winwidth=84
 
-""
 " Fix backspace not deleting new lines
-""
 set backspace=indent,eol,start
 
-""
 " Key press timeout
-""
 set timeoutlen=500
 
-""
 " Completion
-""
 set wildchar=<TAB>
 set wildmenu
 set wildmode=list:longest
 
-""
 " Visual
-""
 set virtualedit=block
 
-""
 " Search
-""
 set incsearch
 set wrapscan
 set ignorecase
 set smartcase
 
-""
 " Replace
-""
 set gdefault
 
-""
 " Set up .swp files to ~/.vim/tmp
-""
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
 
-""
 " Enable mouse if available
-""
 if has("mouse")
   set mouse=a
 endif
 
-""
 " Cursorline Settings
-""
 set cursorline
 hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE
 
-""
 " Highlight column when over 80 characters
-""
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 call matchadd('Error', '\%121v', 100)
 
-""
 " List chars
-""
 set listchars=tab:>#,nbsp:_
 set list
 
-""
 " Trim whitespace
-""
 autocmd BufWritePre *.* :%s/\s\+$//e
 
 " Automatically split when two files are opened
 autocmd VimEnter * call misc#SplitIfTwoFiles()
 
-""
 " Mappings
-""
 let mapleader = "\<space>"
 let g:mapleader = "\<space>"
 
@@ -322,16 +260,12 @@ nnoremap <Leader>ag :call misc#AgWithFiletype('<C-r><C-w>')<CR>
 inoremap :w<CR> <Esc>:w<CR>
 inoremap :wq<CR> <Esc>:wq<CR>
 
-""
 " Jump to end of pasted text
-""
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-""
 " Auto centering
-""
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
@@ -339,9 +273,7 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
 
-""
 " Don't Overwrite Register on vp
-""
 function! RestoreRegister()
   let @" = s:restore_reg
   return ''
