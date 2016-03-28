@@ -12,7 +12,8 @@
 	conflicted = diff --name-only --diff-filter=U
 	ours = checkout --ours
 	theirs = checkout --theirs
-	cleanf = clean -fd
+	cleanf = clean -f
+	cleanfd = clean -fd
 	a = add
 	b = blame
 	br = branch
