@@ -33,6 +33,7 @@
 	open = browse
 	pr = pull-request -o
 	upup = pull --rebase upstream master
+	upupu = upup
 	remotes = remote -v
 [push]
 	default = simple
