@@ -43,6 +43,8 @@ endfunction
 
 function! misc#SplitIfTwoFiles()
   if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 2
-    vsplit | bnext
+    if winnr('$') == 1
+      vsplit | bnext
+    endif
   endif
 endfunction
