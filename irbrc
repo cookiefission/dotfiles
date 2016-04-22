@@ -21,3 +21,15 @@ begin
 rescue LoadError
   # Noop
 end
+
+class Object
+
+  def tputs
+    tap { |obj| puts obj }
+  end
+
+  def tputc
+    tap { |obj| puts obj.class }
+  end
+
+end
