@@ -34,6 +34,7 @@
 	pr = pull-request -o
 	upup = pull --rebase upstream master
 	upupu = upup
+	ypyp = upup
 	remotes = remote -v
 [push]
 	default = simple
