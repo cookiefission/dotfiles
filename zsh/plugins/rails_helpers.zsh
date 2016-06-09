@@ -84,3 +84,29 @@ _rview() {
 }
 
 compdef _rview rview
+
+rlib() {
+    local lib_file="$1"
+    if [[ -z "$lib_file" ]]; then
+        echo "No lib file name provided"
+        return 1
+    fi
+    vim -O lib/$lib_file.rb $(spec_or_test)/lib/${lib_file}_$(spec_or_test).rb
+}
+
+_rlib() {
+    [ -d "lib" ] || return
+
+    local state
+
+    _arguments \
+        '1: :->name'\
+        '*: :->other'
+
+    case $state in
+        name) compadd `find lib -name \*\.rb | sed "s/lib\/\|\.rb$//g"` ;;
+        *) return
+    esac
+}
+
+compdef _rlib rlib
