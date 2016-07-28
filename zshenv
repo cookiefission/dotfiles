@@ -5,6 +5,9 @@ export GOPATH=/Users/sean/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
+# Rust
+export PATH=$PATH:/Users/sean/.cargo/bin
+
 # Home
 export PATH=$HOME/.bin:$PATH
 
