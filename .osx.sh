@@ -12,6 +12,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # Dock
 ## Add stack of recent applications
 defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1;  }; "tile-type" = "recents-tile";  }'
+
+## Enable autohide
+defaults write com.apple.Dock autohide -bool true
+
+## Restart
 killall Dock
 
 # Finder
