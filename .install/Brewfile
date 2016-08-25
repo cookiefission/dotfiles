@@ -1,0 +1,39 @@
+#vi:filetype=ruby
+
+cask_args appdir: '/Applications'
+
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'homebrew/bundle'
+tap 'neovim/neovim'
+tap 'thoughtbot/formulae'
+
+brew 'coreutils'
+brew 'cowsay'
+brew 'ctags'
+brew 'fzf', args: ['HEAD']
+brew 'gist'
+brew 'git'
+brew 'gnu-sed', args: ['with-default-names']
+brew 'htop'
+brew 'hub'
+brew 'jo'
+brew 'jq'
+brew 'keybase'
+brew 'macvim', args: ['HEAD', 'with-cscope', 'with-lua', 'with-override-system-vim', 'with-luajit', 'with-python']
+brew 'neovim/neovim/neovim', args: ['HEAD']
+brew 'reattach-to-user-namespace'
+brew 'terminal-notifier'
+brew 'thoughtbot/formulae/rcm'
+brew 'tmux'
+brew 'tree'
+brew 'wget'
+brew 'zsh'
+brew 'zsh-completions'
+
+cask 'alfred'
+cask 'dropbox'
+cask 'slack'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'firefox'
