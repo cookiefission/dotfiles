@@ -7,12 +7,6 @@ My Dotfiles.
 
 ## Setup
 
-### Required things
+    sh <(curl https://raw.githubusercontent.com/cookiefission/dotfiles/master/.install/osx.sh)
 
-- ruby
-- zsh
-- tmux
 
-### Fzf
-
-This shit is awesome and required for some scripts: https://github.com/junegunn/fzf
