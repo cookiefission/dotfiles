@@ -235,6 +235,7 @@ nnoremap <Leader>mt :call misc#MergeTabs()<CR>
 nnoremap <Leader>tm :tabnext<CR>:call misc#MergeTabs()<CR>
 nnoremap <Leader>oc :set cursorcolumn!<CR>
 nnoremap <Leader><C-]> :vsplit<CR><C-]>
+nnoremap <Leader><C-[> :split<CR><C-]>
 
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gd :Gdiff<CR>
