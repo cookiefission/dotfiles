@@ -16,4 +16,6 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # RVM
-export PATH="$HOME/.rvm/bin:$PATH"
+export PATH=$HOME/.rvm/bin:$PATH
+
+eval "$(rbenv init -)"
