@@ -67,3 +67,8 @@ echo 'Installing dotfiles...'
 
 ln -is ~/.dotfiles/rcrc ~/.rcrc
 rcup -v
+
+# Install zsh things
+echo 'Installing zsh extensions'
+
+git clone git@github.com:zsh-users/zsh-history-substring-search.git ~/.zsh-history-substring-search
