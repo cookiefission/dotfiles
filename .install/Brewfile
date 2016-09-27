@@ -30,6 +30,7 @@ brew 'tree'
 brew 'wget'
 brew 'zsh'
 brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 cask 'alfred'
 cask 'atom'
