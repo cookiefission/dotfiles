@@ -1,9 +1,16 @@
 tags
+
+# Editor files
 Session.vim
-.DS_Store
 .idea/
+
+# Misc
+.DS_Store
 *.deb
 *.tar*
+.byebug_history
+
+# Custom
 .zaw_dir_bookmarks
 .notes.md
 .notes/

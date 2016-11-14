@@ -15,7 +15,6 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
@@ -23,10 +22,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/NERDTree'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'vim-scripts/UltiSnips'
@@ -42,10 +39,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'jplaut/vim-arduino-ino'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'rking/ag.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'sgur/ctrlp-extensions.vim'
-Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-gotham'
@@ -86,23 +81,6 @@ let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" vim-json
-let g:vim_json_warnings=0
-
-" vim-startify
-let g:startify_custom_header = map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['']
-
-let g:startify_list_order = [
-      \ ['   MRU:'],
-      \ 'dir',
-      \ ['   MRU (all):'],
-      \ 'files' ,
-      \ ['   Sessions:'],
-      \ 'sessions',
-      \ ['   Bookmarks:'],
-      \ 'bookmarks',
-      \ ]
-
 " synastic
 " Syntastic is more annoying than useful for html files, given that 90% of the
 " time there is templating in there as well or partials
@@ -121,13 +99,6 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 " More Natural Splits
 set splitbelow
 set splitright
-
-" Codefolding
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
-set foldlevel=20 " Folds available but open
 
 " Relative Number hybrid thing
 set number
@@ -204,8 +175,6 @@ map <Leader>bo :BufOnly<CR>
 
 nnoremap <Leader>] :call misc#NextTabOrBuffer()<CR>
 nnoremap <Leader>[ :call misc#PreviousTabOrBuffer()<CR>
-map <F7> :tabp<CR>
-map <F8> :tabn<CR>
 map <Leader>pb :call misc#SplitOrCtrlP()<CR>
 map <Leader>pm :CtrlPMRUFiles<CR>
 map <Leader>pp :CtrlPMixed<CR>
@@ -256,8 +225,6 @@ nnoremap <Leader><Backspace> mz$x`z:w<CR>
 nnoremap <Leader>s<space> :%s/<C-r><C-w>//c<Left><Left>
 nnoremap <Leader>s% :%s///c<Left><Left><Left>
 nnoremap <Leader>g<space> :g/<C-r><C-w>/
-
-nnoremap <Leader>ag :call misc#AgWithFiletype('<C-r><C-w>')<CR>
 
 inoremap :w<CR> <Esc>:w<CR>
 inoremap :wq<CR> <Esc>:wq<CR>
