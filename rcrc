@@ -1,1 +1,1 @@
-SYMLINK_DIRS="config vim zsh bash tmux*"
+SYMLINK_DIRS="vim zsh bash tmux*"
