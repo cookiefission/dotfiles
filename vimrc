@@ -19,7 +19,6 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
@@ -27,20 +26,15 @@ Plugin 'scrooloose/syntastic'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'vim-scripts/UltiSnips'
-Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
-Plugin 'jplaut/vim-arduino-ino'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'rust-lang/rust.vim'
-Plugin 'sgur/ctrlp-extensions.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-gotham'
@@ -56,8 +50,7 @@ runtime macros/matchit.vim
 
 " CtrlP.vim
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_extensions = ['funky', 'cmdline', 'yankring']
-let g:ctrlp_root_markers = ['Gemfile']
+let g:ctrlp_root_markers = ['Gemfile', 'package.json']
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -111,6 +104,7 @@ set laststatus=2
 set ttyfast
 set nowrap
 set noshowmode
+set showcmd
 set hidden
 set winwidth=84
 
