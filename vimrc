@@ -93,6 +93,9 @@ autocmd BufReadPost *  if line("'\"") > 1 && line("'\"") <= line("$")
 set splitbelow
 set splitright
 
+" All faux-fuzzy finding
+set path+=**
+
 " Relative Number hybrid thing
 set number
 set relativenumber
