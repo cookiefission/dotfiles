@@ -29,7 +29,11 @@ rmodel() {
         echo "No model name provided"
         return 1
     fi
-    vim -O app/models/$model.rb $(spec_or_test)/models/${model}_$(spec_or_test).rb
+
+    local test_file="$(spec_or_test)/models/${model}_$(spec_or_test).rb"
+    [ -f $test_file ] || test_file=''
+
+    vim -O app/models/$model.rb $test_file
 }
 
 _rmodel() {
@@ -45,7 +49,10 @@ rcont() {
         return 1
     fi
     local controller="${controller}_controller"
-    vim -O app/controllers/$controller.rb $(spec_or_test)/controllers/${controller}_$(spec_or_test).rb
+
+    local test_file="$(spec_or_test)/controllers/${controller}_$(spec_or_test).rb"
+    [ -f $test_file ] || test_file=''
+    vim -O app/controllers/$controller.rb $test_file
 }
 
 _rcont() {
@@ -60,12 +67,15 @@ rservice() {
         echo "No service name provided"
         return 1
     fi
-    local service="${service}_service"
-    vim -O app/services/$service.rb $(spec_or_test)/services/${service}_$(spec_or_test).rb
+
+    local test_file="$(spec_or_test)/services/${service}_$(spec_or_test).rb"
+    [ -f $test_file ] || test_file=''
+
+    vim -O app/services/$service.rb $test_file
 }
 
 _rservice() {
-    _completion services "_service\.rb"
+    _completion services "\.rb"
 }
 
 compdef _rservice rservice
@@ -91,7 +101,11 @@ rlib() {
         echo "No lib file name provided"
         return 1
     fi
-    vim -O lib/$lib_file.rb $(spec_or_test)/lib/${lib_file}_$(spec_or_test).rb
+
+    local test_file="$(spec_or_test)/lib/${lib_file}_$(spec_or_test).rb"
+    [ -f $test_file ] || test_file=''
+
+    vim -O lib/$lib_file.rb $test_file
 }
 
 _rlib() {
