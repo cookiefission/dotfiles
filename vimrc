@@ -24,20 +24,21 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/syntastic'
-Plugin 'AndrewRadev/switch.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'vim-scripts/UltiSnips'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'AndrewRadev/switch.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/UltiSnips'
 Plugin 'whatyouhide/vim-gotham'
 
 " Done setting up Vundle
@@ -154,8 +155,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 call matchadd('Error', '\%121v', 100)
 
 " List chars
-set listchars=tab:>#,nbsp:_
-set list
+set list listchars=tab:»·,nbsp:_
 
 " Trim whitespace
 autocmd BufWritePre *.* :%s/\s\+$//e
