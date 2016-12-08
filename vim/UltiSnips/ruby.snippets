@@ -37,3 +37,9 @@ snippet "^(\s*)d\s([\w_]+)\s*$" "def" r
 `!p snip.rv=match.group(1)`  $1$0
 `!p snip.rv=match.group(1)`end
 endsnippet
+
+snippet ldef "Add lazy loading getter" b
+def $1
+  @$1 ||= $0
+end
+endsnippet
