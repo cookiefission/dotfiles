@@ -3,6 +3,7 @@ tags
 # Editor files
 Session.vim
 .idea/
+.projections.json
 
 # Misc
 .DS_Store
