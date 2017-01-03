@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    echo "Machine: ${DOCKER_MACHINE_NAME:-<none specified>}"
+    echo
+    echo "Running Containers:"
+    echo
+    docker ps
+    exit 0
+fi
+
+OP=$1
+shift
+case "$OP" in
+    up)
+        docker-compose up $@
+        ;;
+    c)
+        docker-compose $@
+        ;;
+    m)
+        docker-machine $@
+        ;;
+    *)
+        docker $OP $@
+        ;;
+esac
