@@ -84,7 +84,7 @@ let g:syntastic_ignore_files = ['\mhtml$', '\mmain.scss$', '\merb$', '\mhbs$', '
 " Use ag for grep
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
