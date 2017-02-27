@@ -175,6 +175,7 @@ case "$OP" in
             git checkout -q "$@"
         fi
         ;;
+    chz) branch=$(_fuzzy_branch "$@") && git checkout $branch ;;
     psu) git push -u origin $(git rev-parse --abbrev-ref HEAD) ;;
     z) _fuzzy_git "$@" ;;
     *)
