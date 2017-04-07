@@ -1,0 +1,41 @@
+snippet comp "Pure React Component" b
+import React from 'react';
+
+const ${1:`!p snip.rv = snip.basename`} = (props) => (
+  $0
+)
+
+export default $1;
+endsnippet
+
+snippet ccomp "Class React Component" b
+import React from 'react';
+
+class ${1:`!p snip.rv = snip.basename`} extends React.Component {
+  render() {
+    return(
+      $0
+    );
+  }
+}
+
+export default $1;
+endsnippet
+
+snippet cwm "componentWillMount" b
+componentWillMount() {
+  $0
+}
+endsnippet
+
+snippet cdm "componentDidMount" b
+componentDidMount() {
+  $0
+}
+endsnippet
+
+snippet cwu "componentWillUnmount" b
+componentWillUnmount() {
+  $0
+}
+endsnippet
