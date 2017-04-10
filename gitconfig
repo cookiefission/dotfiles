@@ -36,6 +36,7 @@
 	upupu = upup
 	ypyp = upup
 	remotes = remote -v
+	head = show HEAD
 [push]
 	default = simple
 [color]
