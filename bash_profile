@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Load RVM, if you are using it
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
 #Prompt
 if [[ -f ~/.bash/gitprompt.sh ]]; then
     source ~/.bash/gitprompt.sh
