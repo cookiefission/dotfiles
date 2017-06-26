@@ -19,8 +19,6 @@ brew 'htop'
 brew 'hub'
 brew 'jo'
 brew 'jq'
-brew 'keybase'
-brew 'macvim', args: ['HEAD', 'with-cscope', 'with-lua', 'with-override-system-vim', 'with-luajit', 'with-python']
 brew 'neovim/neovim/neovim', args: ['HEAD']
 brew 'rbenv'
 brew 'reattach-to-user-namespace'

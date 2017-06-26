@@ -3,4 +3,3 @@ root: ~/.dotfiles
 
 windows:
     - dotfiles:
-    - cheatsheet: cd ~/Documents/cheatsheet ; clear
