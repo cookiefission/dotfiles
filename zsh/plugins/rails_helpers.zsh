@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 spec_or_test() {
-    if [ -d "test" ]; then
-        echo "test"
-    else
+    if [ -d "spec" ]; then
         echo "spec"
+    else
+        echo "test"
     fi
 }
 
