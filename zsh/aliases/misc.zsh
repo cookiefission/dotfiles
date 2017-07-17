@@ -7,3 +7,4 @@ alias less='less -r'
 alias hr='hr -'
 alias oneo4j='open "http://localhost:7474"'
 alias readme='vim README*'
+alias mux=tmuxinator
