@@ -61,6 +61,25 @@ _rcont() {
 
 compdef _rcont rcont
 
+rresource() {
+    local resource="$1"
+    if [[ -z "$resource" ]]; then
+        echo "No resource name provided"
+        return 1
+    fi
+    local resource="${resource}_resource"
+
+    local test_file="$(spec_or_test)/resources/${resource}_$(spec_or_test).rb"
+    [ -f $test_file ] || test_file=''
+    vim -O app/resources/$resource.rb $test_file
+}
+
+_rcont() {
+    _completion resources "_resource\.rb"
+}
+
+compdef _rcont rresource
+
 rservice() {
     local service="$1"
     if [[ -z "$service" ]]; then
