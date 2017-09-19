@@ -74,11 +74,11 @@ rresource() {
     vim -O app/resources/$resource.rb $test_file
 }
 
-_rcont() {
+_rresource() {
     _completion resources "_resource\.rb"
 }
 
-compdef _rcont rresource
+compdef _rresource rresource
 
 rservice() {
     local service="$1"
