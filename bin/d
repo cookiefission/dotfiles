@@ -9,9 +9,16 @@ if [ $# -eq 0 ]; then
     exit 0
 fi
 
+pull_current_revision() {
+    docker pull $DEFAULT_DOCKER_GROUP$(basename $PWD):$(git rev-parse HEAD)
+}
+
 OP=$1
 shift
 case "$OP" in
+    pull_current)
+        pull_current_revision
+        ;;
     up)
         docker-compose up $@
         ;;
