@@ -17,6 +17,3 @@ export PATH=/usr/local/bin:$PATH
 
 # Rbenv
 eval "$(rbenv init -)"
-
-# Istio
-export PATH=$PATH:$HOME/.istio/bin
