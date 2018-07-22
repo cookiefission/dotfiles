@@ -205,7 +205,7 @@ command! Q q
 command! Irb silent !tmux split-window -p 25 irb
 command! Bc silent !tmux split-window -p 25 "echo Calculator; bc -sq"
 
-command Vexplore vs | Explore
+command! Vexplore vs | Explore
 
 nnoremap <Leader>vi :tabe $MYVIMRC<CR>
 nnoremap <Leader>so :so $MYVIMRC<CR>:noh<CR>
