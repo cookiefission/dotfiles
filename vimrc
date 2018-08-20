@@ -27,6 +27,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'google/vim-jsonnet'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
@@ -39,7 +40,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/UltiSnips'
+Plugin 'SirVer/UltiSnips'
 Plugin 'whatyouhide/vim-gotham'
 
 " Done setting up Vundle
@@ -47,6 +48,10 @@ call vundle#end()
 
 syntax on
 filetype plugin indent on
+
+if has('python3')
+  silent! python3 1
+endif
 
 " Misc Runtime
 runtime macros/matchit.vim
@@ -122,6 +127,8 @@ set noshowmode
 set showcmd
 set hidden
 set winwidth=84
+set autowrite
+set updatetime=100
 
 " Fix backspace not deleting new lines
 set backspace=indent,eol,start
@@ -240,6 +247,11 @@ nnoremap <Leader>g<space> :g/<C-r><C-w>/
 inoremap :w<CR> <Esc>:w<CR>
 inoremap :wq<CR> <Esc>:wq<CR>
 
+" Quicker quickfix
+nmap <Leader>cn :cnext<CR>
+nmap <Leader>cp :cprevious<CR>
+nmap <Leader>cc :cclose<CR>
+
 " Jump to end of pasted text
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
@@ -252,6 +264,26 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <silent> g# g#zz
+
+" Vim Go related configs
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>gc <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>gi <Plug>(go-info)
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+" Sort out imports on save
+let g:go_fmt_command = "goimports"
 
 " Don't Overwrite Register on vp
 function! RestoreRegister()
