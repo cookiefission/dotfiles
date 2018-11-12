@@ -1,9 +1,13 @@
 #!/bin/zsh
 
 mkcd() {
-    mkdir -p "$@" && cd "$@"
+    local dir=${1?Must pass directory to create}
+
+    mkdir -p "$dir" && cd "$dir"
 }
 
 gmkcd() {
-    mkdir -p "$1" && cd "$1" && git init
+    local dir=${1?Must pass directory to create}
+
+    mkdir -p "$dir" && cd "$dir" && git init
 }
