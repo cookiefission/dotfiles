@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Go loading
-export GOPATH=/Users/sean/go
+export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
@@ -16,4 +16,5 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # Rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
