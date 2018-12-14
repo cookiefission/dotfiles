@@ -61,7 +61,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_root_markers = ['Gemfile', 'package.json']
 
 " vim-airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme = "murmur"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_y = airline#section#create_right(['ffenc'])
