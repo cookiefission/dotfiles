@@ -1,3 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-pmset -g batt | awk '{ if (NR == 2) { gsub(";", ""); print $3 }}'
+if [[ "xDarwin" == "x$(uname)" ]] ; then
+	pmset -g batt | awk '{ if (NR == 2) { gsub(";", ""); print $3 }}'
+elif [[ "xLinux" == "x$(uname)" ]] ; then
+	upower -i $(upower -e | grep 'BAT') | awk '/percentage/ { print $2 }'
+fi
+

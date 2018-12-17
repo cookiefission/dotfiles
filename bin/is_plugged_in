@@ -1,7 +1,13 @@
 #!/bin/bash
 
-if [[ `pmset -g batt` =~ AC\ Power ]]; then
-    exit 0
-else
-    exit 1
+if [[ "xDarwin" == "x$(uname)" ]] ; then
+    if [[ `pmset -g batt` =~ AC\ Power ]]; then
+	exit 0
+    else
+	exit 1
+    fi
+elif [[ "xLinux" == "x$(uname)" ]] ; then
+	upower -i $(upower -e | grep 'BAT') |
+	    awk '/power supply/ { if($3 == "no") { err = 1 } } 
+                 END { exit err }'
 fi
