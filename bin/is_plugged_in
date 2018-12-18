@@ -8,6 +8,6 @@ if [[ "xDarwin" == "x$(uname)" ]] ; then
     fi
 elif [[ "xLinux" == "x$(uname)" ]] ; then
 	upower -i $(upower -e | grep 'BAT') |
-	    awk '/power supply/ { if($3 == "no") { err = 1 } } 
+	    awk '/state:/ { if($2 == "discharging") { err = 1 } } 
                  END { exit err }'
 fi
