@@ -51,3 +51,5 @@
 	required = true
 [hub]
 	host = github.otbeach.com
+[credential]
+	helper = cache --timeout 86400
