@@ -137,7 +137,7 @@ _rlib() {
         '*: :->other'
 
     case $state in
-        name) compadd `find lib -name \*\.rb | sed "s/lib\/\|\.rb$//g"` ;;
+        name) compadd `find lib -name \*\.rb | sed "s/lib\///g" | sed "s/\.rb$//g"` ;;
         *) return
     esac
 }

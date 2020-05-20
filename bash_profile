@@ -19,6 +19,9 @@ shopt -s cmdhist
 if [ -f ~/.profile ]; then
     source  ~/.profile
 fi
+if [ -f ~/.bash_profile.local ]; then
+    source  ~/.bash_profile.local
+fi
 if [ -f /opt/local/etc/bash_completion ]; then
     source  /opt/local/etc/bash_completion
 fi

@@ -4,6 +4,7 @@ tags
 Session.vim
 .idea/
 .projections.json
+notes.code-workspace
 
 # Misc
 .DS_Store
