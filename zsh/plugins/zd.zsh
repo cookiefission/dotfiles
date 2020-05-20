@@ -1,11 +1,7 @@
 #!/bin/zsh
 
 list_dirs() {
-    for dir in *; do
-        if [ -d "$dir" ]; then
-            echo "$dir/"
-        fi
-    done
+    find * -maxdepth 3 -path '*/\.*' -prune -o -type d -print 2> /dev/null
 }
 
 zd() {
