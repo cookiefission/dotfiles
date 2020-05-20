@@ -29,9 +29,7 @@
 	aliases = config --get-regexp '^alias\\.'
 	lg = log --oneline --decorate --all --graph
 	rb = rebase
-	ci = ci-status
 	open = browse
-	pr = pull-request -o
 	upup = pull --rebase upstream master
 	upupu = upup
 	ypyp = upup
@@ -49,7 +47,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[hub]
-	host = github.otbeach.com
 [credential]
 	helper = cache --timeout 86400
