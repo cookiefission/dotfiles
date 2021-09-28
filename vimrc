@@ -40,7 +40,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'SirVer/UltiSnips'
 Plugin 'whatyouhide/vim-gotham'
 
 " Done setting up Vundle
