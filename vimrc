@@ -224,7 +224,7 @@ nnoremap <Leader>oc :set cursorcolumn!<CR>
 nnoremap <Leader><C-]> :vsplit<CR><C-]>
 map <Leader>gf :vsplit<CR>gf
 
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gb :Git blame<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
 nnoremap <Leader>- :Switch<CR>
